@@ -62,8 +62,8 @@
     animation: scroll-right 50s linear infinite;
 }
 
-/* Pause on hover */
-.marquee-container:hover .marquee-track {
+/* Pause on hover for individual track */
+.marquee-track:hover {
     animation-play-state: paused;
 }
 
@@ -79,8 +79,8 @@
 
 .restaurant-card {
     position: relative;
-    width: 250px;
-    height: 320px;
+    width: 200px;
+    height: 260px;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
@@ -195,14 +195,19 @@
 /* Responsive */
 @media (max-width: 768px) {
     .restaurant-card {
-        width: 200px;
-        height: 260px;
+        width: 150px;
+        height: 200px;
     }
     
     .restaurant-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
+    .restaurant-view-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
     .marquee-container::before,
     .marquee-container::after {
         width: 10%;
