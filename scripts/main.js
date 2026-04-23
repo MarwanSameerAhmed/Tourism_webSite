@@ -460,9 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 5. HOTELS LIGHTBOX LOGIC
+    // 5. HOTELS & RESTAURANTS LIGHTBOX LOGIC
     // ==========================================
-    const hotelCards = document.querySelectorAll('.hotel-card');
+    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card');
     const lightbox = document.getElementById('hotelLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach Event Listeners to Cards
     hotelCards.forEach((card, index) => {
         // Hide cards beyond the first 4 (1 row on desktop)
-        if (index >= 4) {
+        if (card.classList.contains('hotel-card') && index >= 4) {
             card.classList.add('hidden');
         }
 
