@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="هيفيلا - اكتشف روسيا بأسلوب فاخر. تجارب سفر فاخرة في موسكو وسانت بطرسبرغ مع أفضل الخدمات السياحية.">
+    <meta name="keywords" content="سياحة, روسيا, موسكو, سفر فاخر, رحلات, حجز فنادق">
+    <title>هيفيلا | Hevela - اكتشف روسيا بأسلوب فاخر</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="styles/destinations.css">
+    <link rel="stylesheet" href="styles/hotels.css">
+    <link rel="stylesheet" href="styles/restaurants.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="preloader-logo-ar">هيفيلا</span>
+                <span class="preloader-logo-en">HEVELA</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+            <p class="preloader-text">جارٍ تحضير رحلتك...</p>
+        </div>
+    </div>
+
+    <!-- Cursor Follower -->
+    <div class="cursor-follower" id="cursorFollower"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="#" class="navbar-logo" id="navLogo">
+                <div class="logo-text">
+                    <span class="logo-ar">هيفيلا</span>
+                    <span class="logo-en">Hevela Travel & Tourism</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-text="الرئيسية">الرئيسية</a></li>
+                <li><a href="#destinations" class="nav-link" data-text="وجهاتنا">وجهاتنا</a></li>
+                <li><a href="#packages" class="nav-link" data-text="الباقات">الباقات</a></li>
+                <li><a href="#gallery" class="nav-link" data-text="المعرض">المعرض</a></li>
+                <li><a href="#hotels" class="nav-link" data-text="الفنادق">الفنادق</a></li>
+                <li><a href="#restaurants" class="nav-link" data-text="المطاعم">المطاعم</a></li>
+                <li><a href="#places" class="nav-link" data-text="الأماكن السياحية">الأماكن السياحية</a></li>
+                <li><a href="#programs" class="nav-link" data-text="برامج رحلات">برامج رحلات</a></li>
+            </ul>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <div class="lang-switch" id="langSwitch">
+                    <span class="lang-active">AR</span>
+                    <span class="lang-divider">/</span>
+                    <span>EN</span>
+                </div>
+                <a href="#contact" class="nav-cta" id="navCta">
+                    <span>احجز رحلتك الآن</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Parallax Background -->
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg" id="heroBg">
+                <img src="assets/images/moscow_hero.png" alt="موسكو - الساحة الحمراء"
+                    class="hero-bg-img">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-content-inner">
+                <!-- Badge -->
+                <div class="hero-badge" id="heroBadge">
+                    <span class="hero-badge-dot"></span>
+                    <span class="hero-badge-text">أفضل وجهة سياحية 2026</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="hero-title" id="heroTitle">
+                    <span class="hero-title-line">
+                        <span class="hero-title-word" data-delay="0">اكتشف</span>
+                    </span>
+                    <span class="hero-title-line">
+                        <span class="hero-title-word" data-delay="1">روسيا</span>
+                        <span class="hero-title-word hero-title-accent" data-delay="2">بأسلوب فاخر</span>
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle" id="heroSubtitle">
+                    Luxury Travel Experiences in Moscow
+                </p>
+
+                <!-- Description -->
+                <p class="hero-description" id="heroDesc">
+                    اكتشف سحر موسكو وجمالها مع تجارب سفر فاخرة لا تُنسى. من الساحة الحمراء إلى كاتدرائية القديس باسيل نقدم لك رحلة استثنائية.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group" id="heroCta">
+                    <a href="#packages" class="hero-btn hero-btn-primary" id="heroCtaPrimary">
+                        <span class="hero-btn-bg"></span>
+                        <span class="hero-btn-text">احجز رحلتك الآن</span>
+                        <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#gallery" class="hero-btn hero-btn-secondary" id="heroCtaSecondary">
+                        <span class="hero-btn-play">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21" />
+                            </svg>
+                        </span>
+                        <span class="hero-btn-text">شاهد الفيديو</span>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll" id="heroScroll">
+            <div class="hero-scroll-line"></div>
+            <span class="hero-scroll-text">اكتشف المزيد</span>
+        </div>
+
+        <!-- Side Social Links -->
+        <div class="hero-social" id="heroSocial">
+            <a href="#" class="hero-social-link" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="5" />
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                </svg>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                </svg>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+            </a>
+            <div class="hero-social-line"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <!-- Floating Decorations -->
+        <div class="services-decor services-decor-1"></div>
+        <div class="services-decor services-decor-2"></div>
+        <div class="services-decor services-decor-3"></div>
+
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <div class="section-badge">
+                    <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <span>ما نقدمه لك</span>
+                </div>
+                <h2 class="section-title">
+                    خدماتنا
+                    <span class="section-title-en">Our Services</span>
+                </h2>
+                <div class="section-title-line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="section-subtitle">نوفر لك مجموعة متكاملة من الخدمات السياحية الفاخرة لتجربة لا تُنسى في روسيا</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+
+                <!-- Card 1: Instant Bookings -->
+                <div class="service-card reveal" style="transition-delay: 0.1s">
+                    <span class="service-number">01</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M3 10h18" />
+                            <path d="M8 2v4" />
+                            <path d="M16 2v4" />
+                            <path d="M10 14l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        Instant Bookings
+                        <span class="service-title-ar">حجوزات فورية</span>
+                    </h3>
+                    <p class="service-description">احجز رحلتك والفندق بضغطة زر واحدة مع تأكيد فوري.</p>
+                </div>
+
+                <!-- Card 2: Airport Greeting -->
+                <div class="service-card reveal" style="transition-delay: 0.2s">
+                    <span class="service-number">02</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        Airport Greeting
+                        <span class="service-title-ar">استقبال المطار</span>
+                    </h3>
+                    <p class="service-description">استقبال VIP في المطار مع مساعدة كاملة في التنقل.</p>
+                </div>
+
+                <!-- Card 3: Private Tours -->
+                <div class="service-card reveal" style="transition-delay: 0.3s">
+                    <span class="service-number">03</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="10" r="3" />
+                            <path d="M12 2a8 8 0 0 0-8 8c0 5.4 7 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        Private Tours
+                        <span class="service-title-ar">جولات خاصة</span>
+                    </h3>
+                    <p class="service-description">جولات خاصة مع مرشدين يتحدثون العربية.</p>
+                </div>
+
+                <!-- Card 4: VIP Transport -->
+                <div class="service-card reveal" style="transition-delay: 0.4s;">
+                    <span class="service-number">04</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M5 17h14M5 17a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2M5 17l-1 3h1.5M19 17l1 3h-1.5" />
+                            <circle cx="7.5" cy="17" r="1.5" />
+                            <circle cx="16.5" cy="17" r="1.5" />
+                            <path d="M5 10h14" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        VIP Transport
+                        <span class="service-title-ar">نقل VIP</span>
+                    </h3>
+                    <p class="service-description">سيارات فاخرة مع سائقين محترفين للتنقل.</p>
+                </div>
+
+                <!-- Card 5 (Hidden Initially) -->
+                <div class="service-card reveal hidden-service" style="transition-delay: 0.1s; display: none;">
+                    <span class="service-number">05</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        VIP Translation
+                        <span class="service-title-ar">مترجم خاص VIP</span>
+                    </h3>
+                    <p class="service-description">مرافق ومترجم محترف لتسهيل تواصلك وتنقلاتك طوال فترة الرحلة.</p>
+                </div>
+
+                <!-- Card 6 (Hidden Initially) -->
+                <div class="service-card reveal hidden-service" style="transition-delay: 0.2s; display: none;">
+                    <span class="service-number">06</span>
+                    <div class="service-card-corner"></div>
+                    <div class="service-icon">
+                        <div class="service-icon-ring"></div>
+                        <div class="service-icon-bg"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        Exclusive Access
+                        <span class="service-title-ar">وصول حصري</span>
+                    </h3>
+                    <p class="service-description">تذاكر حصرية للوصول كبار الشخصيات في أهم المعالم السياحية.</p>
+                </div>
+
+            </div>
+
+            <!-- Show More Services Button -->
+            <div class="show-more-wrapper" style="margin-top: 50px; display: flex; justify-content: center;">
+                <button class="hero-btn hero-btn-primary" id="showMoreServices">
+                    <span class="hero-btn-bg"></span>
+                    <span class="hero-btn-text">عرض جميع الفنادق</span>
+                    <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" style="transform: rotate(0deg); margin-right: 8px;">
+                        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations / Offers Section (Sticky Stacking Cards) -->
+    <section class="destinations" id="destinations">
+        <div class="container destinations-layout">
+            <!-- Sticky Header Side -->
+            <div class="dest-sticky-header">
+                <!-- Section Header (Light Version) -->
+                <div class="section-header reveal">
+                    <div class="section-badge"
+                        style="background: rgba(15, 166, 142, 0.07); border-color: rgba(15, 166, 142, 0.12); color: var(--clr-primary);">
+                        <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>عرض الصور</span>
+                    </div>
+                    <h2 class="section-title" style="color: #1a2332;">
+                        أفضل العروض
+                        <span class="section-title-en" style="color: #9aa5b4;">Premium Offers</span>
+                    </h2>
+                    <div class="section-title-line">
+                        <span style="background: #c8d0da;"></span>
+                        <span></span>
+                        <span style="background: #c8d0da;"></span>
+                    </div>
+                    <p class="section-subtitle" style="color: #6b7a8d;">باقات سياحية مصممة بعناية لتأخذك في رحلة لا تُنسى عبر أعرق المدن الروسية</p>
+                </div>
+            </div>
+
+            <!-- Sticky Stacking Cards Container -->
+            <div class="dest-stack-container">
+
+                <!-- Offer 1 -->
+                <article class="offer-card">
+                    <div class="offer-content-col">
+                        <div class="offer-header">
+                            <span class="offer-subtitle-en">Premium Experience</span>
+                            <h3 class="offer-title">العرض الثاني</h3>
+                            <div class="offer-stars">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="offer-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">6 ليالي - فندق 5 نجوم</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                                        <path d="M3 10h18" />
+                                        <path d="M8 2v4" />
+                                        <path d="M16 2v4" />
+                                        <path d="M10 14l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">استقبال وتوديع VIP</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">تفريك + هاسكي + كروز</span>
+                            </div>
+                        </div>
+
+                        <div class="offer-footer">
+                            <div class="offer-price-wrapper">
+                                <span class="offer-price-label">السعر للشخص</span>
+                                <div class="offer-price"><span>SAR</span> 6400</div>
+                            </div>
+                            <a href="#book" class="hero-btn hero-btn-primary" style="padding: 12px 30px;">
+                                <span class="hero-btn-bg"></span>
+                                <span class="hero-btn-text">احجز الآن</span>
+                                <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    style="transform: rotate(0deg); margin-right: 8px;">
+                                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offer-art-col">
+                        <div class="offer-art-frame">
+                            <div class="offer-art-container">
+                                <img src="assets/offers/1.JPG.jpeg" alt="العرض الأول" class="offer-image">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Offer 2 -->
+                <article class="offer-card">
+                    <div class="offer-content-col">
+                        <div class="offer-header">
+                            <span class="offer-subtitle-en">Exclusive Tour</span>
+                            <h3 class="offer-title">العرض الثالث</h3>
+                            <div class="offer-stars">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="offer-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">5 ليالي - فندق 5 نجوم</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                                        <path d="M3 10h18" />
+                                        <path d="M8 2v4" />
+                                        <path d="M16 2v4" />
+                                        <path d="M10 14l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">استقبال وتوديع VIP</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">تفريك + هاسكي + كروز</span>
+                            </div>
+                        </div>
+
+                        <div class="offer-footer">
+                            <div class="offer-price-wrapper">
+                                <span class="offer-price-label">السعر للشخص</span>
+                                <div class="offer-price"><span>SAR</span> 5400</div>
+                            </div>
+                            <a href="#book" class="hero-btn hero-btn-primary" style="padding: 12px 30px;">
+                                <span class="hero-btn-bg"></span>
+                                <span class="hero-btn-text">احجز الآن</span>
+                                <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    style="transform: rotate(0deg); margin-right: 8px;">
+                                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offer-art-col">
+                        <div class="offer-art-frame">
+                            <div class="offer-art-container">
+                                <img src="assets/offers/2.JPG.jpeg" alt="العرض الثاني" class="offer-image">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Offer 3 -->
+                <article class="offer-card">
+                    <div class="offer-content-col">
+                        <div class="offer-header">
+                            <span class="offer-subtitle-en">Classic Journey</span>
+                            <h3 class="offer-title">العرض الثالث</h3>
+                            <div class="offer-stars">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="offer-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">6 ليالي - فندق 4 نجوم</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                                        <path d="M3 10h18" />
+                                        <path d="M8 2v4" />
+                                        <path d="M16 2v4" />
+                                        <path d="M10 14l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">استقبال وتوديع VIP</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                    </svg>
+                                </div>
+                                <span class="detail-text">تفريك + هاسكي + كروز</span>
+                            </div>
+                        </div>
+
+                        <div class="offer-footer">
+                            <div class="offer-price-wrapper">
+                                <span class="offer-price-label">السعر للشخص</span>
+                                <div class="offer-price"><span>SAR</span> 3800</div>
+                            </div>
+                            <a href="#book" class="hero-btn hero-btn-primary" style="padding: 12px 30px;">
+                                <span class="hero-btn-bg"></span>
+                                <span class="hero-btn-text">احجز الآن</span>
+                                <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    style="transform: rotate(0deg); margin-right: 8px;">
+                                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offer-art-col">
+                        <div class="offer-art-frame">
+                            <div class="offer-art-container">
+                                <img src="assets/offers/3.JPG.jpeg" alt="العرض الثالث" class="offer-image">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="hotels" id="hotels">
+        <div class="container reveal">
+            <div class="section-header reveal">
+                <div class="section-badge">
+                    <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>الإقامة المثالية</span>
+                </div>
+                <h2 class="section-title">
+                    فنادق النخبة
+                    <span class="section-title-en">Luxury Hotels</span>
+                </h2>
+                <div class="section-title-line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="section-subtitle">تشكيلة من أفخم الفنادق العالمية لإقامة لا تُنسى</p>
+            </div>
+
+            <!-- Hotels Grid -->
+            <div class="hotels-grid">
+
+                <!-- Hotel Card 1 -->
+                <div class="hotel-card reveal" data-hotel="ارارت بارك حياة"
+                    data-images="assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9%202.png,assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9%203.png,assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9%204.png,assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9%205.png,assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9.png">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/Ararat%20Park%20Hyatt%20-%20%D8%A7%D8%B1%D8%A7%D8%B1%D8%AA%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%AD%D9%8A%D8%A7%D8%A9/%D8%B5%D9%88%D8%B1%D8%A9%202.png"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">ارارت بارك حياة</h3>
+                        <span class="hotel-name-en">Ararat Park Hyatt</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 2 -->
+                <div class="hotel-card reveal" data-hotel="ارارت بارك حياة"
+                    data-images="assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9%202.png,assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9%203.png,assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9%204.png,assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9%205.png,assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9.png">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/St.Regis%20-%20%D8%B3%D8%A7%D9%86%D8%AA%20%D8%B1%D9%8A%D8%AC%D8%B3/%D8%B5%D9%88%D8%B1%D8%A9%202.png"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">سانت ريجس</h3>
+                        <span class="hotel-name-en">St. Regis</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 3 -->
+                <div class="hotel-card reveal" data-hotel="انتر مارك"
+                    data-images="assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_1_2026-04-22_23-06-34.jpg,assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_2_2026-04-22_23-06-34.jpg,assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_3_2026-04-22_23-06-34.jpg,assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_4_2026-04-22_23-06-34.jpg,assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_5_2026-04-22_23-06-34.jpg,assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_6_2026-04-22_23-06-34.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D8%A7%D9%86%D8%AA%D8%B1%20%D9%85%D8%A7%D8%B1%D9%83/photo_1_2026-04-22_23-06-34.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">انتر مارك</h3>
+                        <span class="hotel-name-en">Intermark Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 4 -->
+                <div class="hotel-card reveal" data-hotel="بيتر ون"
+                    data-images="assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_1_2026-04-22_23-02-28.jpg,assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_2_2026-04-22_23-02-28.jpg,assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_3_2026-04-22_23-02-28.jpg,assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_4_2026-04-22_23-02-28.jpg,assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_5_2026-04-22_23-02-28.jpg,assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_6_2026-04-22_23-02-28.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D8%A8%D9%8A%D8%AA%D8%B1%20%D9%88%D9%86/photo_1_2026-04-22_23-02-28.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">بيتر ون</h3>
+                        <span class="hotel-name-en">Peter 1 Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 5 -->
+                <div class="hotel-card reveal" data-hotel="سافمار اررورا لوكس"
+                    data-images="assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_1_2026-04-22_23-04-20.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_2_2026-04-22_23-04-20.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_3_2026-04-22_23-04-20.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_4_2026-04-22_23-04-20.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_5_2026-04-22_23-04-20.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D8%B3%D8%A7%D9%81%D9%85%D8%A7%D8%B1%20%D8%A7%D8%B1%D9%88%D8%B1%D8%A7%20%D9%84%D9%88%D9%83%D8%B3/photo_1_2026-04-22_23-04-20.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">سافمار اررورا لوكس</h3>
+                        <span class="hotel-name-en">Safmar Aurora Luxe</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 6 -->
+                <div class="hotel-card reveal" data-hotel="سافوي"
+                    data-images="assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_1_2026-04-22_23-09-03.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_1_2026-04-22_23-09-54.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_2_2026-04-22_23-09-03.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_3_2026-04-22_23-09-03.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_4_2026-04-22_23-09-03.jpg,assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_5_2026-04-22_23-09-03.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D8%B3%D8%A7%D9%81%D9%88%D9%8A/photo_1_2026-04-22_23-09-03.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">سافوي</h3>
+                        <span class="hotel-name-en">Savoy Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 7 -->
+                <div class="hotel-card reveal" data-hotel="سويس هوتيل"
+                    data-images="assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_1_2026-04-22_23-08-28.jpg,assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_2_2026-04-22_23-08-28.jpg,assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_3_2026-04-22_23-08-28.jpg,assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_4_2026-04-22_23-08-28.jpg,assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_5_2026-04-22_23-08-28.jpg,assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_6_2026-04-22_23-08-28.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D8%B3%D9%88%D9%8A%D8%B3%20%D9%87%D9%88%D8%AA%D9%8A%D9%84/photo_1_2026-04-22_23-08-28.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Swiss�tel</h3>
+                        <span class="hotel-name-en">Swiss�tel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 8 -->
+                <div class="hotel-card reveal" data-hotel="Four seasons"
+                    data-images="assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_1_2026-04-22_22-59-27.jpg,assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_2_2026-04-22_22-59-27.jpg,assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_3_2026-04-22_22-59-27.jpg,assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_4_2026-04-22_22-59-27.jpg,assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_5_2026-04-22_22-59-27.jpg,assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_6_2026-04-22_22-59-27.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%81%D9%88%D8%B1%D8%B3%D9%88%D9%86%20-%20Four%20seasons/photo_1_2026-04-22_22-59-27.jpg"
+                            alt="Four seasons">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">فورسيزونز</h3>
+                        <span class="hotel-name-en">Four Seasons</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 9 -->
+                <div class="hotel-card reveal" data-hotel="carlton"
+                    data-images="assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_1_2026-04-22_23-01-07.jpg,assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_2_2026-04-22_23-01-07.jpg,assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_3_2026-04-22_23-01-07.jpg,assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_4_2026-04-22_23-01-07.jpg,assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_5_2026-04-22_23-01-07.jpg,assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_6_2026-04-22_23-01-07.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%83%D8%A7%D8%B1%D9%84%D8%AA%D9%88%D9%86%20-%20carlton/photo_1_2026-04-22_23-01-07.jpg"
+                            alt="carlton">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">كارلتون</h3>
+                        <span class="hotel-name-en">Carlton Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 10 -->
+                <div class="hotel-card reveal" data-hotel="كمبينسكي"
+                    data-images="assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_1_2026-04-22_23-05-23.jpg,assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_2_2026-04-22_23-05-23.jpg,assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_3_2026-04-22_23-05-23.jpg,assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_4_2026-04-22_23-05-23.jpg,assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_5_2026-04-22_23-05-23.jpg,assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_6_2026-04-22_23-05-23.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%83%D9%85%D8%A8%D8%B3%D9%83%D9%8A/photo_1_2026-04-22_23-05-23.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">كمبينسكي</h3>
+                        <span class="hotel-name-en">Kempinski Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 11 -->
+                <div class="hotel-card reveal" data-hotel="كونتنال"
+                    data-images="assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_1_2026-04-22_23-03-18.jpg,assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_2_2026-04-22_23-03-18.jpg,assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_3_2026-04-22_23-03-18.jpg,assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_4_2026-04-22_23-03-18.jpg,assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_5_2026-04-22_23-03-18.jpg,assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_6_2026-04-22_23-03-18.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%83%D9%88%D9%86%D8%AA%D9%86%D8%A7%D9%84/photo_1_2026-04-22_23-03-18.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">كونتنال</h3>
+                        <span class="hotel-name-en">Continental Hotel</span>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 12 -->
+                <div class="hotel-card reveal" data-hotel="لوتي"
+                    data-images="assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_1_2026-04-22_23-05-59.jpg,assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_2_2026-04-22_23-05-59.jpg,assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_3_2026-04-22_23-05-59.jpg,assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_4_2026-04-22_23-05-59.jpg,assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_5_2026-04-22_23-05-59.jpg,assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_6_2026-04-22_23-05-59.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%84%D9%88%D8%AA%D9%8A/photo_1_2026-04-22_23-05-59.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">لوتي</h3>
+                        <span class="hotel-name-en">Lotte Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 13 -->
+                <div class="hotel-card reveal" data-hotel="ماريوت امبريال بلازا"
+                    data-images="assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_1_2026-04-22_23-07-16.jpg,assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_2_2026-04-22_23-07-16.jpg,assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_3_2026-04-22_23-07-16.jpg,assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_4_2026-04-22_23-07-16.jpg,assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_5_2026-04-22_23-07-16.jpg,assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_6_2026-04-22_23-07-16.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%85%D8%A7%D8%B1%D9%8A%D9%88%D8%AA%20%D8%A7%D9%85%D8%A8%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A8%D9%84%D8%A7%D8%B2%D8%A7/photo_1_2026-04-22_23-07-16.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">ماريوت امبريال بلازا</h3>
+                        <span class="hotel-name-en">Marriott Imperial Plaza</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 14 -->
+                <div class="hotel-card reveal" data-hotel="Metropol"
+                    data-images="assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_1_2026-04-22_23-01-37.jpg,assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_2_2026-04-22_23-01-37.jpg,assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_3_2026-04-22_23-01-37.jpg,assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_4_2026-04-22_23-01-37.jpg,assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_5_2026-04-22_23-01-37.jpg,assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_6_2026-04-22_23-01-37.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%20-%20Metropol/photo_1_2026-04-22_23-01-37.jpg"
+                            alt="Metropol">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">متروبول</h3>
+                        <span class="hotel-name-en">Metropol Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel Card 15 -->
+                <div class="hotel-card reveal" data-hotel="ناشونال"
+                    data-images="assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_1_2026-04-22_23-04-46.jpg,assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_2_2026-04-22_23-04-46.jpg,assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_3_2026-04-22_23-04-46.jpg,assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_4_2026-04-22_23-04-46.jpg,assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_5_2026-04-22_23-04-46.jpg,assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_6_2026-04-22_23-04-46.jpg">
+                    <div class="hotel-cover">
+                        <img src="assets/hotels/%D9%86%D8%A7%D8%B4%D9%88%D9%86%D8%A7%D9%84/photo_1_2026-04-22_23-04-46.jpg"
+                            alt="انتر مارك">
+                        <div class="hotel-overlay"></div>
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">ناشونال</h3>
+                        <span class="hotel-name-en">National Hotel</span>
+                        <div class="hotel-stars">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div class="hotel-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="show-more-wrapper">
+                <button class="hero-btn-primary" id="showMoreHotels" style="margin: 0 auto; display: flex;">
+                    <span class="hero-btn-bg"></span>
+                    <span class="hero-btn-text">عرض جميع الفنادق</span>
+                    <svg class="hero-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" style="transform: rotate(0deg); margin-right: 8px;">
+                        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants" id="restaurants">
+        <div class="section-header reveal">
+            <h2 class="section-title">
+                تذوق الفخامة
+                <span class="section-title-en">Restaurants & Cafes</span>
+            </h2>
+            <div class="section-title-line">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="section-subtitle">تشكيلة من أروع المطاعم والمقاهي لتجربة تذوق استثنائية</p>
+        </div>
+
+        <div class="marquee-container reveal">
+            <div class="marquee-track left">
+                <div class="restaurant-card" data-hotel="Bolshoi"
+                    data-images="assets/cafes and resturants/Bolshoi/photo_1_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_2_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_3_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_4_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_5_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_6_2026-04-23_19-05-45.jpg">
+                    <img src="assets/cafes and resturants/Bolshoi/photo_1_2026-04-23_19-05-45.jpg" alt="Bolshoi">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Bolshoi</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="bosco cafe"
+                    data-images="assets/cafes and resturants/bosco%20cafe/photo_1_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_2_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_3_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_4_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_5_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_6_2026-04-23_19-07-36.jpg">
+                    <img src="assets/cafes and resturants/bosco%20cafe/photo_1_2026-04-23_19-07-36.jpg"
+                        alt="bosco cafe">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">bosco cafe</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Bro & N"
+                    data-images="assets/cafes and resturants/Bro%20%26%20N/photo_1_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_2_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_3_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_4_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_5_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_6_2026-04-23_19-12-50.jpg">
+                    <img src="assets/cafes and resturants/Bro%20%26%20N/photo_1_2026-04-23_19-12-50.jpg" alt="Bro & N">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Bro & N</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Butler"
+                    data-images="assets/cafes and resturants/Butler/photo_1_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_2_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_3_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_4_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_5_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_6_2026-04-23_19-06-44.jpg">
+                    <img src="assets/cafes and resturants/Butler/photo_1_2026-04-23_19-06-44.jpg" alt="Butler">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Butler</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="cafe Pushkin"
+                    data-images="assets/cafes and resturants/cafe%20Pushkin/photo_1_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_2_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_3_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_4_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_5_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_6_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_7_2026-04-23_19-28-49.jpg">
+                    <img src="assets/cafes and resturants/cafe%20Pushkin/photo_1_2026-04-23_19-28-49.jpg"
+                        alt="cafe Pushkin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">cafe Pushkin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Chaihona 1"
+                    data-images="assets/cafes and resturants/Chaihona%201/photo_1_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_2_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_3_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_4_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_5_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_6_2026-04-23_19-10-56.jpg">
+                    <img src="assets/cafes and resturants/Chaihona%201/photo_1_2026-04-23_19-10-56.jpg"
+                        alt="Chaihona 1">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Chaihona 1</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Chef Arbat"
+                    data-images="assets/cafes and resturants/Chef%20Arbat/photo_1_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_2_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_3_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_4_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_5_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_6_2026-04-23_19-12-02.jpg">
+                    <img src="assets/cafes and resturants/Chef%20Arbat/photo_1_2026-04-23_19-12-02.jpg"
+                        alt="Chef Arbat">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Chef Arbat</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="dr zhivago"
+                    data-images="assets/cafes and resturants/dr%20zhivago/photo_1_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_2_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_3_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_4_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_5_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_6_2026-04-23_19-09-26.jpg">
+                    <img src="assets/cafes and resturants/dr%20zhivago/photo_1_2026-04-23_19-09-26.jpg"
+                        alt="dr zhivago">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">dr zhivago</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Erwin"
+                    data-images="assets/cafes and resturants/Erwin/photo_1_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_2_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_3_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_4_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_5_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_6_2026-04-23_19-21-43.jpg">
+                    <img src="assets/cafes and resturants/Erwin/photo_1_2026-04-23_19-21-43.jpg" alt="Erwin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Erwin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="friends forever"
+                    data-images="assets/cafes and resturants/friends%20forever/photo_1_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_2_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_3_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_4_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_5_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_6_2026-04-23_19-19-02.jpg">
+                    <img src="assets/cafes and resturants/friends%20forever/photo_1_2026-04-23_19-19-02.jpg"
+                        alt="friends forever">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">friends forever</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="il pizzaiolo"
+                    data-images="assets/cafes and resturants/il%20pizzaiolo/photo_1_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_2_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_3_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_4_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_5_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_6_2026-04-23_19-23-20.jpg">
+                    <img src="assets/cafes and resturants/il%20pizzaiolo/photo_1_2026-04-23_19-23-20.jpg"
+                        alt="il pizzaiolo">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">il pizzaiolo</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="La Bottega Sicilian"
+                    data-images="assets/cafes and resturants/La%20Bottega%20Sicilian/photo_1_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_2_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_3_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_4_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_5_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_6_2026-04-23_19-31-50.jpg">
+                    <img src="assets/cafes and resturants/La%20Bottega%20Sicilian/photo_1_2026-04-23_19-31-50.jpg"
+                        alt="La Bottega Sicilian">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">La Bottega Sicilian</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Loomi"
+                    data-images="assets/cafes and resturants/Loomi/photo_1_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_2_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_3_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_4_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_5_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_6_2026-04-23_19-02-37.jpg">
+                    <img src="assets/cafes and resturants/Loomi/photo_1_2026-04-23_19-02-37.jpg" alt="Loomi">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Loomi</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="love cake"
+                    data-images="assets/cafes and resturants/love%20cake/photo_1_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_2_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_3_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_4_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_5_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_6_2026-04-23_19-19-49.jpg">
+                    <img src="assets/cafes and resturants/love%20cake/photo_1_2026-04-23_19-19-49.jpg" alt="love cake">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">love cake</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Maroon"
+                    data-images="assets/cafes and resturants/Maroon/photo_1_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_2_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_3_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_4_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_5_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_6_2026-04-23_19-10-02.jpg">
+                    <img src="assets/cafes and resturants/Maroon/photo_1_2026-04-23_19-10-02.jpg" alt="Maroon">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Maroon</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Bolshoi"
+                    data-images="assets/cafes and resturants/Bolshoi/photo_1_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_2_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_3_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_4_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_5_2026-04-23_19-05-45.jpg,assets/cafes and resturants/Bolshoi/photo_6_2026-04-23_19-05-45.jpg">
+                    <img src="assets/cafes and resturants/Bolshoi/photo_1_2026-04-23_19-05-45.jpg" alt="Bolshoi">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Bolshoi</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="bosco cafe"
+                    data-images="assets/cafes and resturants/bosco%20cafe/photo_1_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_2_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_3_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_4_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_5_2026-04-23_19-07-36.jpg,assets/cafes and resturants/bosco%20cafe/photo_6_2026-04-23_19-07-36.jpg">
+                    <img src="assets/cafes and resturants/bosco%20cafe/photo_1_2026-04-23_19-07-36.jpg"
+                        alt="bosco cafe">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">bosco cafe</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Bro & N"
+                    data-images="assets/cafes and resturants/Bro%20%26%20N/photo_1_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_2_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_3_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_4_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_5_2026-04-23_19-12-50.jpg,assets/cafes and resturants/Bro%20%26%20N/photo_6_2026-04-23_19-12-50.jpg">
+                    <img src="assets/cafes and resturants/Bro%20%26%20N/photo_1_2026-04-23_19-12-50.jpg" alt="Bro & N">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Bro & N</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Butler"
+                    data-images="assets/cafes and resturants/Butler/photo_1_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_2_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_3_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_4_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_5_2026-04-23_19-06-44.jpg,assets/cafes and resturants/Butler/photo_6_2026-04-23_19-06-44.jpg">
+                    <img src="assets/cafes and resturants/Butler/photo_1_2026-04-23_19-06-44.jpg" alt="Butler">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Butler</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="cafe Pushkin"
+                    data-images="assets/cafes and resturants/cafe%20Pushkin/photo_1_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_2_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_3_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_4_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_5_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_6_2026-04-23_19-28-49.jpg,assets/cafes and resturants/cafe%20Pushkin/photo_7_2026-04-23_19-28-49.jpg">
+                    <img src="assets/cafes and resturants/cafe%20Pushkin/photo_1_2026-04-23_19-28-49.jpg"
+                        alt="cafe Pushkin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">cafe Pushkin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Chaihona 1"
+                    data-images="assets/cafes and resturants/Chaihona%201/photo_1_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_2_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_3_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_4_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_5_2026-04-23_19-10-56.jpg,assets/cafes and resturants/Chaihona%201/photo_6_2026-04-23_19-10-56.jpg">
+                    <img src="assets/cafes and resturants/Chaihona%201/photo_1_2026-04-23_19-10-56.jpg"
+                        alt="Chaihona 1">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Chaihona 1</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Chef Arbat"
+                    data-images="assets/cafes and resturants/Chef%20Arbat/photo_1_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_2_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_3_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_4_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_5_2026-04-23_19-12-02.jpg,assets/cafes and resturants/Chef%20Arbat/photo_6_2026-04-23_19-12-02.jpg">
+                    <img src="assets/cafes and resturants/Chef%20Arbat/photo_1_2026-04-23_19-12-02.jpg"
+                        alt="Chef Arbat">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Chef Arbat</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="dr zhivago"
+                    data-images="assets/cafes and resturants/dr%20zhivago/photo_1_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_2_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_3_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_4_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_5_2026-04-23_19-09-26.jpg,assets/cafes and resturants/dr%20zhivago/photo_6_2026-04-23_19-09-26.jpg">
+                    <img src="assets/cafes and resturants/dr%20zhivago/photo_1_2026-04-23_19-09-26.jpg"
+                        alt="dr zhivago">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">dr zhivago</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Erwin"
+                    data-images="assets/cafes and resturants/Erwin/photo_1_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_2_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_3_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_4_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_5_2026-04-23_19-21-43.jpg,assets/cafes and resturants/Erwin/photo_6_2026-04-23_19-21-43.jpg">
+                    <img src="assets/cafes and resturants/Erwin/photo_1_2026-04-23_19-21-43.jpg" alt="Erwin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Erwin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="friends forever"
+                    data-images="assets/cafes and resturants/friends%20forever/photo_1_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_2_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_3_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_4_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_5_2026-04-23_19-19-02.jpg,assets/cafes and resturants/friends%20forever/photo_6_2026-04-23_19-19-02.jpg">
+                    <img src="assets/cafes and resturants/friends%20forever/photo_1_2026-04-23_19-19-02.jpg"
+                        alt="friends forever">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">friends forever</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="il pizzaiolo"
+                    data-images="assets/cafes and resturants/il%20pizzaiolo/photo_1_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_2_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_3_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_4_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_5_2026-04-23_19-23-20.jpg,assets/cafes and resturants/il%20pizzaiolo/photo_6_2026-04-23_19-23-20.jpg">
+                    <img src="assets/cafes and resturants/il%20pizzaiolo/photo_1_2026-04-23_19-23-20.jpg"
+                        alt="il pizzaiolo">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">il pizzaiolo</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="La Bottega Sicilian"
+                    data-images="assets/cafes and resturants/La%20Bottega%20Sicilian/photo_1_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_2_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_3_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_4_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_5_2026-04-23_19-31-50.jpg,assets/cafes and resturants/La%20Bottega%20Sicilian/photo_6_2026-04-23_19-31-50.jpg">
+                    <img src="assets/cafes and resturants/La%20Bottega%20Sicilian/photo_1_2026-04-23_19-31-50.jpg"
+                        alt="La Bottega Sicilian">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">La Bottega Sicilian</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Loomi"
+                    data-images="assets/cafes and resturants/Loomi/photo_1_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_2_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_3_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_4_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_5_2026-04-23_19-02-37.jpg,assets/cafes and resturants/Loomi/photo_6_2026-04-23_19-02-37.jpg">
+                    <img src="assets/cafes and resturants/Loomi/photo_1_2026-04-23_19-02-37.jpg" alt="Loomi">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Loomi</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="love cake"
+                    data-images="assets/cafes and resturants/love%20cake/photo_1_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_2_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_3_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_4_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_5_2026-04-23_19-19-49.jpg,assets/cafes and resturants/love%20cake/photo_6_2026-04-23_19-19-49.jpg">
+                    <img src="assets/cafes and resturants/love%20cake/photo_1_2026-04-23_19-19-49.jpg" alt="love cake">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">love cake</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Maroon"
+                    data-images="assets/cafes and resturants/Maroon/photo_1_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_2_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_3_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_4_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_5_2026-04-23_19-10-02.jpg,assets/cafes and resturants/Maroon/photo_6_2026-04-23_19-10-02.jpg">
+                    <img src="assets/cafes and resturants/Maroon/photo_1_2026-04-23_19-10-02.jpg" alt="Maroon">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Maroon</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-track right">
+                <div class="restaurant-card" data-hotel="Naura cafe"
+                    data-images="assets/cafes and resturants/Naura%20cafe/photo_1_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_2_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_3_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_4_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_5_2026-04-23_19-30-22.jpg">
+                    <img src="assets/cafes and resturants/Naura%20cafe/photo_1_2026-04-23_19-30-22.jpg"
+                        alt="Naura cafe">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Naura cafe</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="No 13"
+                    data-images="assets/cafes and resturants/No%2013/photo_1_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_2_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_3_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_4_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_5_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_6_2026-04-23_19-22-32.jpg">
+                    <img src="assets/cafes and resturants/No%2013/photo_1_2026-04-23_19-22-32.jpg" alt="No 13">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">No 13</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Novikov"
+                    data-images="assets/cafes and resturants/Novikov/photo_1_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_2_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_3_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_4_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_5_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_6_2026-04-23_19-31-10.jpg">
+                    <img src="assets/cafes and resturants/Novikov/photo_1_2026-04-23_19-31-10.jpg" alt="Novikov">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Novikov</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="O2 restaurant"
+                    data-images="assets/cafes and resturants/O2%20restaurant/photo_1_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_2_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_3_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_4_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_5_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_6_2026-04-23_19-23-57.jpg">
+                    <img src="assets/cafes and resturants/O2%20restaurant/photo_1_2026-04-23_19-23-57.jpg"
+                        alt="O2 restaurant">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">O2 restaurant</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="OMG"
+                    data-images="assets/cafes and resturants/OMG/photo_1_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_2_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_3_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_4_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_5_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_6_2026-04-23_19-04-06.jpg">
+                    <img src="assets/cafes and resturants/OMG/photo_1_2026-04-23_19-04-06.jpg" alt="OMG">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">OMG</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Ruskiy Restaurant"
+                    data-images="assets/cafes and resturants/Ruskiy%20Restaurant/photo_1_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_2_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_3_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_4_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_5_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_6_2026-04-23_19-17-11.jpg">
+                    <img src="assets/cafes and resturants/Ruskiy%20Restaurant/photo_1_2026-04-23_19-17-11.jpg"
+                        alt="Ruskiy Restaurant">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Ruskiy Restaurant</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Sakhalin"
+                    data-images="assets/cafes and resturants/Sakhalin/photo_1_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_2_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_3_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_4_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_5_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_6_2026-04-23_19-27-27.jpg">
+                    <img src="assets/cafes and resturants/Sakhalin/photo_1_2026-04-23_19-27-27.jpg" alt="Sakhalin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Sakhalin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Scramble"
+                    data-images="assets/cafes and resturants/Scramble/photo_1_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_2_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_3_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_4_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_5_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_6_2026-04-23_19-04-56.jpg">
+                    <img src="assets/cafes and resturants/Scramble/photo_1_2026-04-23_19-04-56.jpg" alt="Scramble">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Scramble</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="She"
+                    data-images="assets/cafes and resturants/She/photo_1_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_2_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_3_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_4_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_5_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_6_2026-04-23_19-20-42.jpg">
+                    <img src="assets/cafes and resturants/She/photo_1_2026-04-23_19-20-42.jpg" alt="She">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">She</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Shef kebab & steak"
+                    data-images="assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_1_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_2_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_3_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_4_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_5_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_6_2026-04-23_19-28-02.jpg">
+                    <img src="assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_1_2026-04-23_19-28-02.jpg"
+                        alt="Shef kebab & steak">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Shef kebab & steak</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="sixty"
+                    data-images="assets/cafes and resturants/sixty/photo_1_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_2_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_3_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_4_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_5_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_6_2026-04-23_19-14-34.jpg">
+                    <img src="assets/cafes and resturants/sixty/photo_1_2026-04-23_19-14-34.jpg" alt="sixty">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">sixty</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Tajj mahal"
+                    data-images="assets/cafes and resturants/Tajj%20mahal/photo_1_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_2_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_3_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_4_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_5_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_6_2026-04-23_19-08-27.jpg">
+                    <img src="assets/cafes and resturants/Tajj%20mahal/photo_1_2026-04-23_19-08-27.jpg"
+                        alt="Tajj mahal">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Tajj mahal</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Turandot"
+                    data-images="assets/cafes and resturants/Turandot/photo_1_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_2_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_3_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_4_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_5_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_6_2026-04-23_19-18-15.jpg">
+                    <img src="assets/cafes and resturants/Turandot/photo_1_2026-04-23_19-18-15.jpg" alt="Turandot">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Turandot</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="White Rabbit"
+                    data-images="assets/cafes and resturants/White%20Rabbit/photo_1_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_2_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_3_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_4_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_5_2026-04-23_19-16-32.jpg">
+                    <img src="assets/cafes and resturants/White%20Rabbit/photo_1_2026-04-23_19-16-32.jpg"
+                        alt="White Rabbit">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">White Rabbit</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Naura cafe"
+                    data-images="assets/cafes and resturants/Naura%20cafe/photo_1_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_2_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_3_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_4_2026-04-23_19-30-22.jpg,assets/cafes and resturants/Naura%20cafe/photo_5_2026-04-23_19-30-22.jpg">
+                    <img src="assets/cafes and resturants/Naura%20cafe/photo_1_2026-04-23_19-30-22.jpg"
+                        alt="Naura cafe">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Naura cafe</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="No 13"
+                    data-images="assets/cafes and resturants/No%2013/photo_1_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_2_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_3_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_4_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_5_2026-04-23_19-22-32.jpg,assets/cafes and resturants/No%2013/photo_6_2026-04-23_19-22-32.jpg">
+                    <img src="assets/cafes and resturants/No%2013/photo_1_2026-04-23_19-22-32.jpg" alt="No 13">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">No 13</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Novikov"
+                    data-images="assets/cafes and resturants/Novikov/photo_1_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_2_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_3_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_4_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_5_2026-04-23_19-31-10.jpg,assets/cafes and resturants/Novikov/photo_6_2026-04-23_19-31-10.jpg">
+                    <img src="assets/cafes and resturants/Novikov/photo_1_2026-04-23_19-31-10.jpg" alt="Novikov">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Novikov</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="O2 restaurant"
+                    data-images="assets/cafes and resturants/O2%20restaurant/photo_1_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_2_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_3_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_4_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_5_2026-04-23_19-23-57.jpg,assets/cafes and resturants/O2%20restaurant/photo_6_2026-04-23_19-23-57.jpg">
+                    <img src="assets/cafes and resturants/O2%20restaurant/photo_1_2026-04-23_19-23-57.jpg"
+                        alt="O2 restaurant">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">O2 restaurant</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="OMG"
+                    data-images="assets/cafes and resturants/OMG/photo_1_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_2_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_3_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_4_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_5_2026-04-23_19-04-06.jpg,assets/cafes and resturants/OMG/photo_6_2026-04-23_19-04-06.jpg">
+                    <img src="assets/cafes and resturants/OMG/photo_1_2026-04-23_19-04-06.jpg" alt="OMG">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">OMG</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Ruskiy Restaurant"
+                    data-images="assets/cafes and resturants/Ruskiy%20Restaurant/photo_1_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_2_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_3_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_4_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_5_2026-04-23_19-17-11.jpg,assets/cafes and resturants/Ruskiy%20Restaurant/photo_6_2026-04-23_19-17-11.jpg">
+                    <img src="assets/cafes and resturants/Ruskiy%20Restaurant/photo_1_2026-04-23_19-17-11.jpg"
+                        alt="Ruskiy Restaurant">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Ruskiy Restaurant</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Sakhalin"
+                    data-images="assets/cafes and resturants/Sakhalin/photo_1_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_2_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_3_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_4_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_5_2026-04-23_19-27-27.jpg,assets/cafes and resturants/Sakhalin/photo_6_2026-04-23_19-27-27.jpg">
+                    <img src="assets/cafes and resturants/Sakhalin/photo_1_2026-04-23_19-27-27.jpg" alt="Sakhalin">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Sakhalin</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Scramble"
+                    data-images="assets/cafes and resturants/Scramble/photo_1_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_2_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_3_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_4_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_5_2026-04-23_19-04-56.jpg,assets/cafes and resturants/Scramble/photo_6_2026-04-23_19-04-56.jpg">
+                    <img src="assets/cafes and resturants/Scramble/photo_1_2026-04-23_19-04-56.jpg" alt="Scramble">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Scramble</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="She"
+                    data-images="assets/cafes and resturants/She/photo_1_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_2_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_3_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_4_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_5_2026-04-23_19-20-42.jpg,assets/cafes and resturants/She/photo_6_2026-04-23_19-20-42.jpg">
+                    <img src="assets/cafes and resturants/She/photo_1_2026-04-23_19-20-42.jpg" alt="She">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">She</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Shef kebab & steak"
+                    data-images="assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_1_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_2_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_3_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_4_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_5_2026-04-23_19-28-02.jpg,assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_6_2026-04-23_19-28-02.jpg">
+                    <img src="assets/cafes and resturants/Shef%20kebab%20%26%20steak/photo_1_2026-04-23_19-28-02.jpg"
+                        alt="Shef kebab & steak">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Shef kebab & steak</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="sixty"
+                    data-images="assets/cafes and resturants/sixty/photo_1_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_2_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_3_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_4_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_5_2026-04-23_19-14-34.jpg,assets/cafes and resturants/sixty/photo_6_2026-04-23_19-14-34.jpg">
+                    <img src="assets/cafes and resturants/sixty/photo_1_2026-04-23_19-14-34.jpg" alt="sixty">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">sixty</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Tajj mahal"
+                    data-images="assets/cafes and resturants/Tajj%20mahal/photo_1_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_2_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_3_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_4_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_5_2026-04-23_19-08-27.jpg,assets/cafes and resturants/Tajj%20mahal/photo_6_2026-04-23_19-08-27.jpg">
+                    <img src="assets/cafes and resturants/Tajj%20mahal/photo_1_2026-04-23_19-08-27.jpg"
+                        alt="Tajj mahal">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Tajj mahal</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="Turandot"
+                    data-images="assets/cafes and resturants/Turandot/photo_1_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_2_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_3_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_4_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_5_2026-04-23_19-18-15.jpg,assets/cafes and resturants/Turandot/photo_6_2026-04-23_19-18-15.jpg">
+                    <img src="assets/cafes and resturants/Turandot/photo_1_2026-04-23_19-18-15.jpg" alt="Turandot">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">Turandot</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurant-card" data-hotel="White Rabbit"
+                    data-images="assets/cafes and resturants/White%20Rabbit/photo_1_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_2_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_3_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_4_2026-04-23_19-16-32.jpg,assets/cafes and resturants/White%20Rabbit/photo_5_2026-04-23_19-16-32.jpg">
+                    <img src="assets/cafes and resturants/White%20Rabbit/photo_1_2026-04-23_19-16-32.jpg"
+                        alt="White Rabbit">
+                    <div class="restaurant-overlay"></div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">White Rabbit</h3>
+                        <div class="restaurant-view-btn">
+                            <span>عرض الصور</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="lightbox" id="hotelLightbox">
+        <div class="lightbox-overlay"></div>
+        <button class="lightbox-close" id="lightboxClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="lightbox-content">
+            <div class="lightbox-slider">
+                <img src="" alt="Hotel Image" id="lightboxImg">
+            </div>
+
+            <div class="lightbox-controls">
+                <button class="lightbox-btn lightbox-prev" id="lightboxPrev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="lightbox-counter">
+                    <span id="lightboxCurrent">1</span> / <span id="lightboxTotal">5</span>
+                </div>
+                <button class="lightbox-btn lightbox-next" id="lightboxNext">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="lightbox-header-text">
+                <h3 class="lightbox-title" id="lightboxTitle">اسم الفندق</h3>
+                <span class="lightbox-subtitle" id="lightboxSubtitle">Hotel Name</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+/* ===================================
+   HEVELA - Destinations/Offers Section
+   Editorial Fine Art Style
+   =================================== */
+
+.destinations {
+    position: relative;
+    background: #ffffff; /* Contrast against the black cards */
+    color: #1a2332;
+    overflow: visible;
+    padding-top: 120px;
+    padding-bottom: 20vh; /* Increased to avoid sticky header sinking into the next section */
+}
+
+/* ============================================
+   LAYOUT (Sticky Sidebar)
+   ============================================ */
+.destinations-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.dest-sticky-header {
+    width: 35%;
+    position: sticky;
+    top: 25vh;
+    margin-bottom: 25vh; /* Forces the sticky element to stop before the bottom of the section */
+}
+
+/* ============================================
+   SECTION HEADER (Sidebar Style)
+   ============================================ */
+.destinations .section-header {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.destinations .section-title {
+    color: #050505;
+    font-weight: 800;
+}
+
+.destinations .section-title-en {
+    color: #a0abb8;
+    letter-spacing: 2px;
+}
+
+.destinations .section-subtitle {
+    color: #5c6a7a;
+    font-weight: 400;
+}
+
+.destinations .section-title-line {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* ============================================
+   STICKY STACKING CONTAINER
+   ============================================ */
+.dest-stack-container {
+    position: relative;
+    width: 60%;
+    padding-bottom: 10vh; /* Reduced extra space */
+}
+
+/* ============================================
+   EDITORIAL CARD (Light Pearl / Frosted Glass)
+   ============================================ */
+.offer-card {
+    position: sticky;
+    top: 15vh; /* Adjusted top to fit the shorter card nicely */
+    height: auto;
+    min-height: 350px; /* Reduced min-height further */
+    margin-bottom: 8vh;
+    
+    background: rgba(255, 255, 255, 0.9); /* Frosted pearl white */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 168, 83, 0.3); /* Soft gold border */
+    border-radius: 20px; /* Slightly softer corners for compact size */
+    box-shadow: 0 30px 60px rgba(26, 35, 50, 0.05); /* Very soft dark shadow */
+    overflow: hidden;
+    color: #1a2332; /* Dark text for readability */
+    display: flex;
+    transform-origin: center top;
+    will-change: transform, filter;
+    
+    /* Fine Art Padding */
+    padding: 25px; /* Compact padding */
+    gap: 25px; /* Compact gap */
+}
+
+/* Ambient glow inside the card for luxury feel */
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 168, 83, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   CONTENT COLUMN (Editorial Typography)
+   ============================================ */
+.offer-content-col {
+    width: 45%; /* Reduced width to give more space to the image */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.offer-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.offer-subtitle-en {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: 8px; /* Tighter margin */
+    display: block;
+}
+
+.offer-title {
+    font-family: var(--font-ar);
+    font-size: clamp(2rem, 3vw, 2.5rem); /* Smaller title */
+    font-weight: 300; /* Thin, elegant typography */
+    color: #1a2332; /* Deep dark blue-grey */
+    line-height: 1.1;
+    margin-bottom: 12px; /* Tighter margin */
+}
+
+.offer-stars {
+    display: flex;
+    gap: 4px; /* Tighter stars */
+    color: var(--clr-accent);
+}
+
+.offer-stars svg {
+    width: 16px; /* Smaller stars */
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Details Grid */
+.offer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Tighter gap */
+    margin: auto 0; /* Push to center vertically */
+    padding-left: 15px;
+    border-left: 1px solid rgba(26, 35, 50, 0.08); /* Soft separator */
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Tighter gap */
+}
+
+.detail-icon {
+    color: var(--clr-primary); /* Changed from clr-accent to clr-primary (green) */
+    opacity: 0.9;
+}
+
+.detail-icon svg {
+    width: 20px; /* Smaller icon */
+    height: 20px;
+    stroke-width: 1.5;
+}
+
+.detail-text {
+    font-family: var(--font-ar);
+    font-size: 1.05rem; /* Smaller text */
+    font-weight: 400;
+    color: #5c6a7a; /* Medium soft grey */
+    letter-spacing: 0.5px;
+}
+
+/* Price & CTA */
+.offer-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 25px; /* Tighter padding */
+    border-top: 1px solid rgba(26, 35, 50, 0.08);
+}
+
+.offer-price-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-price-label {
+    font-family: var(--font-ar);
+    font-size: 0.9rem; /* Smaller label */
+    color: #8a9bb0; /* Light grey text */
+    margin-bottom: 4px;
+    font-weight: 300;
+}
+
+.offer-price {
+    font-family: var(--font-en);
+    font-size: clamp(2rem, 2.5vw, 3rem); /* Smaller price */
+    font-weight: 200; /* Ultra thin for that Vogue look */
+    color: #1a2332;
+    line-height: 0.9;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.offer-price span {
+    font-family: var(--font-ar);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--clr-accent);
+}
+
+/* ============================================
+   IMAGE COLUMN (Fine Art Frame)
+   ============================================ */
+.offer-art-col {
+    width: 55%; /* Increased width so image is wider */
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-art-frame {
+    width: 100%;
+    height: 100%;
+    padding: 15px; /* The "matting" of the frame */
+    border: 1px solid rgba(212, 168, 83, 0.2); /* Soft gold inner frame */
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-art-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.offer-image {
+    width: 100%;
+    height: 100%; /* Changed from 125% to prevent cropping */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    filter: grayscale(20%) contrast(110%);
+    transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.offer-card:hover .offer-image {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.05); /* Smooth, subtle zoom on hover instead of heavy parallax */
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1100px) {
+    .offer-card {
+        padding: 40px;
+        gap: 40px;
+    }
+    .offer-title { font-size: 2.8rem; }
+    .offer-price { font-size: 3rem; }
+}
+
+@media (max-width: 992px) {
+    .destinations-layout {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .dest-sticky-header,
+    .dest-stack-container {
+        width: 100%;
+        position: static;
+    }
+    .destinations .section-header {
+        text-align: center;
+    }
+    .destinations .section-title-line {
+        margin: 0 auto;
+    }
+
+    .offer-card {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        padding: 30px;
+    }
+    
+    .offer-content-col {
+        width: 100%;
+        order: 2; /* Text below image on mobile */
+    }
+    
+    .offer-art-col {
+        width: 100%;
+        height: 40vh;
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .offer-details {
+        margin: 40px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .destinations {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+    .offer-card {
+        top: 10vh;
+        margin-bottom: 5vh;
+        padding: 20px;
+    }
+    .offer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .offer-btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}

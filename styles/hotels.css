@@ -1,0 +1,452 @@
+/* ===================================
+   HEVELA - Luxury Hotels Section & Lightbox
+   =================================== */
+
+.hotels {
+    position: relative;
+    background: #ffffff;
+    /* White background behind the black container */
+    color: #fff;
+    padding-bottom: 120px;
+    z-index: 10;
+}
+
+/* Make the container a massive black card and wider */
+.hotels .container.reveal {
+    opacity: 0;
+    transform: translateY(150px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hotels .container.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hotels .container {
+    max-width: none;
+    /* Full edge to edge width */
+    width: 100%;
+    background: #050505;
+    border: 1px solid rgba(212, 168, 83, 0.3);
+    border-left: none; /* Removed side borders since it's full width */
+    border-right: none;
+    border-radius: 40px; /* Kept top and bottom curves as requested */
+    padding: 80px 5%; /* Changed horizontal padding to percentage to fit nicely */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+    /* Softer shadow for white bg */
+    margin: 0 auto;
+    margin-top: -20vh;
+    /* Parallax overlap increased to pull it closer to the section above */
+}
+
+.hotels .section-title {
+    color: #ffffff;
+}
+
+.hotels .section-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.hotels .section-badge {
+    background: rgba(212, 168, 83, 0.1);
+    border-color: rgba(212, 168, 83, 0.2);
+    color: var(--clr-accent);
+}
+
+/* ============================================
+   HOTELS GRID (Single Row Initially)
+   ============================================ */
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Exactly 4 columns for desktop (1 row) */
+    gap: 20px;
+    margin-top: 60px;
+}
+
+/* Hide hotels beyond the first row initially */
+.hotel-card.hidden {
+    display: none;
+}
+
+.hotel-card {
+    position: relative;
+    height: 300px;
+    /* Slightly taller for better proportions in 4 columns */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hotel-cover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hotel-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    filter: brightness(0.6) grayscale(10%);
+}
+
+.hotel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 60%);
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover Effects */
+.hotel-card:hover .hotel-cover img {
+    transform: scale(1.08);
+    filter: brightness(0.8) grayscale(0%);
+}
+
+.hotel-card:hover .hotel-overlay {
+    opacity: 1;
+}
+
+/* Hotel Info on Card */
+.hotel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hotel-name {
+    font-family: var(--font-ar);
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 4px;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.hotel-name-en {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    color: rgba(212, 168, 83, 0.8);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translateY(10px);
+    transition: transform 0.4s ease 0.05s;
+}
+
+.hotel-stars {
+    display: flex;
+    gap: 4px;
+    color: var(--clr-accent);
+    margin-top: 6px;
+    transform: translateY(15px);
+    transition: transform 0.4s ease 0.08s;
+}
+
+.hotel-stars svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.hotel-view-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease 0.1s;
+}
+
+.hotel-view-btn svg {
+    width: 16px;
+    height: 16px;
+    color: var(--clr-accent);
+}
+
+.hotel-card:hover .hotel-name,
+.hotel-card:hover .hotel-name-en,
+.hotel-card:hover .hotel-stars,
+.hotel-card:hover .hotel-view-btn {
+    transform: translateY(0);
+}
+
+.hotel-card:hover .hotel-view-btn {
+    opacity: 1;
+}
+
+/* ============================================
+   SHOW MORE BUTTON (Luxurious)
+   ============================================ */
+.show-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.btn-show-more {
+    background: transparent;
+    border: 1px solid rgba(212, 168, 83, 0.4);
+    color: var(--clr-accent);
+    padding: 16px 45px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-ar);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-show-more::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.btn-show-more:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-show-more span,
+.btn-show-more svg {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.btn-show-more:hover span,
+.btn-show-more:hover svg {
+    color: #050505;
+}
+
+.btn-show-more svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-show-more:hover svg {
+    transform: translateY(3px);
+    /* Arrow pointing down */
+}
+
+
+/* ============================================
+   LIGHTBOX MODAL (Fullscreen Gallery)
+   ============================================ */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Using 100vh for fullscreen */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 6, 10, 0.6); /* More transparent background */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.lightbox-close svg {
+    width: 32px;
+    height: 32px;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-slider {
+    width: 100%;
+    height: calc(100% - 100px);
+    /* Leave space for controls */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-slider img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-slider img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.lightbox-controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.lightbox-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-btn:hover {
+    background: var(--clr-accent);
+    color: #000;
+    border-color: var(--clr-accent);
+    transform: scale(1.1);
+}
+
+.lightbox-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.lightbox-counter {
+    font-family: var(--font-en);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+}
+
+.lightbox-counter #lightboxCurrent {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.lightbox-header-text {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lightbox-title {
+    font-family: var(--font-ar);
+    font-size: 1.5rem;
+    color: var(--clr-accent);
+    line-height: 1.2;
+}
+
+.lightbox-subtitle {
+    font-family: var(--font-en);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hotels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .lightbox-content {
+        height: 70vh;
+    }
+
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+    }
+
+    .lightbox-title {
+        bottom: auto;
+        top: -50px;
+        font-size: 1.2rem;
+    }
+}
