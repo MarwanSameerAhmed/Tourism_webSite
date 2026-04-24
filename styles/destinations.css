@@ -72,9 +72,9 @@
    ============================================ */
 .offer-card {
     position: sticky;
-    top: 15vh; /* Adjusted top to fit the shorter card nicely */
-    height: auto;
-    min-height: 350px; /* Reduced min-height further */
+    top: 15vh; 
+    height: 420px; /* Explicit height to allow image to stretch */
+    min-height: auto; 
     margin-bottom: 8vh;
     
     background: rgba(255, 255, 255, 0.9); /* Frosted pearl white */
@@ -287,8 +287,7 @@
    ============================================ */
 @media (max-width: 1100px) {
     .offer-card {
-        padding: 40px;
-        gap: 40px;
+        /* Edge to edge preserved */
     }
     .offer-title { font-size: 2.8rem; }
     .offer-price { font-size: 3rem; }
@@ -326,9 +325,9 @@
     
     .offer-art-col {
         width: 100%;
-        height: 40vh;
+        height: 280px; /* Fixed height for mobile image */
         order: 1;
-        margin-bottom: 0; /* Remove gap between image and text */
+        margin-bottom: 0;
     }
     
     .offer-details {

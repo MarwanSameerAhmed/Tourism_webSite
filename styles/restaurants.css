@@ -5,7 +5,7 @@
 .restaurants {
     position: relative;
     background: #f8f9fa; /* Light premium background to contrast with hotels */
-    padding: 100px 0 120px 0;
+    padding: 60px 0;
     overflow: hidden; /* Important for marquee */
     z-index: 5;
 }

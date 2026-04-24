@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 5. HOTELS, RESTAURANTS & ACTIVITIES LIGHTBOX LOGIC
     // ==========================================
-    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card, .bento-card');
+    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card, .bento-card, .mall-item, .activity-card');
     const lightbox = document.getElementById('hotelLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
@@ -658,7 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ACTIVITIES SHOW MORE LOGIC
     // ==========================================
     const activitiesShowMoreBtn = document.getElementById('activitiesShowMoreBtn');
-    const hiddenActivities = document.querySelectorAll('.bento-card.hidden-activity');
+    const hiddennActivities = document.querySelectorAll('.bento-card.hidden-activity');
 
     if (activitiesShowMoreBtn && hiddenActivities.length > 0) {
         let isActivitiesExpanded = false;
@@ -701,6 +701,182 @@ document.addEventListener('DOMContentLoaded', () => {
                     activitiesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
+        });
+    }
+
+    // ==========================================
+    // RESTAURANTS SHOW MORE LOGIC
+    // ==========================================
+    const restaurantsShowMoreBtn = document.getElementById('restaurantsShowMoreBtn');
+    const hiddenRestaurants = document.querySelectorAll('.restaurant-card.hidden-restaurant');
+
+    if (restaurantsShowMoreBtn && hiddenRestaurants.length > 0) {
+        let isRestaurantsExpanded = false;
+
+        restaurantsShowMoreBtn.addEventListener('click', () => {
+            const btnText = document.getElementById('restaurantsBtnText');
+            const btnIcon = document.getElementById('restaurantsBtnIcon');
+
+            if (!isRestaurantsExpanded) {
+                // Show hidden restaurants
+                hiddenRestaurants.forEach((card, index) => {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.classList.remove('hidden-restaurant');
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, index * 20); // Fast staggered reveal
+                });
+                btnText.textContent = 'إخفاء المطاعم';
+                btnIcon.style.transform = 'rotate(180deg)';
+                isRestaurantsExpanded = true;
+            } else {
+                // Hide restaurants smoothly
+                hiddenRestaurants.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.9)';
+
+                        setTimeout(() => {
+                            card.classList.add('hidden-restaurant');
+                            card.style.display = 'none';
+                        }, 500); // Wait for transition
+                    }, index * 20);
+                });
+
+                btnText.textContent = 'عرض المزيد من المطاعم';
+                btnIcon.style.transform = 'rotate(0deg)';
+                isRestaurantsExpanded = false;
+
+                setTimeout(() => {
+                    const restaurantsSection = document.getElementById('restaurants');
+                    if (restaurantsSection) {
+                        restaurantsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 400);
+            }
+        });
+    }
+
+    // ==========================================
+    // MALLS SPLIT-SCREEN LOGIC
+    // ==========================================
+    const mallItems = document.querySelectorAll('.mall-item');
+    const mallImages = document.querySelectorAll('.mall-image');
+
+    // Malls Expanded Grid Logic
+    const btnShowMoreMalls = document.getElementById('showMoreMallsBtn');
+    const btnHideMalls = document.getElementById('hideMallsBtn');
+    const hiddenMalls = document.querySelectorAll('.hidden-mall');
+    const mallsSection = document.getElementById('malls');
+
+    if (btnShowMoreMalls && btnHideMalls && hiddenMalls.length > 0) {
+        btnShowMoreMalls.addEventListener('click', () => {
+            hiddenMalls.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.remove('hidden-mall');
+                    card.classList.add('revealed-mall');
+                }, index * 100); // Staggered reveal
+            });
+
+            // Toggle buttons
+            btnShowMoreMalls.style.display = 'none';
+            btnHideMalls.style.display = 'inline-flex';
+        });
+
+        btnHideMalls.addEventListener('click', () => {
+            // Smoothly scroll back to the start of the section
+            if (mallsSection) {
+                mallsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Animate exit in reverse
+            Array.from(hiddenMalls).reverse().forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.remove('revealed-mall');
+                    card.classList.add('hidden-mall');
+                }, index * 50); // Faster exit
+            });
+
+            // Toggle buttons after all animations
+            setTimeout(() => {
+                btnHideMalls.style.display = 'none';
+                btnShowMoreMalls.style.display = 'inline-flex';
+            }, hiddenMalls.length * 50 + 100);
+        });
+    }
+
+    if (mallItems.length > 0) {
+        mallItems.forEach(item => {
+            // Use mouseenter for desktop, click for mobile
+            const triggerEvent = window.innerWidth > 992 ? 'mouseenter' : 'click';
+
+            item.addEventListener(triggerEvent, () => {
+                const targetMall = item.getAttribute('data-hotel');
+
+                // Only act if it's not already active
+                if (!item.classList.contains('active')) {
+                    // Deactivate all
+                    mallItems.forEach(el => el.classList.remove('active'));
+                    mallImages.forEach(el => el.classList.remove('active'));
+
+                    // Activate current
+                    item.classList.add('active');
+                    const targetImage = document.getElementById(`mall-img-${targetMall}`);
+                    if (targetImage) {
+                        targetImage.classList.add('active');
+                    }
+                }
+            });
+        });
+    }
+
+    // ==========================================
+    // ACTIVITIES EXPANDED GRID LOGIC
+    // ==========================================
+    const btnShowMoreActivities = document.getElementById('showMoreActivitiesBtn');
+    const btnHideActivities = document.getElementById('hideActivitiesBtn');
+    const hiddenActivities = document.querySelectorAll('.hidden-activity');
+    const activitiesSection = document.getElementById('activities');
+
+    if (btnShowMoreActivities && btnHideActivities && hiddenActivities.length > 0) {
+        btnShowMoreActivities.addEventListener('click', () => {
+            hiddenActivities.forEach((card) => {
+                card.style.display = 'block';
+                // Small delay to allow browser to register display:block before adding animation class
+                requestAnimationFrame(() => {
+                    card.classList.remove('hidden-activity');
+                    card.classList.add('revealed-activity');
+                });
+            });
+
+            btnShowMoreActivities.style.display = 'none';
+            btnHideActivities.style.display = 'inline-flex';
+        });
+
+        btnHideActivities.addEventListener('click', () => {
+            if (activitiesSection) {
+                activitiesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            Array.from(hiddenActivities).forEach((card) => {
+                card.classList.remove('revealed-activity');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px) scale(0.95)';
+
+                setTimeout(() => {
+                    card.style.display = 'none';
+                    card.classList.add('hidden-activity');
+                    // reset inline styles so the animation class can take over next time
+                    card.style.opacity = '';
+                    card.style.transform = '';
+                }, 400);
+            });
+
+            setTimeout(() => {
+                btnHideActivities.style.display = 'none';
+                btnShowMoreActivities.style.display = 'inline-flex';
+            }, 400);
         });
     }
 

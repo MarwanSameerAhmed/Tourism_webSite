@@ -235,7 +235,7 @@
     color: var(--clr-text-muted);
     max-width: 550px;
     line-height: 1.8;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
     opacity: 0;
     transform: translateY(20px);
     animation: slideUpFade 0.8s 3.1s forwards;
@@ -516,7 +516,8 @@
     }
 
     .hero-scroll {
-        display: none;
+        display: flex;
+        bottom: 15px; /* Adjust bottom offset for mobile */
     }
 
     .hero-description {
