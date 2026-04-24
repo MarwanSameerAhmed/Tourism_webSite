@@ -460,9 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 5. HOTELS & RESTAURANTS LIGHTBOX LOGIC
+    // 5. HOTELS, RESTAURANTS & ACTIVITIES LIGHTBOX LOGIC
     // ==========================================
-    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card');
+    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card, .bento-card');
     const lightbox = document.getElementById('hotelLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
@@ -599,6 +599,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 const servicesSection = document.getElementById('services');
                 if (servicesSection) {
                     servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    }
+
+    // ==========================================
+    // ACTIVITIES SHOW MORE LOGIC
+    // ==========================================
+    const activitiesShowMoreBtn = document.getElementById('activitiesShowMoreBtn');
+    const hiddenActivities = document.querySelectorAll('.bento-card.hidden-activity');
+    
+    if (activitiesShowMoreBtn && hiddenActivities.length > 0) {
+        let isActivitiesExpanded = false;
+        
+        activitiesShowMoreBtn.addEventListener('click', () => {
+            const btnText = activitiesShowMoreBtn.querySelector('span');
+            const btnIcon = activitiesShowMoreBtn.querySelector('svg');
+            
+            if (!isActivitiesExpanded) {
+                // Show hidden activities
+                hiddenActivities.forEach((card, index) => {
+                    card.style.display = 'block';
+                    // Small delay to allow display:block to apply before animating opacity
+                    setTimeout(() => {
+                        card.classList.remove('hidden-activity');
+                        standardObserver.observe(card); // Re-observe to trigger reveal
+                    }, index * 100); // Staggered reveal
+                });
+                btnText.textContent = 'إخفاء الفعاليات';
+                btnIcon.style.transform = 'rotate(180deg)';
+                isActivitiesExpanded = true;
+            } else {
+                // Hide activities
+                hiddenActivities.forEach((card) => {
+                    card.classList.remove('active'); // Remove animation class
+                    card.classList.add('hidden-activity');
+                    standardObserver.unobserve(card);
+                    
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300); // Wait for transition
+                });
+                btnText.textContent = 'عرض جميع الفعاليات';
+                btnIcon.style.transform = 'rotate(0deg)';
+                isActivitiesExpanded = false;
+                
+                // Scroll back to the top of activities section smoothly
+                const activitiesSection = document.getElementById('activities');
+                if (activitiesSection) {
+                    activitiesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
         });

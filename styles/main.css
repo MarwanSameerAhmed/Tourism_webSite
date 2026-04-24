@@ -34,7 +34,9 @@
     --glass-blur: 20px;
 
     /* Typography */
-    --font-ar: 'Cairo', 'Tajawal', sans-serif;
+    --font-ar: 'Thmanyah Serif Text', 'Cairo', sans-serif;
+    --font-heading: 'Thmanyah Serif Display', 'Tajawal', sans-serif;
+    --font-ui: 'Thmanyah Sans', 'Tajawal', sans-serif;
     --font-en: 'Poppins', sans-serif;
 
     /* Font Sizes */
@@ -156,7 +158,7 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    font-family: inherit;
+    font-family: var(--font-ui);
     color: inherit;
 }
 

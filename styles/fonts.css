@@ -1,0 +1,141 @@
+/* =========================================================
+   THMANYAH TYPOGRAPHY SYSTEM
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. Thmanyah Sans (For UI, Badges, Buttons, Nav)
+   --------------------------------------------------------- */
+@font-face {
+    font-family: 'Thmanyah Sans';
+    src: url('../assets/fonts/thmanyahsans/woff2/thmanyahsans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Sans';
+    src: url('../assets/fonts/thmanyahsans/woff2/thmanyahsans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Sans';
+    src: url('../assets/fonts/thmanyahsans/woff2/thmanyahsans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Sans';
+    src: url('../assets/fonts/thmanyahsans/woff2/thmanyahsans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Sans';
+    src: url('../assets/fonts/thmanyahsans/woff2/thmanyahsans-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   2. Thmanyah Serif Display (For Large Headers, Titles)
+   --------------------------------------------------------- */
+@font-face {
+    font-family: 'Thmanyah Serif Display';
+    src: url('../assets/fonts/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Display';
+    src: url('../assets/fonts/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Display';
+    src: url('../assets/fonts/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Display';
+    src: url('../assets/fonts/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Display';
+    src: url('../assets/fonts/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   3. Thmanyah Serif Text (For Paragraphs, Descriptions)
+   --------------------------------------------------------- */
+@font-face {
+    font-family: 'Thmanyah Serif Text';
+    src: url('../assets/fonts/thmanyahseriftext/woff2/thmanyahseriftext-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Text';
+    src: url('../assets/fonts/thmanyahseriftext/woff2/thmanyahseriftext-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Text';
+    src: url('../assets/fonts/thmanyahseriftext/woff2/thmanyahseriftext-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Text';
+    src: url('../assets/fonts/thmanyahseriftext/woff2/thmanyahseriftext-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah Serif Text';
+    src: url('../assets/fonts/thmanyahseriftext/woff2/thmanyahseriftext-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY ASSIGNMENT
+   ========================================================= */
+
+/* Default Body / Paragraphs */
+body, p, span, div, input, textarea {
+    font-family: 'Thmanyah Serif Text', 'Tajawal', sans-serif;
+}
+
+/* Main Headers (H1-H6) & Section Titles */
+h1, h2, h3, h4, h5, h6, 
+.section-title, .hero-title, .hotel-name, .bento-title, .service-title {
+    font-family: 'Thmanyah Serif Display', 'Tajawal', sans-serif;
+}
+
+/* UI Elements: Buttons, Nav, Badges, Small tags */
+button, .nav-links a, .nav-btn, .section-badge, .bento-explore, .hero-btn, 
+.section-title-en, .bento-tag, .service-icon-wrapper span, .lightbox-title {
+    font-family: 'Thmanyah Sans', 'Tajawal', sans-serif;
+}
