@@ -242,13 +242,10 @@
 /* ---- Kenburns (Subtle zoom on hero) ---- */
 @keyframes kenburns {
     0% {
-        transform: scale(1) translate(0, 0);
-    }
-    50% {
-        transform: scale(1.08) translate(-1%, -1%);
+        transform: scale(1.02);
     }
     100% {
-        transform: scale(1) translate(0, 0);
+        transform: scale(1);
     }
 }
 

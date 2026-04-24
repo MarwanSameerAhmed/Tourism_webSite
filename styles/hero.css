@@ -41,8 +41,24 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    animation: kenburns 25s ease-in-out infinite;
     transform-origin: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 3.5s ease-in-out;
+    /* Super Smooth cinematic fade */
+    will-change: opacity, transform;
+    animation: kenburns 20s ease-out forwards;
+    /* Play animation seamlessly */
+}
+
+.hero-bg-img.active-slide {
+    opacity: 1;
+}
+
+.hero-bg-img.prev-slide {
+    opacity: 1;
 }
 
 /* Overlay gradient */
@@ -97,6 +113,8 @@
 
 .hero-content-inner {
     max-width: 800px;
+    margin-top: 12vh;
+    /* Push texts down from the logo */
 }
 
 /* Badge */
@@ -141,6 +159,9 @@
     font-weight: 600;
     color: var(--clr-text-secondary);
     letter-spacing: 0.5px;
+    line-height: 1.6;
+    /* Fix clipped Arabic dots */
+    padding-bottom: 2px;
 }
 
 /* Title */
@@ -148,7 +169,7 @@
     font-family: var(--font-ar);
     font-size: var(--fs-hero);
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.4;
     margin-bottom: var(--space-md);
     color: var(--clr-text);
 }
@@ -156,6 +177,9 @@
 .hero-title-line {
     display: block;
     overflow: hidden;
+    padding-bottom: 20px;
+    /* Fix clipped Arabic dots */
+    margin-bottom: -20px;
 }
 
 .hero-title-word {

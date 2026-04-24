@@ -89,9 +89,9 @@
     transform-origin: center top;
     will-change: transform, filter;
     
-    /* Fine Art Padding */
-    padding: 25px; /* Compact padding */
-    gap: 25px; /* Compact gap */
+    /* Removed padding from the card to allow edge-to-edge image */
+    padding: 0;
+    gap: 0;
 }
 
 /* Ambient glow inside the card for luxury feel */
@@ -112,13 +112,14 @@
    CONTENT COLUMN (Editorial Typography)
    ============================================ */
 .offer-content-col {
-    width: 45%; /* Reduced width to give more space to the image */
+    width: 50%; /* Rebalance width */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    padding: 30px; /* Add padding here since card has none */
 }
 
 .offer-header {
@@ -237,7 +238,7 @@
    IMAGE COLUMN (Fine Art Frame)
    ============================================ */
 .offer-art-col {
-    width: 55%; /* Increased width so image is wider */
+    width: 50%;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -249,9 +250,9 @@
 .offer-art-frame {
     width: 100%;
     height: 100%;
-    padding: 15px; /* The "matting" of the frame */
-    border: 1px solid rgba(212, 168, 83, 0.2); /* Soft gold inner frame */
-    border-radius: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
     position: relative;
     overflow: hidden;
 }
@@ -261,7 +262,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .offer-image {
@@ -314,19 +315,20 @@
         flex-direction: column;
         height: auto;
         min-height: auto;
-        padding: 30px;
+        padding: 0;
     }
     
     .offer-content-col {
         width: 100%;
         order: 2; /* Text below image on mobile */
+        padding: 25px; /* Adjust padding for mobile text */
     }
     
     .offer-art-col {
         width: 100%;
         height: 40vh;
         order: 1;
-        margin-bottom: 30px;
+        margin-bottom: 0; /* Remove gap between image and text */
     }
     
     .offer-details {
@@ -342,6 +344,10 @@
     .offer-card {
         top: 10vh;
         margin-bottom: 5vh;
+        padding: 0;
+    }
+    
+    .offer-content-col {
         padding: 20px;
     }
     .offer-footer {

@@ -7,7 +7,7 @@
     <meta name="description"
         content="هيفيلا - اكتشف روسيا بأسلوب فاخر. تجارب سفر فاخرة في موسكو وسانت بطرسبرغ مع أفضل الخدمات السياحية.">
     <meta name="keywords" content="سياحة, روسيا, موسكو, سفر فاخر, رحلات, حجز فنادق">
-    <title>هيفيلا | Hevela - اكتشف روسيا بأسلوب فاخر</title>
+    <title>وجهه | WEJHA - اكتشف روسيا بأسلوب فاخر</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,16 +17,16 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/hero.css">
-    <link rel="stylesheet" href="styles/services.css">
-    <link rel="stylesheet" href="styles/destinations.css">
-    <link rel="stylesheet" href="styles/hotels.css">
-    <link rel="stylesheet" href="styles/restaurants.css">
-    <link rel="stylesheet" href="styles/activities.css">
+    <link rel="stylesheet" href="styles/fonts.css?v=2">
+    <link rel="stylesheet" href="styles/main.css?v=2">
+    <link rel="stylesheet" href="styles/animations.css?v=2">
+    <link rel="stylesheet" href="styles/navbar.css?v=2">
+    <link rel="stylesheet" href="styles/hero.css?v=2">
+    <link rel="stylesheet" href="styles/services.css?v=2">
+    <link rel="stylesheet" href="styles/destinations.css?v=2">
+    <link rel="stylesheet" href="styles/hotels.css?v=2">
+    <link rel="stylesheet" href="styles/restaurants.css?v=2">
+    <link rel="stylesheet" href="styles/activities.css?v=2">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-logo">
-                <img src="assets/images/logo.png" alt="WEJHA" style="max-width: 180px; margin-bottom: 15px;">
+                <img src="assets/logo1.png" alt="WEJHA" style="max-width: 160px; margin-bottom: 15px;">
             </div>
             <div class="preloader-bar">
                 <div class="preloader-bar-fill"></div>
@@ -52,7 +52,7 @@
         <div class="navbar-container">
             <!-- Logo -->
             <a href="#" class="navbar-logo" id="navLogo">
-                <img src="assets/images/logo.png" alt="WEJHA Travel" style="height: 50px; object-fit: contain;">
+                <img src="assets/logo1.png" alt="WEJHA Travel" style="height: 65px; object-fit: contain;">
             </a>
 
             <!-- Nav Links -->
@@ -96,7 +96,9 @@
         <!-- Parallax Background -->
         <div class="hero-bg-wrapper">
             <div class="hero-bg" id="heroBg">
-                <img src="assets/images/moscow_hero.png" alt="موسكو - الساحة الحمراء" class="hero-bg-img">
+                <!-- First image preloaded, others handled by JS slider -->
+                <img src="assets/hero/photo_1_2026-04-24_05-39-51.jpg" alt="موسكو - الساحة الحمراء"
+                    class="hero-bg-img active-slide" id="currentHeroSlide">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-particles" id="heroParticles"></div>
@@ -104,9 +106,9 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <div class="hero-content-inner">
+            <div class="hero-content-inner" style="padding-top: 10vh;">
                 <!-- Badge -->
-                <div class="hero-badge" id="heroBadge">
+                <div class="hero-badge" id="heroBadge" style="margin-bottom: -5px; z-index: 10; position: relative;">
                     <span class="hero-badge-dot"></span>
                     <span class="hero-badge-text">أفضل وجهة سياحية 2026</span>
                 </div>
@@ -1306,10 +1308,8 @@
     <section class="restaurants" id="restaurants">
         <div class="section-header reveal">
             <div class="section-badge">
-                <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
-                    <path
-                        d="M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
                 </svg>
                 <span>مذاق لا يُنسى</span>
             </div>
@@ -2180,8 +2180,7 @@
                 <div class="section-badge">
                     <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     <span>تجارب لا تنسى</span>
                 </div>
@@ -2199,275 +2198,317 @@
 
             <div class="bento-grid reveal">
 
-                <div class="bento-card bento-large" data-hotel="البقي العملاق" data-images="assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_1_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_2_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_3_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_4_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_5_2026-04-24_04-30-30.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_1_2026-04-24_04-30-30.jpg" alt="البقي العملاق">
+                <div class="bento-card bento-large "" data-hotel=" البقي العملاق"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_1_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_2_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_3_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_4_2026-04-24_04-30-30.jpg,assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_5_2026-04-24_04-30-30.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%A8%D9%82%D9%8A%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82/photo_1_2026-04-24_04-30-30.jpg"
+                        alt="البقي العملاق">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">البقي العملاق</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card bento-wide" data-hotel="التزلج على الثلج" data-images="assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_10_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_11_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_12_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_1_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_2_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_3_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_4_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_5_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_6_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_7_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_8_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_9_2026-04-24_04-45-19.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_10_2026-04-24_04-45-19.jpg" alt="التزلج على الثلج">
+                <div class="bento-card bento-wide "" data-hotel=" التزلج على الثلج"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_10_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_11_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_12_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_1_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_2_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_3_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_4_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_5_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_6_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_7_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_8_2026-04-24_04-45-19.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_9_2026-04-24_04-45-19.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AA%D8%B2%D9%84%D8%AC%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%AB%D9%84%D8%AC/photo_10_2026-04-24_04-45-19.jpg"
+                        alt="التزلج على الثلج">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">التزلج على الثلج</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card bento-tall" data-hotel="التوبنج" data-images="assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_1_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_2_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_3_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_4_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_5_2026-04-24_04-44-31.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_1_2026-04-24_04-44-31.jpg" alt="التوبنج">
+                <div class="bento-card bento-tall "" data-hotel=" التوبنج"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_1_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_2_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_3_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_4_2026-04-24_04-44-31.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_5_2026-04-24_04-44-31.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D9%86%D8%AC/photo_1_2026-04-24_04-44-31.jpg"
+                        alt="التوبنج">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">التوبنج</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card bento-small" data-hotel="الدرجات الشتوية" data-images="assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_1_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_2_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_3_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_4_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_5_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_6_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_7_2026-04-24_04-42-04.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_1_2026-04-24_04-42-04.jpg" alt="الدرجات الشتوية">
+                <div class="bento-card bento-small "" data-hotel=" الدرجات الشتوية"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_1_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_2_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_3_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_4_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_5_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_6_2026-04-24_04-42-04.jpg,assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_7_2026-04-24_04-42-04.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%AF%D8%B1%D8%AC%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A%D8%A9/photo_1_2026-04-24_04-42-04.jpg"
+                        alt="الدرجات الشتوية">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الدرجات الشتوية</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card bento-small" data-hotel="الزحليقة الروسية" data-images="assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_1_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_2_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_3_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_4_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_5_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_6_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_7_2026-04-24_04-40-44.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_1_2026-04-24_04-40-44.jpg" alt="الزحليقة الروسية">
+                <div class="bento-card bento-wide "" data-hotel=" الزحليقة الروسية"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_1_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_2_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_3_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_4_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_5_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_6_2026-04-24_04-40-44.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_7_2026-04-24_04-40-44.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B2%D8%AD%D9%84%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9/photo_1_2026-04-24_04-40-44.jpg"
+                        alt="الزحليقة الروسية">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الزحليقة الروسية</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card bento-large" data-hotel="السكن في الكوخ الريفي" data-images="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_1_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_2_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_3_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_4_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_5_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_6_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_7_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_8_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_9_2026-04-24_04-39-54.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_1_2026-04-24_04-39-54.jpg" alt="السكن في الكوخ الريفي">
+                <div class="bento-card bento-small "" data-hotel=" السكن في الكوخ الريفي"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_1_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_2_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_3_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_4_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_5_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_6_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_7_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_8_2026-04-24_04-39-54.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_9_2026-04-24_04-39-54.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%83%D9%86%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%83%D9%88%D8%AE%20%D8%A7%D9%84%D8%B1%D9%8A%D9%81%D9%8A/photo_1_2026-04-24_04-39-54.jpg"
+                        alt="السكن في الكوخ الريفي">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">السكن في الكوخ الريفي</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-wide" data-hotel="السيرك" data-images="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_10_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_11_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_12_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_13_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_14_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_15_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_16_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_17_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_1_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_2_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_3_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_4_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_5_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_6_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_7_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_8_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_9_2026-04-24_04-26-14.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_10_2026-04-24_04-26-14.jpg" alt="السيرك">
+                <div class="bento-card hidden-activity bento-wide" data-hotel="السيرك"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_10_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_11_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_12_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_13_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_14_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_15_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_16_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_17_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_1_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_2_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_3_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_4_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_5_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_6_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_7_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_8_2026-04-24_04-26-14.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_9_2026-04-24_04-26-14.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%83/photo_10_2026-04-24_04-26-14.jpg"
+                        alt="السيرك">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">السيرك</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-tall" data-hotel="الطيران الشراعي" data-images="assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_1_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_2_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_3_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_4_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_5_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_6_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_7_2026-04-24_04-34-52.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_1_2026-04-24_04-34-52.jpg" alt="الطيران الشراعي">
+                <div class="bento-card hidden-activity bento-tall" data-hotel="الطيران الشراعي"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_1_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_2_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_3_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_4_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_5_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_6_2026-04-24_04-34-52.jpg,assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_7_2026-04-24_04-34-52.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B9%D9%8A/photo_1_2026-04-24_04-34-52.jpg"
+                        alt="الطيران الشراعي">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الطيران الشراعي</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="الكارتينج" data-images="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_1_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_2_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_3_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_4_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_5_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_6_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_7_2026-04-24_04-41-23.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_1_2026-04-24_04-41-23.jpg" alt="الكارتينج">
+                <div class="bento-card hidden-activity bento-small" data-hotel="الكارتينج"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_1_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_2_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_3_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_4_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_5_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_6_2026-04-24_04-41-23.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_7_2026-04-24_04-41-23.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D8%AC/photo_1_2026-04-24_04-41-23.jpg"
+                        alt="الكارتينج">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الكارتينج</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="الكروز" data-images="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_10_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_1_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_2_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_3_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_4_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_5_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_6_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_7_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_8_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_9_2026-04-24_04-27-19.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_10_2026-04-24_04-27-19.jpg" alt="الكروز">
+                <div class="bento-card hidden-activity bento-small" data-hotel="الكروز"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_10_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_1_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_2_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_3_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_4_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_5_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_6_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_7_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_8_2026-04-24_04-27-19.jpg,assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_9_2026-04-24_04-27-19.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%83%D8%B1%D9%88%D8%B2/photo_10_2026-04-24_04-27-19.jpg"
+                        alt="الكروز">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الكروز</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-large" data-hotel="المعسكر السياحي" data-images="assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_1_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_2_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_3_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_4_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_5_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_6_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_7_2026-04-24_04-31-44.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_1_2026-04-24_04-31-44.jpg" alt="المعسكر السياحي">
+                <div class="bento-card hidden-activity bento-large" data-hotel="المعسكر السياحي"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_1_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_2_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_3_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_4_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_5_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_6_2026-04-24_04-31-44.jpg,assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_7_2026-04-24_04-31-44.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%85%D8%B9%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A/photo_1_2026-04-24_04-31-44.jpg"
+                        alt="المعسكر السياحي">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">المعسكر السياحي</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-wide" data-hotel="الهاسكي" data-images="assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_1_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_2_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_3_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_4_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_5_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_6_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_7_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_8_2026-04-24_04-28-05.jpg">
-                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_1_2026-04-24_04-28-05.jpg" alt="الهاسكي">
+                <div class="bento-card hidden-activity bento-wide" data-hotel="الهاسكي"
+                    data-images="assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_1_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_2_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_3_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_4_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_5_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_6_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_7_2026-04-24_04-28-05.jpg,assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_8_2026-04-24_04-28-05.jpg">
+                    <img src="assets/events and adventures/%D8%A7%D9%84%D9%87%D8%A7%D8%B3%D9%83%D9%8A/photo_1_2026-04-24_04-28-05.jpg"
+                        alt="الهاسكي">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">الهاسكي</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-tall" data-hotel="اﻟﺘﻠﻔﺮﻳﻚ واﻟﺰيبلاين" data-images="assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_1_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_2_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_3_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_4_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_5_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_6_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_7_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_8_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_9_2026-04-24_04-42-53.jpg">
-                    <img src="assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_1_2026-04-24_04-42-53.jpg" alt="اﻟﺘﻠﻔﺮﻳﻚ واﻟﺰيبلاين">
+                <div class="bento-card hidden-activity bento-tall" data-hotel="اﻟﺘﻠﻔﺮﻳﻚ واﻟﺰيبلاين"
+                    data-images="assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_1_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_2_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_3_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_4_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_5_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_6_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_7_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_8_2026-04-24_04-42-53.jpg,assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_9_2026-04-24_04-42-53.jpg">
+                    <img src="assets/events and adventures/%D8%A7%EF%BB%9F%EF%BA%98%EF%BB%A0%EF%BB%94%EF%BA%AE%EF%BB%B3%EF%BB%9A%20%D9%88%D8%A7%EF%BB%9F%EF%BA%B0%D9%8A%D8%A8%D9%84%D8%A7%D9%8A%D9%86/photo_1_2026-04-24_04-42-53.jpg"
+                        alt="اﻟﺘﻠﻔﺮﻳﻚ واﻟﺰيبلاين">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">اﻟﺘﻠﻔﺮﻳﻚ واﻟﺰيبلاين</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="تصوير الدب الروسي" data-images="assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_1_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_2_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_3_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_4_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_5_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_6_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_7_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_8_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_9_2026-04-24_04-38-19.jpg">
-                    <img src="assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_1_2026-04-24_04-38-19.jpg" alt="تصوير الدب الروسي">
+                <div class="bento-card hidden-activity bento-small" data-hotel="تصوير الدب الروسي"
+                    data-images="assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_1_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_2_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_3_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_4_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_5_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_6_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_7_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_8_2026-04-24_04-38-19.jpg,assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_9_2026-04-24_04-38-19.jpg">
+                    <img src="assets/events and adventures/%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AF%D8%A8%20%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/photo_1_2026-04-24_04-38-19.jpg"
+                        alt="تصوير الدب الروسي">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">تصوير الدب الروسي</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="حديقة الاحلام" data-images="assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_1_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_2_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_3_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_4_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_5_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_6_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_7_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_8_2026-04-24_04-43-41.jpg">
-                    <img src="assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_1_2026-04-24_04-43-41.jpg" alt="حديقة الاحلام">
+                <div class="bento-card hidden-activity bento-small" data-hotel="حديقة الاحلام"
+                    data-images="assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_1_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_2_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_3_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_4_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_5_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_6_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_7_2026-04-24_04-43-41.jpg,assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_8_2026-04-24_04-43-41.jpg">
+                    <img src="assets/events and adventures/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D9%84%D8%A7%D9%85/photo_1_2026-04-24_04-43-41.jpg"
+                        alt="حديقة الاحلام">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">حديقة الاحلام</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-large" data-hotel="درافت السيارات" data-images="assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_1_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_2_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_3_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_4_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_5_2026-04-24_04-33-07.jpg">
-                    <img src="assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_1_2026-04-24_04-33-07.jpg" alt="درافت السيارات">
+                <div class="bento-card hidden-activity bento-large" data-hotel="درافت السيارات"
+                    data-images="assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_1_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_2_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_3_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_4_2026-04-24_04-33-07.jpg,assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_5_2026-04-24_04-33-07.jpg">
+                    <img src="assets/events and adventures/%D8%AF%D8%B1%D8%A7%D9%81%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/photo_1_2026-04-24_04-33-07.jpg"
+                        alt="درافت السيارات">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">درافت السيارات</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-wide" data-hotel="ركوب الخيل" data-images="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_1_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_2_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_3_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_4_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_5_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_6_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_7_2026-04-24_04-28-57.jpg">
-                    <img src="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_1_2026-04-24_04-28-57.jpg" alt="ركوب الخيل">
+                <div class="bento-card hidden-activity bento-wide" data-hotel="ركوب الخيل"
+                    data-images="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_1_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_2_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_3_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_4_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_5_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_6_2026-04-24_04-28-57.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_7_2026-04-24_04-28-57.jpg">
+                    <img src="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D8%AE%D9%8A%D9%84/photo_1_2026-04-24_04-28-57.jpg"
+                        alt="ركوب الخيل">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">ركوب الخيل</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-tall" data-hotel="ركوب المنطاد" data-images="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_1_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_2_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_3_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_4_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_5_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_6_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_7_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_8_2026-04-24_04-34-07.jpg">
-                    <img src="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_1_2026-04-24_04-34-07.jpg" alt="ركوب المنطاد">
+                <div class="bento-card hidden-activity bento-tall" data-hotel="ركوب المنطاد"
+                    data-images="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_1_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_2_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_3_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_4_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_5_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_6_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_7_2026-04-24_04-34-07.jpg,assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_8_2026-04-24_04-34-07.jpg">
+                    <img src="assets/events and adventures/%D8%B1%D9%83%D9%88%D8%A8%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D8%A7%D8%AF/photo_1_2026-04-24_04-34-07.jpg"
+                        alt="ركوب المنطاد">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">ركوب المنطاد</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="طائرة الهيلوكوبتر" data-images="assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_1_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_2_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_3_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_4_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_5_2026-04-24_04-32-31.jpg">
-                    <img src="assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_1_2026-04-24_04-32-31.jpg" alt="طائرة الهيلوكوبتر">
+                <div class="bento-card hidden-activity bento-small" data-hotel="طائرة الهيلوكوبتر"
+                    data-images="assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_1_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_2_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_3_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_4_2026-04-24_04-32-31.jpg,assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_5_2026-04-24_04-32-31.jpg">
+                    <img src="assets/events and adventures/%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9%20%D8%A7%D9%84%D9%87%D9%8A%D9%84%D9%88%D9%83%D9%88%D8%A8%D8%AA%D8%B1/photo_1_2026-04-24_04-32-31.jpg"
+                        alt="طائرة الهيلوكوبتر">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">طائرة الهيلوكوبتر</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-small" data-hotel="عرض الباليه والأوبرا" data-images="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_1_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_2_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_3_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_4_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_5_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_6_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_7_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_8_2026-04-24_04-37-41.jpg">
-                    <img src="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_1_2026-04-24_04-37-41.jpg" alt="عرض الباليه والأوبرا">
+                <div class="bento-card hidden-activity bento-small" data-hotel="عرض الباليه والأوبرا"
+                    data-images="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_1_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_2_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_3_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_4_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_5_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_6_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_7_2026-04-24_04-37-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_8_2026-04-24_04-37-41.jpg">
+                    <img src="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D9%8A%D9%87%20%D9%88%D8%A7%D9%84%D8%A3%D9%88%D8%A8%D8%B1%D8%A7/photo_1_2026-04-24_04-37-41.jpg"
+                        alt="عرض الباليه والأوبرا">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">عرض الباليه والأوبرا</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </div>
-                <div class="bento-card hidden-activity bento-large" data-hotel="عرض الدلافين" data-images="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_1_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_2_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_3_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_4_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_5_2026-04-24_04-36-41.jpg">
-                    <img src="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_1_2026-04-24_04-36-41.jpg" alt="عرض الدلافين">
+                <div class="bento-card hidden-activity bento-large" data-hotel="عرض الدلافين"
+                    data-images="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_1_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_2_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_3_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_4_2026-04-24_04-36-41.jpg,assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_5_2026-04-24_04-36-41.jpg">
+                    <img src="assets/events and adventures/%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86/photo_1_2026-04-24_04-36-41.jpg"
+                        alt="عرض الدلافين">
                     <div class="bento-overlay"></div>
                     <div class="bento-content">
                         <h3 class="bento-title">عرض الدلافين</h3>
                         <div class="bento-explore">
                             اكتشف المزيد
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
@@ -2477,7 +2518,7 @@
                 <button id="activitiesShowMoreBtn" class="primary-btn">
                     <span>عرض جميع الفعاليات</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-                        <path d="M19 9l-7 7-7-7"/>
+                        <path d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
             </div>

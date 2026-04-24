@@ -4,12 +4,62 @@
    =================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================
+    // HERO CINEMATIC SLIDER LOGIC
+    // ==========================================
+    const heroBgContainer = document.getElementById('heroBg');
+    if (heroBgContainer) {
+        const heroImages = ["assets/hero/photo_10_2026-04-24_05-39-51.jpg", "assets/hero/photo_11_2026-04-24_05-39-51.jpg", "assets/hero/photo_12_2026-04-24_05-39-51.jpg", "assets/hero/photo_13_2026-04-24_05-39-51.jpg", "assets/hero/photo_14_2026-04-24_05-39-51.jpg", "assets/hero/photo_15_2026-04-24_05-39-51.jpg", "assets/hero/photo_16_2026-04-24_05-39-51.jpg", "assets/hero/photo_17_2026-04-24_05-39-51.jpg", "assets/hero/photo_18_2026-04-24_05-39-51.jpg", "assets/hero/photo_19_2026-04-24_05-39-51.jpg", "assets/hero/photo_1_2026-04-24_05-39-51.jpg", "assets/hero/photo_20_2026-04-24_05-39-51.jpg", "assets/hero/photo_21_2026-04-24_05-39-51.jpg", "assets/hero/photo_22_2026-04-24_05-39-51.jpg", "assets/hero/photo_23_2026-04-24_05-39-51.jpg", "assets/hero/photo_24_2026-04-24_05-39-51.jpg", "assets/hero/photo_25_2026-04-24_05-39-51.jpg", "assets/hero/photo_26_2026-04-24_05-39-51.jpg", "assets/hero/photo_27_2026-04-24_05-39-51.jpg", "assets/hero/photo_28_2026-04-24_05-39-51.jpg", "assets/hero/photo_29_2026-04-24_05-39-51.jpg", "assets/hero/photo_2_2026-04-24_05-39-51.jpg", "assets/hero/photo_30_2026-04-24_05-39-51.jpg", "assets/hero/photo_31_2026-04-24_05-39-51.jpg", "assets/hero/photo_32_2026-04-24_05-39-51.jpg", "assets/hero/photo_33_2026-04-24_05-39-51.jpg", "assets/hero/photo_34_2026-04-24_05-39-51.jpg", "assets/hero/photo_35_2026-04-24_05-39-51.jpg", "assets/hero/photo_36_2026-04-24_05-39-51.jpg", "assets/hero/photo_37_2026-04-24_05-39-51.jpg", "assets/hero/photo_38_2026-04-24_05-39-51.jpg", "assets/hero/photo_39_2026-04-24_05-39-51.jpg", "assets/hero/photo_3_2026-04-24_05-39-51.jpg", "assets/hero/photo_4_2026-04-24_05-39-51.jpg", "assets/hero/photo_5_2026-04-24_05-39-51.jpg", "assets/hero/photo_6_2026-04-24_05-39-51.jpg", "assets/hero/photo_7_2026-04-24_05-39-51.jpg", "assets/hero/photo_8_2026-04-24_05-39-51.jpg", "assets/hero/photo_9_2026-04-24_05-39-51.jpg"];
+        let currentSlideIndex = 0;
+
+        // Remove initially loaded image duplicate if any
+        let currentImgElement = document.getElementById('currentHeroSlide');
+
+        setInterval(() => {
+            // Determine next slide
+            currentSlideIndex = (currentSlideIndex + 1) % heroImages.length;
+            const nextImgSrc = heroImages[currentSlideIndex];
+
+            // Set current image as prev-slide
+            if (currentImgElement) {
+                currentImgElement.classList.remove('active-slide');
+                currentImgElement.classList.add('prev-slide');
+            }
+
+            // Create new image
+            const newImg = document.createElement('img');
+            newImg.src = nextImgSrc;
+            newImg.alt = "صورة الهيرو";
+            newImg.className = "hero-bg-img";
+            heroBgContainer.appendChild(newImg);
+
+            // Force reflow
+            newImg.offsetHeight;
+
+            // Make new image active
+            newImg.classList.add('active-slide');
+
+            const oldImgElement = currentImgElement;
+            currentImgElement = newImg;
+
+            // Remove old image after transition completes (4 seconds)
+            if (oldImgElement) {
+                setTimeout(() => {
+                    if (oldImgElement.parentNode) {
+                        oldImgElement.parentNode.removeChild(oldImgElement);
+                    }
+                }, 10000);
+            }
+
+        }, 10000); // 10 seconds
+    }
+
 
     // =============================
     //  PRELOADER
     // =============================
     const preloader = document.getElementById('preloader');
-    
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('loaded');
@@ -26,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================
     const cursorFollower = document.getElementById('cursorFollower');
     const cursorDot = document.getElementById('cursorDot');
-    
+
     let mouseX = 0, mouseY = 0;
     let followerX = 0, followerY = 0;
 
@@ -34,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             if (cursorDot) {
                 cursorDot.style.left = mouseX + 'px';
                 cursorDot.style.top = mouseY + 'px';
@@ -45,12 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function animateCursor() {
             followerX += (mouseX - followerX) * 0.12;
             followerY += (mouseY - followerY) * 0.12;
-            
+
             if (cursorFollower) {
                 cursorFollower.style.left = followerX + 'px';
                 cursorFollower.style.top = followerY + 'px';
             }
-            
+
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
@@ -78,21 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll effects
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
-        
+
         // Add scrolled class
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         // Hide/Show navbar on scroll direction
         if (currentScroll > lastScrollY && currentScroll > 200) {
             navbar.style.transform = 'translateY(-100%)';
         } else {
             navbar.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollY = currentScroll;
     });
 
@@ -101,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('open');
-            
+
             // Toggle body scroll
             if (navLinks.classList.contains('open')) {
                 document.body.style.overflow = 'hidden';
@@ -118,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.remove('active');
             navLinks.classList.remove('open');
             document.body.style.overflow = 'auto';
-            
+
             // Update active link
             navLinkItems.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
@@ -133,64 +183,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContent = document.querySelector('.hero-content');
     const heroScroll = document.getElementById('heroScroll');
     const heroSocial = document.getElementById('heroSocial');
-    
+
     function handleParallax() {
         const scrolled = window.scrollY;
         const windowH = window.innerHeight;
-        
+
         // Only run parallax within the hero scroll range
         if (scrolled < windowH * 1.2) {
             const progress = scrolled / windowH; // 0 = top, 1 = scrolled full viewport
-            
+
             // Background moves SLOWER than scroll (classic parallax depth)
             if (heroBg) {
                 heroBg.style.transform = `translateY(${scrolled * 0.4}px) scale(${1 + progress * 0.05})`;
             }
-            
+
             // Content fades out & floats upward (cinematic exit)
             if (heroContent) {
                 heroContent.style.opacity = Math.max(1 - progress * 1.8, 0);
                 heroContent.style.transform = `translateY(${scrolled * -0.3}px)`;
             }
-            
+
             // Scroll indicator fades early
             if (heroScroll) {
                 heroScroll.style.opacity = Math.max(1 - progress * 3, 0);
             }
-            
+
             // Social links fade
             if (heroSocial) {
                 heroSocial.style.opacity = Math.max(1 - progress * 2.5, 0);
             }
         }
-        
+
         // --- Offer Cards Image Parallax & Stacking Effect ---
         const offerCards = document.querySelectorAll('.offer-card');
         offerCards.forEach((card, index) => {
             const rect = card.getBoundingClientRect();
-            
+
             // 1. Image Parallax removed to prevent cropping. Replaced with CSS hover scale.
             // 2. Cinematic Stacking (Scale down & dim when covered by next card)
             if (index < offerCards.length - 1) { // Don't do this to the very last card
                 const nextCard = offerCards[index + 1];
                 const nextRect = nextCard.getBoundingClientRect();
-                
+
                 // If the next card is coming up to cover this card
                 if (nextRect.top < windowH) {
                     // Distance between this card's top and the next card's top
                     const distance = nextRect.top - rect.top;
-                    
+
                     // When distance is less than card height, it means it's starting to overlap
                     const overlapStart = rect.height + 50; // Add some buffer
-                    
+
                     if (distance < overlapStart && distance > 0) {
                         const overlapProgress = 1 - (distance / overlapStart); // 0 to 1
-                        
+
                         // Scale down slightly (from 1 to 0.95)
                         const scale = 1 - (overlapProgress * 0.05);
                         // Dim slightly (from 1 to 0.4 opacity, handled via filter brightness)
                         const brightness = 1 - (overlapProgress * 0.5);
-                        
+
                         card.style.transform = `scale(${scale})`;
                         card.style.filter = `brightness(${brightness})`;
                     } else if (distance <= 0) {
@@ -208,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(handleParallax);
     }
-    
+
     requestAnimationFrame(handleParallax);
 
     // =============================
@@ -217,13 +267,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function createParticles() {
         const container = document.getElementById('heroParticles');
         if (!container) return;
-        
+
         const particleCount = 25;
-        
+
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
-            
+
             const size = Math.random() * 4 + 2;
             const x = Math.random() * 100;
             const y = Math.random() * 100;
@@ -231,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const ty = (Math.random() - 0.5) * 200;
             const duration = Math.random() * 10 + 8;
             const delay = Math.random() * 5;
-            
+
             particle.style.setProperty('--size', size + 'px');
             particle.style.setProperty('--tx', tx + 'px');
             particle.style.setProperty('--ty', ty + 'px');
@@ -240,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             particle.style.left = x + '%';
             particle.style.top = y + '%';
             particle.style.opacity = Math.random() * 0.3 + 0.1;
-            
+
             container.appendChild(particle);
         }
     }
@@ -259,10 +309,10 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            
+
             if (target) {
                 const offsetTop = target.offsetTop - 80;
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -274,10 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================
     //  CINEMATIC REVEAL ON SCROLL
     // =============================
-    
+
     // Standard reveals (non-services)
     const standardReveals = document.querySelectorAll('.reveal:not(.section-header):not(.service-card), .reveal-left, .reveal-right, .reveal-scale');
-    
+
     const standardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -291,25 +341,25 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1,
         rootMargin: '0px 0px -60px 0px'
     });
-    
+
     standardReveals.forEach(el => standardObserver.observe(el));
-    
+
     // --- Sequential Cinematic Reveal for Sections ---
     // Header appears first → then cards cascade one by one
     const sectionHeaders = document.querySelectorAll('.section-header.reveal');
-    
+
     sectionHeaders.forEach(header => {
         const headerObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // Step 1: Reveal header with cinematic animation
                     header.classList.add('visible');
-                    
+
                     // Step 2: Find cards inside this specific section
                     const section = header.closest('section');
                     if (section) {
                         const cards = section.querySelectorAll('.service-card.reveal');
-                        
+
                         // After header settles, cascade the cards
                         cards.forEach((card, i) => {
                             setTimeout(() => {
@@ -317,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             }, 400 + (i * 200)); // 400ms after header, then 200ms between each card
                         });
                     }
-                    
+
                     headerObserver.unobserve(entry.target);
                 }
             });
@@ -325,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: 0.2,
             rootMargin: '0px 0px -40px 0px'
         });
-        
+
         headerObserver.observe(header);
     });
 
@@ -333,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //  ACTIVE NAV LINK ON SCROLL
     // =============================
     const sections = document.querySelectorAll('section[id]');
-    
+
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -349,29 +399,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
         threshold: 0.3
     });
-    
+
     sections.forEach(section => sectionObserver.observe(section));
 
     // =============================
     //  TILT EFFECT ON HERO (Mouse Move)
     // =============================
     const hero = document.getElementById('home');
-    
+
     if (hero && window.matchMedia('(hover: hover)').matches) {
         hero.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
             const { innerWidth, innerHeight } = window;
-            
+
             const moveX = (clientX / innerWidth - 0.5) * 12;
             const moveY = (clientY / innerHeight - 0.5) * 8;
             const scrollOffset = window.scrollY * 0.4;
             const progress = window.scrollY / innerHeight;
-            
+
             if (heroBg) {
                 heroBg.style.transform = `translate(${moveX}px, ${moveY + scrollOffset}px) scale(${1 + progress * 0.05})`;
             }
         });
-        
+
         hero.addEventListener('mouseleave', () => {
             if (heroBg) {
                 const scrolled = window.scrollY;
@@ -386,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================
     if (window.matchMedia('(hover: hover)').matches) {
         const serviceCards = document.querySelectorAll('.service-card');
-        
+
         serviceCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
@@ -394,12 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                
+
                 const rotateX = ((y - centerY) / centerY) * -6;
                 const rotateY = ((x - centerX) / centerX) * 6;
-                
+
                 card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
-                
+
                 // Dynamic glow following cursor
                 const glowX = (x / rect.width) * 100;
                 const glowY = (y / rect.height) * 100;
@@ -408,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     #ffffff
                 `;
             });
-            
+
             card.addEventListener('mouseleave', () => {
                 card.style.transform = '';
                 card.style.background = '';
@@ -420,11 +470,11 @@ document.addEventListener('DOMContentLoaded', () => {
     //  RIPPLE EFFECT ON BUTTONS
     // =============================
     document.querySelectorAll('.hero-btn-primary, .nav-cta').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
-            
+
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
             ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
@@ -433,9 +483,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ripple.style.background = 'rgba(255, 255, 255, 0.3)';
             ripple.style.animation = 'ripple 0.6s linear';
             ripple.style.pointerEvents = 'none';
-            
+
             this.appendChild(ripple);
-            
+
             setTimeout(() => ripple.remove(), 600);
         });
     });
@@ -449,10 +499,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                
+
                 btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
             });
-            
+
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = '';
             });
@@ -471,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNext = document.getElementById('lightboxNext');
     const btnPrev = document.getElementById('lightboxPrev');
     const btnClose = document.getElementById('lightboxClose');
-    
+
     let currentImages = [];
     let currentIndex = 0;
 
@@ -479,15 +529,15 @@ document.addEventListener('DOMContentLoaded', () => {
         currentImages = imagesStr.split(',');
         currentIndex = 0;
         lightboxTitle.textContent = hotelName;
-        
+
         const lightboxSubtitle = document.getElementById('lightboxSubtitle');
         if (lightboxSubtitle) {
             lightboxSubtitle.textContent = hotelNameEn || '';
             lightboxSubtitle.style.display = hotelNameEn ? 'block' : 'none';
         }
-        
+
         lightboxTotal.textContent = currentImages.length;
-        
+
         updateLightboxImage();
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden'; // prevent background scrolling
@@ -505,7 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateLightboxImage() {
         lightboxImg.classList.remove('loaded');
         lightboxCurrent.textContent = currentIndex + 1;
-        
+
         // Small delay to allow CSS transition to reset
         setTimeout(() => {
             lightboxImg.src = currentImages[currentIndex];
@@ -539,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const hotel = card.getAttribute('data-hotel');
             const hotelEnElement = card.querySelector('.hotel-name-en');
             const hotelEn = hotelEnElement ? hotelEnElement.textContent : '';
-            
+
             if (images && hotel) {
                 openLightbox(images, hotel, hotelEn);
             }
@@ -554,7 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.remove('hidden');
             });
             btnShowMore.style.display = 'none'; // hide button after showing all
-            
+
             // Trigger standard observer for newly revealed cards if needed
             const newReveals = document.querySelectorAll('.hotel-card.reveal:not(.visible)');
             newReveals.forEach(el => standardObserver.observe(el));
@@ -570,7 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnShowMoreServices.addEventListener('click', () => {
             const btnText = btnShowMoreServices.querySelector('.hero-btn-text');
             const btnIcon = btnShowMoreServices.querySelector('.hero-btn-icon');
-            
+
             if (!isExpanded) {
                 // Show services
                 hiddenServices.forEach(card => {
@@ -594,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnText.textContent = 'عرض جميع الخدمات';
                 btnIcon.style.transform = 'rotate(0deg)';
                 isExpanded = false;
-                
+
                 // Scroll back to the top of services section smoothly
                 const servicesSection = document.getElementById('services');
                 if (servicesSection) {
@@ -609,14 +659,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const activitiesShowMoreBtn = document.getElementById('activitiesShowMoreBtn');
     const hiddenActivities = document.querySelectorAll('.bento-card.hidden-activity');
-    
+
     if (activitiesShowMoreBtn && hiddenActivities.length > 0) {
         let isActivitiesExpanded = false;
-        
+
         activitiesShowMoreBtn.addEventListener('click', () => {
             const btnText = activitiesShowMoreBtn.querySelector('span');
             const btnIcon = activitiesShowMoreBtn.querySelector('svg');
-            
+
             if (!isActivitiesExpanded) {
                 // Show hidden activities
                 hiddenActivities.forEach((card, index) => {
@@ -636,7 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.remove('active'); // Remove animation class
                     card.classList.add('hidden-activity');
                     standardObserver.unobserve(card);
-                    
+
                     setTimeout(() => {
                         card.style.display = 'none';
                     }, 300); // Wait for transition
@@ -644,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnText.textContent = 'عرض جميع الفعاليات';
                 btnIcon.style.transform = 'rotate(0deg)';
                 isActivitiesExpanded = false;
-                
+
                 // Scroll back to the top of activities section smoothly
                 const activitiesSection = document.getElementById('activities');
                 if (activitiesSection) {
@@ -658,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnNext) btnNext.addEventListener('click', nextImage);
     if (btnPrev) btnPrev.addEventListener('click', prevImage);
     if (btnClose) btnClose.addEventListener('click', closeLightbox);
-    
+
     // Close on overlay click
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
@@ -671,7 +721,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!lightbox || !lightbox.classList.contains('active')) return;
-        
+
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'Escape') closeLightbox();
