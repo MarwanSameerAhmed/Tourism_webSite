@@ -28,16 +28,17 @@
     /* Full edge to edge width */
     width: 100%;
     background: #050505;
-    border: 1px solid rgba(15, 166, 142, 0.15);
-    border-left: none; /* Removed side borders since it's full width */
-    border-right: none;
-    border-radius: 40px; /* Kept top and bottom curves as requested */
-    padding: 120px 5%; /* Unified vertical padding */
+    border: none;
+    /* Removed border */
+    border-radius: 40px;
+    /* Kept top and bottom curves as requested */
+    padding: 120px 5%;
+    /* Unified vertical padding */
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
     /* Softer shadow for white bg */
     margin: 0 auto;
-    margin-top: -20vh;
-    /* Parallax overlap increased to pull it closer to the section above */
+    margin-top: 80px;
+    /* Positive spacing from section above */
 }
 
 .hotels .section-title {
@@ -79,19 +80,29 @@
 
 /* Featured patterns for revealed hotels (Desktop) */
 @media (min-width: 993px) {
-    /* Pattern: Large -> Medium -> Small -> Full */
-    .hotel-card.hotel-revealing:nth-child(5) { grid-column: span 3; height: 350px; }
-    .hotel-card.hotel-revealing:nth-child(6) { grid-column: span 1; height: 350px; }
-    .hotel-card.hotel-revealing:nth-child(7) { grid-column: span 2; height: 320px; }
-    .hotel-card.hotel-revealing:nth-child(8) { grid-column: span 2; height: 320px; }
-    .hotel-card.hotel-revealing:nth-child(9) { grid-column: span 4; height: 400px; }
+
+    .hotel-card.hotel-revealing:nth-child(n) {
+        grid-column: span 1 !important;
+        /* فرض عمود واحد لكل كارت */
+        height: 320px !important;
+        /* توحيد الارتفاع لجميع الكروت الجديدة */
+    }
+
+    /* 2. ضمان أن الشبكة مقسمة دائماً لـ 4 أعمدة */
+    .hotels-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 20px;
+    }
 }
+
 
 @keyframes hotelReveal {
     from {
         opacity: 0;
         transform: translateY(30px) scale(0.98);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -321,8 +332,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(4, 6, 10, 0.6); /* More transparent background */
-    backdrop-filter: blur(15px); /* Frosted glass effect */
+    background: rgba(4, 6, 10, 0.6);
+    /* More transparent background */
+    backdrop-filter: blur(15px);
+    /* Frosted glass effect */
     -webkit-backdrop-filter: blur(15px);
 }
 

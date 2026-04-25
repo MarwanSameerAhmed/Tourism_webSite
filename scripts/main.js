@@ -216,45 +216,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Offer Cards Image Parallax & Stacking Effect ---
         const offerCards = document.querySelectorAll('.offer-card');
-        offerCards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
 
-            // 1. Image Parallax removed to prevent cropping. Replaced with CSS hover scale.
-            // 2. Cinematic Stacking (Scale down & dim when covered by next card)
-            if (index < offerCards.length - 1) { // Don't do this to the very last card
-                const nextCard = offerCards[index + 1];
-                const nextRect = nextCard.getBoundingClientRect();
+        // Skip stacking effect on mobile — it causes dark filter and sizing issues
+        if (window.innerWidth > 992) {
+            offerCards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
 
-                // If the next card is coming up to cover this card
-                if (nextRect.top < windowH) {
-                    // Distance between this card's top and the next card's top
-                    const distance = nextRect.top - rect.top;
+                // 1. Image Parallax removed to prevent cropping. Replaced with CSS hover scale.
+                // 2. Cinematic Stacking (Scale down & dim when covered by next card)
+                if (index < offerCards.length - 1) { // Don't do this to the very last card
+                    const nextCard = offerCards[index + 1];
+                    const nextRect = nextCard.getBoundingClientRect();
 
-                    // When distance is less than card height, it means it's starting to overlap
-                    const overlapStart = rect.height + 50; // Add some buffer
+                    // If the next card is coming up to cover this card
+                    if (nextRect.top < windowH) {
+                        // Distance between this card's top and the next card's top
+                        const distance = nextRect.top - rect.top;
 
-                    if (distance < overlapStart && distance > 0) {
-                        const overlapProgress = 1 - (distance / overlapStart); // 0 to 1
+                        // When distance is less than card height, it means it's starting to overlap
+                        const overlapStart = rect.height + 50; // Add some buffer
 
-                        // Scale down slightly (from 1 to 0.95)
-                        const scale = 1 - (overlapProgress * 0.05);
-                        // Dim slightly (from 1 to 0.4 opacity, handled via filter brightness)
-                        const brightness = 1 - (overlapProgress * 0.5);
+                        if (distance < overlapStart && distance > 0) {
+                            const overlapProgress = 1 - (distance / overlapStart); // 0 to 1
 
-                        card.style.transform = `scale(${scale})`;
-                        card.style.filter = `brightness(${brightness})`;
-                    } else if (distance <= 0) {
-                        // Fully covered
-                        card.style.transform = `scale(0.95)`;
-                        card.style.filter = `brightness(0.5)`;
-                    } else {
-                        // Not covered yet
-                        card.style.transform = `scale(1)`;
-                        card.style.filter = `brightness(1)`;
+                            // Scale down slightly (from 1 to 0.95)
+                            const scale = 1 - (overlapProgress * 0.05);
+                            // Dim slightly (from 1 to 0.4 opacity, handled via filter brightness)
+                            const brightness = 1 - (overlapProgress * 0.5);
+
+                            card.style.transform = `scale(${scale})`;
+                            card.style.filter = `brightness(${brightness})`;
+                        } else if (distance <= 0) {
+                            // Fully covered
+                            card.style.transform = `scale(0.95)`;
+                            card.style.filter = `brightness(0.5)`;
+                        } else {
+                            // Not covered yet
+                            card.style.transform = `scale(1)`;
+                            card.style.filter = `brightness(1)`;
+                        }
                     }
                 }
-            }
-        });
+            });
+        } else {
+            // On mobile, clear any leftover inline styles
+            offerCards.forEach(card => {
+                card.style.transform = '';
+                card.style.filter = '';
+            });
+        }
 
         requestAnimationFrame(handleParallax);
     }
@@ -912,236 +922,236 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Lightbox Controls
-if (btnNext) btnNext.addEventListener('click', nextImage);
-if (btnPrev) btnPrev.addEventListener('click', prevImage);
-if (btnClose) btnClose.addEventListener('click', closeLightbox);
+    if (btnNext) btnNext.addEventListener('click', nextImage);
+    if (btnPrev) btnPrev.addEventListener('click', prevImage);
+    if (btnClose) btnClose.addEventListener('click', closeLightbox);
 
-// Close on overlay click
-if (lightbox) {
-    lightbox.addEventListener('click', (e) => {
-        if (e.target.classList.contains('lightbox-overlay') || e.target.classList.contains('lightbox-slider')) {
-            closeLightbox();
-        }
+    // Close on overlay click
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target.classList.contains('lightbox-overlay') || e.target.classList.contains('lightbox-slider')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeLightbox();
     });
-}
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (!lightbox || !lightbox.classList.contains('active')) return;
+    // ==========================================
+    // GARDENS SHOW MORE LOGIC
+    // ==========================================
+    const btnShowMoreGardens = document.getElementById('showMoreGardensBtn');
+    const btnHideGardens = document.getElementById('hideGardensBtn');
+    const hiddenGardens = document.querySelectorAll('.hidden-garden');
+    const gardensSection = document.getElementById('gardens');
 
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'Escape') closeLightbox();
-});
+    if (btnShowMoreGardens && btnHideGardens && hiddenGardens.length > 0) {
+        btnShowMoreGardens.addEventListener('click', () => {
+            hiddenGardens.forEach((card) => {
+                card.style.display = 'block';
+                requestAnimationFrame(() => {
+                    card.classList.remove('hidden-garden');
+                    card.classList.add('revealed-garden');
+                });
+            });
 
-// ==========================================
-// GARDENS SHOW MORE LOGIC
-// ==========================================
-const btnShowMoreGardens = document.getElementById('showMoreGardensBtn');
-const btnHideGardens = document.getElementById('hideGardensBtn');
-const hiddenGardens = document.querySelectorAll('.hidden-garden');
-const gardensSection = document.getElementById('gardens');
+            btnShowMoreGardens.style.display = 'none';
+            btnHideGardens.style.display = 'inline-flex';
+        });
 
-if (btnShowMoreGardens && btnHideGardens && hiddenGardens.length > 0) {
-    btnShowMoreGardens.addEventListener('click', () => {
-        hiddenGardens.forEach((card) => {
-            card.style.display = 'block';
-            requestAnimationFrame(() => {
-                card.classList.remove('hidden-garden');
-                card.classList.add('revealed-garden');
+        btnHideGardens.addEventListener('click', () => {
+            if (gardensSection) {
+                gardensSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            Array.from(hiddenGardens).forEach((card) => {
+                card.classList.remove('revealed-garden');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+
+                setTimeout(() => {
+                    card.style.display = 'none';
+                    card.classList.add('hidden-garden');
+                    card.style.opacity = '';
+                    card.style.transform = '';
+                }, 400);
+            });
+
+            setTimeout(() => {
+                btnHideGardens.style.display = 'none';
+                btnShowMoreGardens.style.display = 'inline-flex';
+            }, 400);
+        });
+    }
+
+
+    // ==========================================
+    // MUSEUMS ACCORDION LOGIC (Mobile Support)
+    // ==========================================
+    const museumItems = document.querySelectorAll('.museum-item');
+    if (museumItems.length > 0) {
+        museumItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                if (window.innerWidth <= 992) {
+                    // On mobile: first click activates the card
+                    if (!this.classList.contains('active')) {
+                        museumItems.forEach(el => el.classList.remove('active'));
+                        this.classList.add('active');
+                        e.stopPropagation(); // Prevent lightbox from opening
+                        return;
+                    }
+                    // If already active, check if the explore button was clicked
+                    const exploreBtn = this.querySelector('.museum-explore');
+                    if (exploreBtn && (e.target === exploreBtn || exploreBtn.contains(e.target))) {
+                        // Allow lightbox to open (handled by the generic lightbox handler)
+                    } else {
+                        // Click on active card body - do nothing special
+                        e.stopPropagation();
+                    }
+                }
+            });
+            // Desktop hover is handled via pure CSS (:hover)
+        });
+    }
+
+
+
+    // ==========================================
+    // GALLERY TABS & LOAD MORE LOGIC
+    // ==========================================
+    const galleryTabs = document.querySelectorAll('.gallery-tab');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const showMoreGalleryBtn = document.getElementById('showMoreGalleryBtn');
+    let currentCity = 'moscow';
+    let visibleCount = 8;
+
+    function renderGallery() {
+        let cityItems = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]`));
+
+        galleryItems.forEach(item => {
+            if (item.getAttribute('data-city') !== currentCity) {
+                item.classList.add('hidden-gallery-item');
+                item.classList.remove('revealed-gallery-item');
+            }
+        });
+
+        cityItems.forEach((item, index) => {
+            if (index < visibleCount) {
+                item.classList.remove('hidden-gallery-item');
+                if (!item.classList.contains('revealed-gallery-item')) {
+                    item.classList.add('revealed-gallery-item');
+                }
+            } else {
+                item.classList.add('hidden-gallery-item');
+                item.classList.remove('revealed-gallery-item');
+            }
+        });
+
+        if (visibleCount >= cityItems.length) {
+            showMoreGalleryBtn.style.display = 'none';
+        } else {
+            showMoreGalleryBtn.style.display = 'inline-flex';
+        }
+    }
+
+    if (galleryTabs.length > 0) {
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                galleryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentCity = tab.getAttribute('data-target');
+                visibleCount = 8; // reset
+                renderGallery();
             });
         });
 
-        btnShowMoreGardens.style.display = 'none';
-        btnHideGardens.style.display = 'inline-flex';
-    });
-
-    btnHideGardens.addEventListener('click', () => {
-        if (gardensSection) {
-            gardensSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        Array.from(hiddenGardens).forEach((card) => {
-            card.classList.remove('revealed-garden');
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95)';
-
-            setTimeout(() => {
-                card.style.display = 'none';
-                card.classList.add('hidden-garden');
-                card.style.opacity = '';
-                card.style.transform = '';
-            }, 400);
-        });
-
-        setTimeout(() => {
-            btnHideGardens.style.display = 'none';
-            btnShowMoreGardens.style.display = 'inline-flex';
-        }, 400);
-    });
-}
-
-
-// ==========================================
-// MUSEUMS ACCORDION LOGIC (Mobile Support)
-// ==========================================
-const museumItems = document.querySelectorAll('.museum-item');
-if (museumItems.length > 0) {
-    museumItems.forEach(item => {
-        item.addEventListener('click', function (e) {
-            if (window.innerWidth <= 992) {
-                // On mobile: first click activates the card
-                if (!this.classList.contains('active')) {
-                    museumItems.forEach(el => el.classList.remove('active'));
-                    this.classList.add('active');
-                    e.stopPropagation(); // Prevent lightbox from opening
-                    return;
-                }
-                // If already active, check if the explore button was clicked
-                const exploreBtn = this.querySelector('.museum-explore');
-                if (exploreBtn && (e.target === exploreBtn || exploreBtn.contains(e.target))) {
-                    // Allow lightbox to open (handled by the generic lightbox handler)
-                } else {
-                    // Click on active card body - do nothing special
-                    e.stopPropagation();
-                }
-            }
-        });
-        // Desktop hover is handled via pure CSS (:hover)
-    });
-}
-
-
-
-// ==========================================
-// GALLERY TABS & LOAD MORE LOGIC
-// ==========================================
-const galleryTabs = document.querySelectorAll('.gallery-tab');
-const galleryItems = document.querySelectorAll('.gallery-item');
-const showMoreGalleryBtn = document.getElementById('showMoreGalleryBtn');
-let currentCity = 'moscow';
-let visibleCount = 8;
-
-function renderGallery() {
-    let cityItems = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]`));
-
-    galleryItems.forEach(item => {
-        if (item.getAttribute('data-city') !== currentCity) {
-            item.classList.add('hidden-gallery-item');
-            item.classList.remove('revealed-gallery-item');
-        }
-    });
-
-    cityItems.forEach((item, index) => {
-        if (index < visibleCount) {
-            item.classList.remove('hidden-gallery-item');
-            if (!item.classList.contains('revealed-gallery-item')) {
-                item.classList.add('revealed-gallery-item');
-            }
-        } else {
-            item.classList.add('hidden-gallery-item');
-            item.classList.remove('revealed-gallery-item');
-        }
-    });
-
-    if (visibleCount >= cityItems.length) {
-        showMoreGalleryBtn.style.display = 'none';
-    } else {
-        showMoreGalleryBtn.style.display = 'inline-flex';
-    }
-}
-
-if (galleryTabs.length > 0) {
-    galleryTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            galleryTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            currentCity = tab.getAttribute('data-target');
-            visibleCount = 8; // reset
+        showMoreGalleryBtn.addEventListener('click', () => {
+            visibleCount += 12;
             renderGallery();
         });
-    });
 
-    showMoreGalleryBtn.addEventListener('click', () => {
-        visibleCount += 12;
+        // Initial render
         renderGallery();
-    });
-
-    // Initial render
-    renderGallery();
-}
-
-// Attach Gallery to Lightbox (reuse existing openLightbox)
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        // Build image list from all visible items in the current city
-        const visibleCityImgs = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]:not(.hidden-gallery-item) img`));
-        const allSrcs = visibleCityImgs.map(img => img.src).join(',');
-        const cityName = currentCity === 'moscow' ? 'موسكو' : 'سانت بطرسبرغ';
-
-        // Find index of clicked item among visible items
-        const clickedSrc = item.querySelector('img').src;
-        const clickedIdx = visibleCityImgs.findIndex(img => img.src === clickedSrc);
-
-        if (allSrcs) {
-            openLightbox(allSrcs, cityName, '');
-            if (clickedIdx >= 0) {
-                currentIndex = clickedIdx;
-                updateLightboxImage();
-            }
-        }
-    });
-});
-
-
-// ==========================================
-// OFFERS MOBILE CAROUSEL + POPUP
-// ==========================================
-const offerCards = document.querySelectorAll('.offer-card');
-const offersDots = document.querySelectorAll('.offers-dot-nav');
-const offerPopup = document.getElementById('offerPopup');
-const offerPopupOverlay = document.getElementById('offerPopupOverlay');
-const offerPopupImage = document.getElementById('offerPopupImage');
-const offerPopupBody = document.getElementById('offerPopupBody');
-let currentOfferIndex = 0;
-let offersAutoplayInterval = null;
-
-function setupOffersMobileCarousel() {
-    if (window.innerWidth > 992 || offerCards.length === 0) {
-        // Desktop: remove mobile classes
-        offerCards.forEach(card => {
-            card.classList.remove('mobile-active');
-            const mobileLabel = card.querySelector('.offer-mobile-label');
-            if (mobileLabel) mobileLabel.remove();
-            
-            // Fix image styles for desktop/mobile
-            const img = card.querySelector('.offer-image');
-            if (img) {
-                img.style.objectFit = '';
-                img.style.filter = '';
-            }
-        });
-        return;
     }
 
-    // Add mobile labels to each card
-    offerCards.forEach((card, idx) => {
-        // Fix image styles for mobile carousel
-        const img = card.querySelector('.offer-image');
-        if (img) {
-            img.style.objectFit = 'contain';
-            img.style.filter = 'none';
+    // Attach Gallery to Lightbox (reuse existing openLightbox)
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Build image list from all visible items in the current city
+            const visibleCityImgs = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]:not(.hidden-gallery-item) img`));
+            const allSrcs = visibleCityImgs.map(img => img.src).join(',');
+            const cityName = currentCity === 'moscow' ? 'موسكو' : 'سانت بطرسبرغ';
+
+            // Find index of clicked item among visible items
+            const clickedSrc = item.querySelector('img').src;
+            const clickedIdx = visibleCityImgs.findIndex(img => img.src === clickedSrc);
+
+            if (allSrcs) {
+                openLightbox(allSrcs, cityName, '');
+                if (clickedIdx >= 0) {
+                    currentIndex = clickedIdx;
+                    updateLightboxImage();
+                }
+            }
+        });
+    });
+
+
+    // ==========================================
+    // OFFERS MOBILE CAROUSEL + POPUP
+    // ==========================================
+    const offerCards = document.querySelectorAll('.offer-card');
+    const offersDots = document.querySelectorAll('.offers-dot-nav');
+    const offerPopup = document.getElementById('offerPopup');
+    const offerPopupOverlay = document.getElementById('offerPopupOverlay');
+    const offerPopupImage = document.getElementById('offerPopupImage');
+    const offerPopupBody = document.getElementById('offerPopupBody');
+    let currentOfferIndex = 0;
+    let offersAutoplayInterval = null;
+
+    function setupOffersMobileCarousel() {
+        if (window.innerWidth > 992 || offerCards.length === 0) {
+            // Desktop: remove mobile classes
+            offerCards.forEach(card => {
+                card.classList.remove('mobile-active');
+                const mobileLabel = card.querySelector('.offer-mobile-label');
+                if (mobileLabel) mobileLabel.remove();
+
+                // Fix image styles for desktop/mobile
+                const img = card.querySelector('.offer-image');
+                if (img) {
+                    img.style.objectFit = '';
+                    img.style.filter = '';
+                }
+            });
+            return;
         }
 
-        // Skip if already has label
-        if (card.querySelector('.offer-mobile-label')) return;
+        // Add mobile labels to each card
+        offerCards.forEach((card, idx) => {
+            // Fix image styles for mobile carousel
+            const img = card.querySelector('.offer-image');
+            if (img) {
+                img.style.objectFit = 'contain';
+                img.style.filter = 'none';
+            }
 
-        const title = card.querySelector('.offer-title')?.textContent || '';
-        const subtitle = card.querySelector('.offer-subtitle-en')?.textContent || '';
+            // Skip if already has label
+            if (card.querySelector('.offer-mobile-label')) return;
 
-        const label = document.createElement('div');
-        label.className = 'offer-mobile-label';
-        label.innerHTML = `
+            const title = card.querySelector('.offer-title')?.textContent || '';
+            const subtitle = card.querySelector('.offer-subtitle-en')?.textContent || '';
+
+            const label = document.createElement('div');
+            label.className = 'offer-mobile-label';
+            label.innerHTML = `
                 <div class="offer-mobile-title">${title}</div>
                 <div class="offer-mobile-subtitle">${subtitle}</div>
                 <div class="offer-mobile-tap">
@@ -1151,70 +1161,70 @@ function setupOffersMobileCarousel() {
                     </svg>
                 </div>
             `;
-        card.appendChild(label);
-    });
+            card.appendChild(label);
+        });
 
-    switchToOfferCard(0);
-    startOffersAutoplay();
-}
-
-function switchToOfferCard(index) {
-    currentOfferIndex = index;
-
-    offerCards.forEach(card => card.classList.remove('mobile-active'));
-    if (offerCards[index]) offerCards[index].classList.add('mobile-active');
-
-    offersDots.forEach(d => d.classList.remove('active'));
-    if (offersDots[index]) offersDots[index].classList.add('active');
-}
-
-function startOffersAutoplay() {
-    if (offersAutoplayInterval) clearInterval(offersAutoplayInterval);
-
-    if (window.innerWidth <= 992 && offerCards.length > 1) {
-        offersAutoplayInterval = setInterval(() => {
-            const nextIndex = (currentOfferIndex + 1) % offerCards.length;
-            switchToOfferCard(nextIndex);
-        }, 5000);
-    }
-}
-
-// Dots click
-offersDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        const idx = parseInt(dot.getAttribute('data-index'));
-        switchToOfferCard(idx);
+        switchToOfferCard(0);
         startOffersAutoplay();
-    });
-});
+    }
 
-// Card click -> open popup
-offerCards.forEach((card, idx) => {
-    card.addEventListener('click', () => {
-        if (window.innerWidth > 992) return; // Desktop: no popup
+    function switchToOfferCard(index) {
+        currentOfferIndex = index;
 
-        const img = card.querySelector('.offer-image');
-        const title = card.querySelector('.offer-title')?.textContent || '';
-        const subtitle = card.querySelector('.offer-subtitle-en')?.textContent || '';
-        const details = card.querySelectorAll('.detail-item');
-        const price = card.querySelector('.offer-price')?.innerHTML || '';
-        const priceLabel = card.querySelector('.offer-price-label')?.textContent || '';
+        offerCards.forEach(card => card.classList.remove('mobile-active'));
+        if (offerCards[index]) offerCards[index].classList.add('mobile-active');
 
-        // Fill popup image
-        if (img && offerPopupImage) {
-            offerPopupImage.innerHTML = `<div class="offer-popup-image"><img src="${img.src}" alt="${title}"></div>`;
+        offersDots.forEach(d => d.classList.remove('active'));
+        if (offersDots[index]) offersDots[index].classList.add('active');
+    }
+
+    function startOffersAutoplay() {
+        if (offersAutoplayInterval) clearInterval(offersAutoplayInterval);
+
+        if (window.innerWidth <= 992 && offerCards.length > 1) {
+            offersAutoplayInterval = setInterval(() => {
+                const nextIndex = (currentOfferIndex + 1) % offerCards.length;
+                switchToOfferCard(nextIndex);
+            }, 5000);
         }
+    }
 
-        // Fill popup body
-        if (offerPopupBody) {
-            let detailsHTML = '';
-            details.forEach(d => {
-                const icon = d.querySelector('.detail-icon')?.innerHTML || '';
-                const text = d.querySelector('.detail-text')?.textContent || '';
-                detailsHTML += `<div class="offer-popup-detail">${icon}<span>${text}</span></div>`;
-            });
+    // Dots click
+    offersDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index'));
+            switchToOfferCard(idx);
+            startOffersAutoplay();
+        });
+    });
 
-            offerPopupBody.innerHTML = `
+    // Card click -> open popup
+    offerCards.forEach((card, idx) => {
+        card.addEventListener('click', () => {
+            if (window.innerWidth > 992) return; // Desktop: no popup
+
+            const img = card.querySelector('.offer-image');
+            const title = card.querySelector('.offer-title')?.textContent || '';
+            const subtitle = card.querySelector('.offer-subtitle-en')?.textContent || '';
+            const details = card.querySelectorAll('.detail-item');
+            const price = card.querySelector('.offer-price')?.innerHTML || '';
+            const priceLabel = card.querySelector('.offer-price-label')?.textContent || '';
+
+            // Fill popup image
+            if (img && offerPopupImage) {
+                offerPopupImage.innerHTML = `<div class="offer-popup-image"><img src="${img.src}" alt="${title}"></div>`;
+            }
+
+            // Fill popup body
+            if (offerPopupBody) {
+                let detailsHTML = '';
+                details.forEach(d => {
+                    const icon = d.querySelector('.detail-icon')?.innerHTML || '';
+                    const text = d.querySelector('.detail-text')?.textContent || '';
+                    detailsHTML += `<div class="offer-popup-detail">${icon}<span>${text}</span></div>`;
+                });
+
+                offerPopupBody.innerHTML = `
                     <div class="offer-popup-subtitle">${subtitle}</div>
                     <h3 class="offer-popup-title">${title}</h3>
                     <div class="offer-popup-details">${detailsHTML}</div>
@@ -1231,175 +1241,175 @@ offerCards.forEach((card, idx) => {
                         </a>
                     </div>
                 `;
-        }
-
-        // Show popup
-        if (offerPopup) offerPopup.classList.add('active');
-        if (offerPopupOverlay) offerPopupOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        // Pause autoplay
-        if (offersAutoplayInterval) clearInterval(offersAutoplayInterval);
-    });
-});
-
-// Close popup
-function closeOfferPopup() {
-    if (offerPopup) offerPopup.classList.remove('active');
-    if (offerPopupOverlay) offerPopupOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-    startOffersAutoplay();
-}
-
-if (offerPopupOverlay) {
-    offerPopupOverlay.addEventListener('click', closeOfferPopup);
-}
-
-// Swipe on popup handle to close
-if (offerPopup) {
-    let popupTouchStartY = 0;
-    offerPopup.addEventListener('touchstart', (e) => {
-        popupTouchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-    offerPopup.addEventListener('touchend', (e) => {
-        const diff = e.changedTouches[0].screenY - popupTouchStartY;
-        if (diff > 80) closeOfferPopup(); // Swipe down to close
-    }, { passive: true });
-}
-
-// Touch swipe on carousel
-const destStackContainer = document.querySelector('.dest-stack-container');
-if (destStackContainer) {
-    let offerTouchStartX = 0;
-    destStackContainer.addEventListener('touchstart', (e) => {
-        offerTouchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    destStackContainer.addEventListener('touchend', (e) => {
-        if (window.innerWidth > 992) return;
-        const diff = offerTouchStartX - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                switchToOfferCard((currentOfferIndex + 1) % offerCards.length);
-            } else {
-                switchToOfferCard((currentOfferIndex - 1 + offerCards.length) % offerCards.length);
             }
-            startOffersAutoplay();
-        }
-    }, { passive: true });
-}
 
-// Initialize
-setupOffersMobileCarousel();
-window.addEventListener('resize', () => {
-    setupOffersMobileCarousel();
-    if (window.innerWidth > 992 && offersAutoplayInterval) {
-        clearInterval(offersAutoplayInterval);
-    }
-});
+            // Show popup
+            if (offerPopup) offerPopup.classList.add('active');
+            if (offerPopupOverlay) offerPopupOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
 
-
-// ==========================================
-// METRO TIMELINE LOGIC + MOBILE AUTO-CAROUSEL
-// ==========================================
-const metroStops = document.querySelectorAll('.metro-stop');
-const metroCards = document.querySelectorAll('.metro-card');
-const metroProgress = document.querySelector('.metro-line-progress');
-const metroDots = document.querySelectorAll('.metro-dot-nav');
-let currentMetroIndex = 0;
-let metroAutoplayInterval = null;
-
-function switchToMetroCard(index) {
-    currentMetroIndex = index;
-
-    // Update stops (desktop timeline)
-    metroStops.forEach(s => s.classList.remove('active'));
-    if (metroStops[index]) metroStops[index].classList.add('active');
-
-    // Update cards
-    metroCards.forEach(c => c.classList.remove('active'));
-    const targetCard = document.querySelector(`.metro-card[data-index="${index}"]`);
-    if (targetCard) targetCard.classList.add('active');
-
-    // Update progress line
-    if (metroProgress && metroStops.length > 1) {
-        const percentage = (index / (metroStops.length - 1)) * 100;
-        metroProgress.style.width = `${percentage}%`;
-    }
-
-    // Update mobile dots
-    metroDots.forEach(d => d.classList.remove('active'));
-    if (metroDots[index]) metroDots[index].classList.add('active');
-}
-
-// Desktop: timeline click
-if (metroStops.length > 0 && metroCards.length > 0) {
-    metroStops.forEach((stop, index) => {
-        stop.addEventListener('click', () => {
-            switchToMetroCard(index);
+            // Pause autoplay
+            if (offersAutoplayInterval) clearInterval(offersAutoplayInterval);
         });
     });
-}
 
-// Mobile: dots click
-metroDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        const idx = parseInt(dot.getAttribute('data-index'));
-        switchToMetroCard(idx);
-        // Reset autoplay timer on manual interaction
-        startMetroAutoplay();
-    });
-});
-
-// Auto-play for mobile
-function startMetroAutoplay() {
-    if (metroAutoplayInterval) clearInterval(metroAutoplayInterval);
-
-    if (window.innerWidth <= 768 && metroCards.length > 1) {
-        metroAutoplayInterval = setInterval(() => {
-            const nextIndex = (currentMetroIndex + 1) % metroCards.length;
-            switchToMetroCard(nextIndex);
-        }, 4000); // 4 seconds per slide
+    // Close popup
+    function closeOfferPopup() {
+        if (offerPopup) offerPopup.classList.remove('active');
+        if (offerPopupOverlay) offerPopupOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        startOffersAutoplay();
     }
-}
 
-// Touch swipe for metro cards on mobile
-const metroWrapper = document.querySelector('.metro-cards-wrapper');
-if (metroWrapper) {
-    let touchStartX = 0;
-    let touchEndX = 0;
+    if (offerPopupOverlay) {
+        offerPopupOverlay.addEventListener('click', closeOfferPopup);
+    }
 
-    metroWrapper.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    // Swipe on popup handle to close
+    if (offerPopup) {
+        let popupTouchStartY = 0;
+        offerPopup.addEventListener('touchstart', (e) => {
+            popupTouchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+        offerPopup.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].screenY - popupTouchStartY;
+            if (diff > 80) closeOfferPopup(); // Swipe down to close
+        }, { passive: true });
+    }
 
-    metroWrapper.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
+    // Touch swipe on carousel
+    const destStackContainer = document.querySelector('.dest-stack-container');
+    if (destStackContainer) {
+        let offerTouchStartX = 0;
+        destStackContainer.addEventListener('touchstart', (e) => {
+            offerTouchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        destStackContainer.addEventListener('touchend', (e) => {
+            if (window.innerWidth > 992) return;
+            const diff = offerTouchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    switchToOfferCard((currentOfferIndex + 1) % offerCards.length);
+                } else {
+                    switchToOfferCard((currentOfferIndex - 1 + offerCards.length) % offerCards.length);
+                }
+                startOffersAutoplay();
+            }
+        }, { passive: true });
+    }
 
-        if (Math.abs(diff) > 50) { // min swipe distance
-            if (diff > 0) {
-                // Swipe left -> next (RTL: previous)
+    // Initialize
+    setupOffersMobileCarousel();
+    window.addEventListener('resize', () => {
+        setupOffersMobileCarousel();
+        if (window.innerWidth > 992 && offersAutoplayInterval) {
+            clearInterval(offersAutoplayInterval);
+        }
+    });
+
+
+    // ==========================================
+    // METRO TIMELINE LOGIC + MOBILE AUTO-CAROUSEL
+    // ==========================================
+    const metroStops = document.querySelectorAll('.metro-stop');
+    const metroCards = document.querySelectorAll('.metro-card');
+    const metroProgress = document.querySelector('.metro-line-progress');
+    const metroDots = document.querySelectorAll('.metro-dot-nav');
+    let currentMetroIndex = 0;
+    let metroAutoplayInterval = null;
+
+    function switchToMetroCard(index) {
+        currentMetroIndex = index;
+
+        // Update stops (desktop timeline)
+        metroStops.forEach(s => s.classList.remove('active'));
+        if (metroStops[index]) metroStops[index].classList.add('active');
+
+        // Update cards
+        metroCards.forEach(c => c.classList.remove('active'));
+        const targetCard = document.querySelector(`.metro-card[data-index="${index}"]`);
+        if (targetCard) targetCard.classList.add('active');
+
+        // Update progress line
+        if (metroProgress && metroStops.length > 1) {
+            const percentage = (index / (metroStops.length - 1)) * 100;
+            metroProgress.style.width = `${percentage}%`;
+        }
+
+        // Update mobile dots
+        metroDots.forEach(d => d.classList.remove('active'));
+        if (metroDots[index]) metroDots[index].classList.add('active');
+    }
+
+    // Desktop: timeline click
+    if (metroStops.length > 0 && metroCards.length > 0) {
+        metroStops.forEach((stop, index) => {
+            stop.addEventListener('click', () => {
+                switchToMetroCard(index);
+            });
+        });
+    }
+
+    // Mobile: dots click
+    metroDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index'));
+            switchToMetroCard(idx);
+            // Reset autoplay timer on manual interaction
+            startMetroAutoplay();
+        });
+    });
+
+    // Auto-play for mobile
+    function startMetroAutoplay() {
+        if (metroAutoplayInterval) clearInterval(metroAutoplayInterval);
+
+        if (window.innerWidth <= 768 && metroCards.length > 1) {
+            metroAutoplayInterval = setInterval(() => {
                 const nextIndex = (currentMetroIndex + 1) % metroCards.length;
                 switchToMetroCard(nextIndex);
-            } else {
-                // Swipe right -> prev (RTL: next)
-                const prevIndex = (currentMetroIndex - 1 + metroCards.length) % metroCards.length;
-                switchToMetroCard(prevIndex);
-            }
-            startMetroAutoplay(); // Reset timer after swipe
+            }, 4000); // 4 seconds per slide
         }
-    }, { passive: true });
-}
-
-// Start autoplay on load and handle resize
-startMetroAutoplay();
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        if (metroAutoplayInterval) clearInterval(metroAutoplayInterval);
-    } else {
-        startMetroAutoplay();
     }
-});
+
+    // Touch swipe for metro cards on mobile
+    const metroWrapper = document.querySelector('.metro-cards-wrapper');
+    if (metroWrapper) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        metroWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        metroWrapper.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > 50) { // min swipe distance
+                if (diff > 0) {
+                    // Swipe left -> next (RTL: previous)
+                    const nextIndex = (currentMetroIndex + 1) % metroCards.length;
+                    switchToMetroCard(nextIndex);
+                } else {
+                    // Swipe right -> prev (RTL: next)
+                    const prevIndex = (currentMetroIndex - 1 + metroCards.length) % metroCards.length;
+                    switchToMetroCard(prevIndex);
+                }
+                startMetroAutoplay(); // Reset timer after swipe
+            }
+        }, { passive: true });
+    }
+
+    // Start autoplay on load and handle resize
+    startMetroAutoplay();
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            if (metroAutoplayInterval) clearInterval(metroAutoplayInterval);
+        } else {
+            startMetroAutoplay();
+        }
+    });
 
 
 });

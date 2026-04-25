@@ -5,11 +5,13 @@
 
 .destinations {
     position: relative;
-    background: #ffffff; /* Contrast against the black cards */
+    background: #ffffff;
+    /* Contrast against the black cards */
     color: #1a2332;
     overflow: visible;
     padding-top: 120px;
-    padding-bottom: 20vh; /* Increased to avoid sticky header sinking into the next section */
+    padding-bottom: 20vh;
+    /* Increased to avoid sticky header sinking into the next section */
 }
 
 /* ============================================
@@ -27,7 +29,8 @@
     width: 35%;
     position: sticky;
     top: 25vh;
-    margin-bottom: 25vh; /* Forces the sticky element to stop before the bottom of the section */
+    margin-bottom: 25vh;
+    /* Forces the sticky element to stop before the bottom of the section */
 }
 
 /* ============================================
@@ -64,7 +67,8 @@
 .dest-stack-container {
     position: relative;
     width: 60%;
-    padding-bottom: 10vh; /* Reduced extra space */
+    padding-bottom: 10vh;
+    /* Reduced extra space */
 }
 
 /* ============================================
@@ -72,23 +76,29 @@
    ============================================ */
 .offer-card {
     position: sticky;
-    top: 15vh; 
-    height: 420px; /* Explicit height to allow image to stretch */
-    min-height: auto; 
+    top: 15vh;
+    height: 420px;
+    /* Explicit height to allow image to stretch */
+    min-height: auto;
     margin-bottom: 8vh;
-    
-    background: rgba(255, 255, 255, 0.9); /* Frosted pearl white */
+
+    background: rgba(255, 255, 255, 0.9);
+    /* Frosted pearl white */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(15, 166, 142, 0.15); /* Soft teal border */
-    border-radius: 20px; /* Slightly softer corners for compact size */
-    box-shadow: 0 30px 60px rgba(26, 35, 50, 0.05); /* Very soft dark shadow */
+    border: 1px solid rgba(15, 166, 142, 0.15);
+    /* Soft teal border */
+    border-radius: 20px;
+    /* Slightly softer corners for compact size */
+    box-shadow: 0 30px 60px rgba(26, 35, 50, 0.05);
+    /* Very soft dark shadow */
     overflow: hidden;
-    color: #1a2332; /* Dark text for readability */
+    color: #1a2332;
+    /* Dark text for readability */
     display: flex;
     transform-origin: center top;
     will-change: transform, filter;
-    
+
     /* Removed padding from the card to allow edge-to-edge image */
     padding: 0;
     gap: 0;
@@ -112,14 +122,16 @@
    CONTENT COLUMN (Editorial Typography)
    ============================================ */
 .offer-content-col {
-    width: 50%; /* Rebalance width */
+    width: 50%;
+    /* Rebalance width */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    padding: 30px; /* Add padding here since card has none */
+    padding: 30px;
+    /* Add padding here since card has none */
 }
 
 .offer-header {
@@ -134,27 +146,34 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--clr-primary);
-    margin-bottom: 8px; /* Tighter margin */
+    margin-bottom: 8px;
+    /* Tighter margin */
     display: block;
 }
 
 .offer-title {
     font-family: var(--font-ar);
-    font-size: clamp(2rem, 3vw, 2.5rem); /* Smaller title */
-    font-weight: 300; /* Thin, elegant typography */
-    color: #1a2332; /* Deep dark blue-grey */
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    /* Smaller title */
+    font-weight: 300;
+    /* Thin, elegant typography */
+    color: #1a2332;
+    /* Deep dark blue-grey */
     line-height: 1.1;
-    margin-bottom: 12px; /* Tighter margin */
+    margin-bottom: 12px;
+    /* Tighter margin */
 }
 
 .offer-stars {
     display: flex;
-    gap: 4px; /* Tighter stars */
+    gap: 4px;
+    /* Tighter stars */
     color: var(--clr-primary);
 }
 
 .offer-stars svg {
-    width: 16px; /* Smaller stars */
+    width: 16px;
+    /* Smaller stars */
     height: 16px;
     fill: currentColor;
 }
@@ -163,34 +182,42 @@
 .offer-details {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Tighter gap */
-    margin: auto 0; /* Push to center vertically */
+    gap: 15px;
+    /* Tighter gap */
+    margin: auto 0;
+    /* Push to center vertically */
     padding-left: 15px;
-    border-left: 1px solid rgba(26, 35, 50, 0.08); /* Soft separator */
+    border-left: 1px solid rgba(26, 35, 50, 0.08);
+    /* Soft separator */
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 12px; /* Tighter gap */
+    gap: 12px;
+    /* Tighter gap */
 }
 
 .detail-icon {
-    color: var(--clr-primary); /* Changed from clr-accent to clr-primary (green) */
+    color: var(--clr-primary);
+    /* Changed from clr-accent to clr-primary (green) */
     opacity: 0.9;
 }
 
 .detail-icon svg {
-    width: 20px; /* Smaller icon */
+    width: 20px;
+    /* Smaller icon */
     height: 20px;
     stroke-width: 1.5;
 }
 
 .detail-text {
     font-family: var(--font-ar);
-    font-size: 1.05rem; /* Smaller text */
+    font-size: 1.05rem;
+    /* Smaller text */
     font-weight: 400;
-    color: #5c6a7a; /* Medium soft grey */
+    color: #5c6a7a;
+    /* Medium soft grey */
     letter-spacing: 0.5px;
 }
 
@@ -199,7 +226,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding-top: 25px; /* Tighter padding */
+    padding-top: 25px;
+    /* Tighter padding */
     border-top: 1px solid rgba(26, 35, 50, 0.08);
 }
 
@@ -210,16 +238,20 @@
 
 .offer-price-label {
     font-family: var(--font-ar);
-    font-size: 0.9rem; /* Smaller label */
-    color: #8a9bb0; /* Light grey text */
+    font-size: 0.9rem;
+    /* Smaller label */
+    color: #8a9bb0;
+    /* Light grey text */
     margin-bottom: 4px;
     font-weight: 300;
 }
 
 .offer-price {
     font-family: var(--font-en);
-    font-size: clamp(2rem, 2.5vw, 3rem); /* Smaller price */
-    font-weight: 200; /* Ultra thin for that Vogue look */
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    /* Smaller price */
+    font-weight: 200;
+    /* Ultra thin for that Vogue look */
     color: #1a2332;
     line-height: 0.9;
     display: flex;
@@ -267,7 +299,8 @@
 
 .offer-image {
     width: 100%;
-    height: 100%; /* Changed from 125% to prevent cropping */
+    height: 100%;
+    /* Changed from 125% to prevent cropping */
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -279,7 +312,8 @@
 
 .offer-card:hover .offer-image {
     filter: grayscale(0%) contrast(100%);
-    transform: scale(1.05); /* Smooth, subtle zoom on hover instead of heavy parallax */
+    transform: scale(1.05);
+    /* Smooth, subtle zoom on hover instead of heavy parallax */
 }
 
 /* ============================================
@@ -289,8 +323,14 @@
     .offer-card {
         /* Edge to edge preserved */
     }
-    .offer-title { font-size: 2.8rem; }
-    .offer-price { font-size: 3rem; }
+
+    .offer-title {
+        font-size: 2.8rem;
+    }
+
+    .offer-price {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 992px) {
@@ -319,41 +359,35 @@
         margin: 0 auto;
     }
 
-    /* Image-Only Carousel */
+    /* Image-Only Carousel — image drives the size */
     .dest-stack-container {
         width: 100%;
         position: relative;
-        padding-bottom: 0;
-        overflow: hidden;
+        height: auto;
+        margin-bottom: 0;
+        overflow: visible;
     }
 
     .offer-card {
-        position: absolute;
-        top: 0;
-        left: 0;
+        display: none;
         width: 100%;
-        height: 100%;
         flex-direction: column;
         min-height: auto;
         min-width: auto;
         max-width: none;
         margin-bottom: 0;
         padding: 0;
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transform: scale(0.98);
-        transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        border-radius: 16px;
+        box-shadow: none;
+        background: #ffffff;
+        border: none;
+        backdrop-filter: none;
+        overflow: hidden;
         cursor: pointer;
     }
 
     .offer-card.mobile-active {
-        position: relative;
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-        z-index: 2;
+        display: block;
     }
 
     /* Hide content column on mobile */
@@ -363,45 +397,52 @@
 
     .offer-art-col {
         width: 100%;
-        height: 380px;
+        height: auto;
         order: 1;
         margin-bottom: 0;
-        border-radius: 20px;
+        border-radius: 16px;
         overflow: hidden;
+        background: #ffffff;
     }
 
     .offer-art-frame {
-        border-radius: 20px;
+        border-radius: 16px;
+        background: #ffffff;
+        height: auto;
+    }
+
+    .offer-art-container {
+        background: #ffffff;
+        height: auto;
+        position: static;
     }
 
     .offer-image {
-        border-radius: 0;
-        filter: none;
-        object-fit: contain; /* Show full image without cropping */
-        background: #0a0a0a; /* Dark background for vertical images */
-    }
-
-    /* Overlay gradient on image */
-    .offer-card::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
-        height: 50%;
-        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
-        border-radius: 0 0 20px 20px;
-        z-index: 3;
-        pointer-events: none;
+        height: auto;
+        min-height: 480px;
+        position: static;
+        display: block;
+        object-fit: contain;
+        filter: none !important;
+        /* Explicitly remove grayscale from desktop styles */
+        border-radius: 16px;
+        background: #ffffff;
     }
 
+    /* Removed shadow gradient as requested */
+    .offer-card::after {
+        display: none;
+    }
+
+    /* Remove ambient glow on mobile */
+    .offer-card::before {
+        display: none;
+    }
+
+    /* Hide labels on card as requested */
     .offer-card .offer-mobile-label {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        z-index: 4;
-        color: #fff;
-        text-align: right;
+        display: none;
     }
 
     .offer-card .offer-mobile-label .offer-mobile-title {
@@ -425,34 +466,35 @@
         font-weight: 600;
     }
 
-    .offer-card .offer-mobile-label .offer-mobile-tap svg {
+    .offer-card .offer-mobile-tap svg {
         width: 16px;
         height: 16px;
     }
 
-    /* Dots Navigation */
+    /* Mobile Dots Navigation */
     .offers-dots-nav {
-        display: flex !important;
+        display: flex;
         justify-content: center;
-        gap: 8px;
-        margin-top: 20px;
+        gap: 12px;
+        margin-top: 15px;
+        /* Directly under the card */
     }
 
     .offers-dot-nav {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: #d0d5dd;
+        background: rgba(15, 166, 142, 0.2);
         border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
         padding: 0;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .offers-dot-nav.active {
         background: var(--clr-primary);
-        width: 28px;
-        border-radius: 5px;
+        transform: scale(1.3);
+        box-shadow: 0 0 15px rgba(15, 166, 142, 0.3);
     }
 }
 
@@ -514,16 +556,16 @@
     border-radius: 2px;
 }
 
+/* Image hidden in popup as requested */
 .offer-popup-image {
-    width: 100%;
-    height: 240px;
-    overflow: hidden;
+    display: none;
 }
 
 .offer-popup-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Full image in popup */
+    object-fit: contain;
+    /* Full image in popup */
     background: #000;
 }
 
@@ -619,9 +661,11 @@
     box-shadow: 0 8px 25px rgba(15, 166, 142, 0.3);
 }
 
-/* Hide dots and popup elements on desktop */
-.offers-dots-nav {
-    display: none;
+/* Hide dots on desktop only */
+@media (min-width: 993px) {
+    .offers-dots-nav {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -629,13 +673,4 @@
         padding-top: 60px;
         padding-bottom: 40px;
     }
-
-    .offer-art-col {
-        height: 320px;
-    }
-
-    .offer-popup-image {
-        height: 200px;
-    }
 }
-

@@ -104,7 +104,7 @@ html {
 
 body {
     font-family: var(--font-ar);
-    background-color: var(--clr-bg);
+    /* background-color: var(--clr-bg); */
     color: var(--clr-text);
     line-height: 1.7;
     overflow-x: hidden;
@@ -149,7 +149,8 @@ img {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -196,6 +197,7 @@ button {
 
 /* Hide custom cursor on touch devices */
 @media (hover: none) {
+
     .cursor-follower,
     .cursor-dot {
         display: none;
@@ -278,19 +280,39 @@ button {
 }
 
 @keyframes preloaderPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes preloaderFill {
-    0% { width: 0%; }
-    50% { width: 70%; }
-    100% { width: 100%; }
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 @keyframes preloaderTextFade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* ---- Utility Classes ---- */
@@ -307,7 +329,7 @@ button {
         --space-xl: 2.5rem;
         --space-2xl: 4rem;
     }
-    
+
     .cursor-follower,
     .cursor-dot {
         display: none;
