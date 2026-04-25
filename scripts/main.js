@@ -1413,3 +1413,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const videoBtn = document.getElementById('heroCtaSecondary');
+
+    if (videoBtn) {
+        videoBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 1. تحويل رابط اليوتيوب العادي أو Shorts إلى رابط Embed ليعمل داخل الموقع
+            let videoUrl = this.getAttribute('href');
+            if (videoUrl.includes('shorts/')) {
+                videoUrl = videoUrl.replace('shorts/', 'embed/');
+            } else if (videoUrl.includes('watch?v=')) {
+                videoUrl = videoUrl.replace('watch?v=', 'embed/');
+            }
+
+            // إضافة خاصية التشغيل التلقائي ومنع الفيديوهات المقترحة
+            const finalUrl = videoUrl.includes('?') ? `${videoUrl}&autoplay=1` : `${videoUrl}?autoplay=1`;
+
+            // 2. إنشاء خلفية النافذة المنبثقة
+            const overlay = document.createElement('div');
+            overlay.className = 'video-overlay-wrapper';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+            // 3. هيكل مشغل الفيديو (مصمم ليتناسب مع أبعاد Shorts الطولية)
+            overlay.innerHTML = `
+                <div class="video-container" style="position: relative; width: 90%; max-width: 400px; aspect-ratio: 9/16; transform: scale(0.9); transition: transform 0.3s ease;">
+                    <button id="closeVideoPopup" style="position: absolute; top: -50px; right: 0; background: none; border: none; color: #fff; font-size: 40px; cursor: pointer; line-height: 1;">&times;</button>
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="${finalUrl}" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen 
+                        style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000;">
+                    </iframe>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+
+            // تفعيل الأنيميشن للظهور
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+                overlay.querySelector('.video-container').style.transform = 'scale(1)';
+            }, 10);
+
+            // 4. وظائف الإغلاق
+            const closeVideo = () => {
+                overlay.style.opacity = '0';
+                overlay.querySelector('.video-container').style.transform = 'scale(0.9)';
+                setTimeout(() => overlay.remove(), 300);
+            };
+
+            document.getElementById('closeVideoPopup').onclick = closeVideo;
+            overlay.onclick = (event) => {
+                if (event.target === overlay) closeVideo();
+            };
+
+            // إغلاق عند الضغط على زر Esc
+            document.onkeydown = (event) => {
+                if (event.key === "Escape") closeVideo();
+            };
+        });
+    }
+});
