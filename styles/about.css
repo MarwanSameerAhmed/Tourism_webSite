@@ -33,7 +33,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(15, 166, 142, 0.06) 0%, transparent 70%);
     filter: blur(50px);
 }
 
@@ -97,6 +97,7 @@
     align-items: center;
     gap: 8px;
     margin: 16px 0 24px;
+    justify-content: flex-end;
 }
 
 .about-title-line span {

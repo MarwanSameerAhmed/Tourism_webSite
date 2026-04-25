@@ -219,6 +219,11 @@
         text-align: center;
     }
 
+    .footer-logo {
+        margin: 0 auto 20px;
+        display: block;
+    }
+
     .footer-socials {
         justify-content: center;
     }

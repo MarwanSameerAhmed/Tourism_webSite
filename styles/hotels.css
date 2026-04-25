@@ -28,7 +28,7 @@
     /* Full edge to edge width */
     width: 100%;
     background: #050505;
-    border: 1px solid rgba(212, 168, 83, 0.3);
+    border: 1px solid rgba(15, 166, 142, 0.15);
     border-left: none; /* Removed side borders since it's full width */
     border-right: none;
     border-radius: 40px; /* Kept top and bottom curves as requested */
@@ -49,9 +49,9 @@
 }
 
 .hotels .section-badge {
-    background: rgba(212, 168, 83, 0.1);
-    border-color: rgba(212, 168, 83, 0.2);
-    color: var(--clr-accent);
+    background: rgba(15, 166, 142, 0.1);
+    border-color: rgba(15, 166, 142, 0.2);
+    color: var(--clr-primary);
 }
 
 /* ============================================
@@ -68,6 +68,34 @@
 /* Hide hotels beyond the first row initially */
 .hotel-card.hidden {
     display: none;
+    opacity: 0;
+}
+
+/* Reveal animation for hotels with Bento Grid Pattern */
+.hotel-card.hotel-revealing {
+    display: block;
+    animation: hotelReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Featured patterns for revealed hotels (Desktop) */
+@media (min-width: 993px) {
+    /* Pattern: Large -> Medium -> Small -> Full */
+    .hotel-card.hotel-revealing:nth-child(5) { grid-column: span 3; height: 350px; }
+    .hotel-card.hotel-revealing:nth-child(6) { grid-column: span 1; height: 350px; }
+    .hotel-card.hotel-revealing:nth-child(7) { grid-column: span 2; height: 320px; }
+    .hotel-card.hotel-revealing:nth-child(8) { grid-column: span 2; height: 320px; }
+    .hotel-card.hotel-revealing:nth-child(9) { grid-column: span 4; height: 400px; }
+}
+
+@keyframes hotelReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .hotel-card {
@@ -142,7 +170,7 @@
 .hotel-name-en {
     font-family: var(--font-en);
     font-size: 0.75rem;
-    color: rgba(212, 168, 83, 0.8);
+    color: rgba(15, 166, 142, 0.8);
     letter-spacing: 1px;
     text-transform: uppercase;
     transform: translateY(10px);
@@ -152,7 +180,7 @@
 .hotel-stars {
     display: flex;
     gap: 4px;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     margin-top: 6px;
     transform: translateY(15px);
     transition: transform 0.4s ease 0.08s;
@@ -179,7 +207,7 @@
 .hotel-view-btn svg {
     width: 16px;
     height: 16px;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
 }
 
 .hotel-card:hover .hotel-name,
@@ -205,8 +233,8 @@
 
 .btn-show-more {
     background: transparent;
-    border: 1px solid rgba(212, 168, 83, 0.4);
-    color: var(--clr-accent);
+    border: 1px solid rgba(15, 166, 142, 0.4);
+    color: var(--clr-primary);
     padding: 16px 45px;
     border-radius: var(--radius-full);
     font-family: var(--font-ar);
@@ -227,7 +255,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--clr-accent);
+    background: var(--clr-primary);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -379,9 +407,9 @@
 }
 
 .lightbox-btn:hover {
-    background: var(--clr-accent);
-    color: #000;
-    border-color: var(--clr-accent);
+    background: var(--clr-primary);
+    color: #fff;
+    border-color: var(--clr-primary);
     transform: scale(1.1);
 }
 
@@ -414,7 +442,7 @@
 .lightbox-title {
     font-family: var(--font-ar);
     font-size: 1.5rem;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     line-height: 1.2;
 }
 

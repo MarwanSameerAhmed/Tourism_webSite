@@ -245,6 +245,11 @@
     transform: translateX(-5px); /* RTL */
 }
 
+/* Hide mobile dots on desktop */
+.metro-dots-nav {
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .metro-cards-wrapper {
@@ -256,28 +261,85 @@
 }
 
 @media (max-width: 768px) {
-    .metro-stops {
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 50px;
-        padding: 0 20px 40px 20px;
+    .metro-timeline {
+        display: none; /* Hide timeline on mobile */
     }
-    
-    .metro-line, .metro-line-progress {
-        display: none; /* Hide lines on mobile horizontal scroll */
+
+    .metro-container {
+        margin-top: 30px;
     }
 
     .metro-cards-wrapper {
-        height: 400px;
-        margin-top: 20px;
+        position: relative;
+        height: 420px;
+        margin-top: 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* Auto carousel indicators */
+    .metro-cards-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 2px;
+        z-index: 10;
+    }
+
+    .metro-card {
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .metro-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .metro-card-content {
         bottom: 20px;
         right: 20px;
     }
+
+    .metro-explore {
+        font-size: 0.95rem;
+    }
+
+    /* Mobile dots navigation */
+    .metro-dots-nav {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .metro-dot-nav {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d0d5dd;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .metro-dot-nav.active {
+        background: var(--clr-primary);
+        width: 28px;
+        border-radius: 5px;
+    }
+
+    .metro-actions-container {
+        margin-top: 30px;
+    }
+
+    .metro-download-btn {
+        font-size: 0.95rem;
+        padding: 12px 25px;
+    }
 }
+

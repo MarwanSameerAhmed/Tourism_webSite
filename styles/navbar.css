@@ -79,7 +79,7 @@
 }
 
 .nav-link {
-    font-size: var(--fs-small);
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--clr-text-secondary);
     padding: var(--space-xs) var(--space-sm);
