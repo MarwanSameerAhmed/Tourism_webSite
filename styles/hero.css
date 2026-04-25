@@ -446,8 +446,8 @@
 .hero-social {
     position: absolute;
     left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30%;
+    transform: translateY(0%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -517,7 +517,8 @@
 
     .hero-scroll {
         display: flex;
-        bottom: 15px; /* Adjust bottom offset for mobile */
+        bottom: 15px;
+        /* Adjust bottom offset for mobile */
     }
 
     .hero-description {

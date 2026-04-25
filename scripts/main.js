@@ -961,13 +961,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const museumItems = document.querySelectorAll('.museum-item');
     if (museumItems.length > 0) {
         museumItems.forEach(item => {
-            // Only necessary for touch devices where hover is sticky
             item.addEventListener('click', function(e) {
-                // If it's not active, make it active and prevent lightbox immediately
-                // to allow the user to see the content first.
-                if (!this.classList.contains('active') && window.innerWidth <= 992) {
-                    museumItems.forEach(el => el.classList.remove('active'));
-                    this.classList.add('active');
+                if (window.innerWidth <= 992) {
+                    // On mobile: first click activates the card
+                    if (!this.classList.contains('active')) {
+                        museumItems.forEach(el => el.classList.remove('active'));
+                        this.classList.add('active');
+                        e.stopPropagation(); // Prevent lightbox from opening
+                        return;
+                    }
+                    // If already active, check if the explore button was clicked
+                    const exploreBtn = this.querySelector('.museum-explore');
+                    if (exploreBtn && (e.target === exploreBtn || exploreBtn.contains(e.target))) {
+                        // Allow lightbox to open (handled by the generic lightbox handler)
+                    } else {
+                        // Click on active card body - do nothing special
+                        e.stopPropagation();
+                    }
                 }
             });
             // Desktop hover is handled via pure CSS (:hover)
@@ -983,7 +993,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const showMoreGalleryBtn = document.getElementById('showMoreGalleryBtn');
     let currentCity = 'moscow';
-    let visibleCount = 12;
+    let visibleCount = 8;
 
     function renderGallery() {
         let cityItems = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]`));
@@ -1020,7 +1030,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 currentCity = tab.getAttribute('data-target');
-                visibleCount = 12; // reset
+                visibleCount = 8; // reset
                 renderGallery();
             });
         });

@@ -141,7 +141,18 @@
 @media (max-width: 992px) {
     .museums-accordion {
         flex-direction: column;
-        height: 800px;
+        height: auto;
+        min-height: 900px;
+    }
+
+    .museum-item {
+        min-height: 120px;
+        flex: 1;
+    }
+
+    .museum-item.active {
+        flex: 5;
+        min-height: 280px;
     }
 
     .museum-title {
@@ -160,5 +171,18 @@
 
     .museum-content {
         padding: 20px;
+    }
+
+    /* Show explore button only on active */
+    .museum-explore {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .museum-item.active .museum-explore {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        transition-delay: 0.3s;
     }
 }
