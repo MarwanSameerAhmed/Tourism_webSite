@@ -1,0 +1,137 @@
+/* ===================================
+   WEJHA - Gallery Section (Masonry & Tabs)
+   =================================== */
+
+.gallery-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+/* Tabs */
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.gallery-tab {
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: transparent;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.gallery-tab:hover {
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+}
+
+.gallery-tab.active {
+    background: var(--clr-primary);
+    color: #fff;
+    border-color: var(--clr-primary);
+    box-shadow: 0 5px 15px rgba(var(--clr-primary-rgb), 0.3);
+}
+
+/* Masonry Grid */
+.gallery-masonry {
+    column-count: 4;
+    column-gap: 20px;
+    width: 100%;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #eee;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-overlay svg {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    transform: scale(0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover .gallery-item-overlay svg {
+    transform: scale(1);
+}
+
+/* Hidden state */
+.hidden-gallery-item {
+    display: none !important;
+}
+
+/* Reveal Animation */
+.revealed-gallery-item {
+    animation: simpleFadeIn 0.5s ease forwards;
+}
+
+/* Load More Button */
+.gallery-actions-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .gallery-masonry {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-masonry {
+        column-count: 2;
+    }
+    .gallery-tab {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-masonry {
+        column-count: 1;
+    }
+}

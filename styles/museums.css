@@ -1,0 +1,164 @@
+/* ===================================
+   WEJHA - Museums & History Section (Accordion)
+   =================================== */
+
+.museums-section {
+    padding: 100px 0;
+    background: #f8f9fa; /* Very light subtle gray to differentiate from pure white */
+}
+
+.museums-accordion {
+    display: flex;
+    gap: 15px;
+    height: 600px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.museum-item {
+    position: relative;
+    flex: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
+    background: #000;
+}
+
+.museum-item.active,
+.museum-item:hover {
+    flex: 4;
+}
+
+.museum-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.5s ease, transform 0.8s ease;
+    transform: scale(1.1);
+}
+
+.museum-item.active .museum-img,
+.museum-item:hover .museum-img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.museum-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.museum-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.museum-number {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.museum-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    margin-top: auto;
+    transition: all 0.5s ease;
+}
+
+.museum-item.active .museum-title,
+.museum-item:hover .museum-title {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    white-space: normal;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.museum-item.active .museum-number,
+.museum-item:hover .museum-number {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.museum-explore {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    color: var(--clr-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.museum-explore svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.museum-item.active .museum-explore,
+.museum-item:hover .museum-explore {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.museum-item:hover .museum-explore svg {
+    transform: translateX(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .museums-accordion {
+        flex-direction: column;
+        height: 800px;
+    }
+
+    .museum-title {
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+        font-size: 1.4rem;
+        white-space: normal;
+        margin-bottom: 0;
+    }
+
+    .museum-item.active .museum-title,
+    .museum-item:hover .museum-title {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .museum-content {
+        padding: 20px;
+    }
+}

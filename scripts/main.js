@@ -511,8 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
     // 5. HOTELS, RESTAURANTS & ACTIVITIES LIGHTBOX LOGIC
-    // ==========================================
-    const hotelCards = document.querySelectorAll('.hotel-card, .restaurant-card, .bento-card, .mall-item, .activity-card');
+    // Attach Lightbox to Hotels, Services, Restaurants, Malls, Activities, Gardens
+    const allHotelCards = document.querySelectorAll('.hotel-card, .service-card, .restaurant-card, .mall-item, .activity-card, .garden-card, .museum-item, .metro-item');
     const lightbox = document.getElementById('hotelLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
@@ -578,10 +578,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Attach Event Listeners to Cards
-    hotelCards.forEach((card, index) => {
-        // Hide cards beyond the first 4 (1 row on desktop)
-        if (card.classList.contains('hotel-card') && index >= 4) {
-            card.classList.add('hidden');
+    let hotelCardIndex = 0;
+    allHotelCards.forEach((card) => {
+        // Hide hotel cards beyond the first 4 (1 row on desktop)
+        if (card.classList.contains('hotel-card')) {
+            if (hotelCardIndex >= 4) {
+                card.classList.add('hidden');
+            }
+            hotelCardIndex++;
         }
 
         card.addEventListener('click', () => {
@@ -600,7 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnShowMore = document.getElementById('showMoreHotels');
     if (btnShowMore) {
         btnShowMore.addEventListener('click', () => {
-            hotelCards.forEach(card => {
+            allHotelCards.forEach(card => {
                 card.classList.remove('hidden');
             });
             btnShowMore.style.display = 'none'; // hide button after showing all
@@ -902,5 +906,187 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'Escape') closeLightbox();
     });
+
+    // ==========================================
+    // GARDENS SHOW MORE LOGIC
+    // ==========================================
+    const btnShowMoreGardens = document.getElementById('showMoreGardensBtn');
+    const btnHideGardens = document.getElementById('hideGardensBtn');
+    const hiddenGardens = document.querySelectorAll('.hidden-garden');
+    const gardensSection = document.getElementById('gardens');
+
+    if (btnShowMoreGardens && btnHideGardens && hiddenGardens.length > 0) {
+        btnShowMoreGardens.addEventListener('click', () => {
+            hiddenGardens.forEach((card) => {
+                card.style.display = 'block';
+                requestAnimationFrame(() => {
+                    card.classList.remove('hidden-garden');
+                    card.classList.add('revealed-garden');
+                });
+            });
+
+            btnShowMoreGardens.style.display = 'none';
+            btnHideGardens.style.display = 'inline-flex';
+        });
+
+        btnHideGardens.addEventListener('click', () => {
+            if (gardensSection) {
+                gardensSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            Array.from(hiddenGardens).forEach((card) => {
+                card.classList.remove('revealed-garden');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+
+                setTimeout(() => {
+                    card.style.display = 'none';
+                    card.classList.add('hidden-garden');
+                    card.style.opacity = '';
+                    card.style.transform = '';
+                }, 400);
+            });
+
+            setTimeout(() => {
+                btnHideGardens.style.display = 'none';
+                btnShowMoreGardens.style.display = 'inline-flex';
+            }, 400);
+        });
+    }
+
+
+    // ==========================================
+    // MUSEUMS ACCORDION LOGIC (Mobile Support)
+    // ==========================================
+    const museumItems = document.querySelectorAll('.museum-item');
+    if (museumItems.length > 0) {
+        museumItems.forEach(item => {
+            // Only necessary for touch devices where hover is sticky
+            item.addEventListener('click', function(e) {
+                // If it's not active, make it active and prevent lightbox immediately
+                // to allow the user to see the content first.
+                if (!this.classList.contains('active') && window.innerWidth <= 992) {
+                    museumItems.forEach(el => el.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+            // Desktop hover is handled via pure CSS (:hover)
+        });
+    }
+
+
+
+    // ==========================================
+    // GALLERY TABS & LOAD MORE LOGIC
+    // ==========================================
+    const galleryTabs = document.querySelectorAll('.gallery-tab');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const showMoreGalleryBtn = document.getElementById('showMoreGalleryBtn');
+    let currentCity = 'moscow';
+    let visibleCount = 12;
+
+    function renderGallery() {
+        let cityItems = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]`));
+        
+        galleryItems.forEach(item => {
+            if (item.getAttribute('data-city') !== currentCity) {
+                item.classList.add('hidden-gallery-item');
+                item.classList.remove('revealed-gallery-item');
+            }
+        });
+
+        cityItems.forEach((item, index) => {
+            if (index < visibleCount) {
+                item.classList.remove('hidden-gallery-item');
+                if (!item.classList.contains('revealed-gallery-item')) {
+                    item.classList.add('revealed-gallery-item');
+                }
+            } else {
+                item.classList.add('hidden-gallery-item');
+                item.classList.remove('revealed-gallery-item');
+            }
+        });
+
+        if (visibleCount >= cityItems.length) {
+            showMoreGalleryBtn.style.display = 'none';
+        } else {
+            showMoreGalleryBtn.style.display = 'inline-flex';
+        }
+    }
+
+    if (galleryTabs.length > 0) {
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                galleryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentCity = tab.getAttribute('data-target');
+                visibleCount = 12; // reset
+                renderGallery();
+            });
+        });
+
+        showMoreGalleryBtn.addEventListener('click', () => {
+            visibleCount += 12;
+            renderGallery();
+        });
+        
+        // Initial render
+        renderGallery();
+    }
+
+    // Attach Gallery to Lightbox (reuse existing openLightbox)
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Build image list from all visible items in the current city
+            const visibleCityImgs = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]:not(.hidden-gallery-item) img`));
+            const allSrcs = visibleCityImgs.map(img => img.src).join(',');
+            const cityName = currentCity === 'moscow' ? 'موسكو' : 'سانت بطرسبرغ';
+
+            // Find index of clicked item among visible items
+            const clickedSrc = item.querySelector('img').src;
+            const clickedIdx = visibleCityImgs.findIndex(img => img.src === clickedSrc);
+
+            if (allSrcs) {
+                openLightbox(allSrcs, cityName, '');
+                if (clickedIdx >= 0) {
+                    currentIndex = clickedIdx;
+                    updateLightboxImage();
+                }
+            }
+        });
+    });
+
+
+
+    // ==========================================
+    // METRO TIMELINE LOGIC
+    // ==========================================
+    const metroStops = document.querySelectorAll('.metro-stop');
+    const metroCards = document.querySelectorAll('.metro-card');
+    const metroProgress = document.querySelector('.metro-line-progress');
+
+    if (metroStops.length > 0 && metroCards.length > 0) {
+        metroStops.forEach((stop, index) => {
+            stop.addEventListener('click', () => {
+                // Update stops
+                metroStops.forEach(s => s.classList.remove('active'));
+                stop.classList.add('active');
+
+                // Update cards
+                metroCards.forEach(c => c.classList.remove('active'));
+                const targetCard = document.querySelector(`.metro-card[data-index="${index}"]`);
+                if (targetCard) {
+                    targetCard.classList.add('active');
+                }
+
+                // Update progress line (if applicable)
+                if (metroProgress) {
+                    const percentage = (index / (metroStops.length - 1)) * 100;
+                    metroProgress.style.width = `${percentage}%`;
+                }
+            });
+        });
+    }
+
 
 });

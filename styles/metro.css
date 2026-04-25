@@ -1,0 +1,283 @@
+/* ===================================
+   WEJHA - Metro Stations Section (Timeline)
+   =================================== */
+
+.metro-section {
+    padding: 100px 0;
+    background: #fdfdfd;
+}
+
+.metro-container {
+    margin-top: 60px;
+    position: relative;
+    width: 100%;
+}
+
+/* Timeline */
+.metro-timeline {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.metro-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.metro-line-progress {
+    position: absolute;
+    top: 50%;
+    right: 0; /* RTL start */
+    width: 0%;
+    height: 4px;
+    background: var(--clr-primary);
+    transform: translateY(-50%);
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.metro-stops {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.metro-stop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    width: 120px; /* Keep text centered over dot */
+}
+
+.metro-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #e0e0e0;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 0 rgba(var(--clr-primary-rgb), 0.4);
+}
+
+.metro-stop-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 35px;
+    white-space: nowrap;
+}
+
+.metro-stop:hover .metro-dot {
+    border-color: var(--clr-primary);
+    transform: scale(1.1);
+}
+
+.metro-stop.active .metro-dot {
+    border-color: var(--clr-primary);
+    background: var(--clr-primary);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(var(--clr-primary-rgb), 0.2);
+}
+
+.metro-stop.active .metro-stop-name {
+    color: var(--clr-primary);
+    font-weight: 700;
+}
+
+/* Cards Wrapper */
+.metro-cards-wrapper {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    margin-top: 60px;
+}
+
+/* Metro Actions (Download Map) */
+.metro-actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.metro-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 35px;
+    border-radius: 50px;
+    border: 2px solid var(--clr-primary);
+    background: transparent;
+    color: var(--clr-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.metro-download-btn:hover {
+    background: var(--clr-primary);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(var(--clr-primary-rgb), 0.3);
+}
+
+.metro-download-btn svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+.metro-download-btn:hover svg {
+    transform: translateY(2px);
+}
+
+.metro-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+.metro-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.metro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 10s ease;
+}
+
+.metro-card.active .metro-img {
+    transform: scale(1.05);
+}
+
+.metro-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+.metro-card-content {
+    position: absolute;
+    bottom: 40px;
+    right: 40px; /* RTL alignment */
+    color: #fff;
+    z-index: 3;
+}
+
+.metro-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.metro-card.active .metro-title {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.metro-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--clr-primary);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.3s;
+}
+
+.metro-card.active .metro-explore {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.metro-explore svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.metro-card:hover .metro-explore svg {
+    transform: translateX(-5px); /* RTL */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .metro-cards-wrapper {
+        height: 500px;
+    }
+    .metro-stop-name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .metro-stops {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 50px;
+        padding: 0 20px 40px 20px;
+    }
+    
+    .metro-line, .metro-line-progress {
+        display: none; /* Hide lines on mobile horizontal scroll */
+    }
+
+    .metro-cards-wrapper {
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    .metro-title {
+        font-size: 1.6rem;
+    }
+
+    .metro-card-content {
+        bottom: 20px;
+        right: 20px;
+    }
+}
