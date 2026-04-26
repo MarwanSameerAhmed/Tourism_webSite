@@ -1421,16 +1421,31 @@ document.addEventListener('DOMContentLoaded', function () {
         videoBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // 1. تحويل رابط اليوتيوب العادي أو Shorts إلى رابط Embed ليعمل داخل الموقع
-            let videoUrl = this.getAttribute('href');
-            if (videoUrl.includes('shorts/')) {
-                videoUrl = videoUrl.replace('shorts/', 'embed/');
-            } else if (videoUrl.includes('watch?v=')) {
-                videoUrl = videoUrl.replace('watch?v=', 'embed/');
+            // 1. استخراج معرف الفيديو (Video ID) بشكل ذكي ونظيف
+            let href = this.getAttribute('href');
+            let videoId = "";
+
+            try {
+                if (href.includes('shorts/')) {
+                    // استخراج الآيدي من روابط Shorts
+                    videoId = href.split('shorts/')[1].split(/[?&]/)[0];
+                } else if (href.includes('v=')) {
+                    // استخراج الآيدي من الروابط العادية watch?v=
+                    videoId = href.split('v=')[1].split(/[?&]/)[0];
+                } else if (href.includes('youtu.be/')) {
+                    // استخراج الآيدي من الروابط المختصرة
+                    videoId = href.split('youtu.be/')[1].split(/[?&]/)[0];
+                } else {
+                    // في حال كان الرابط نظيفاً أو بصيغة أخرى
+                    videoId = href.split('/').pop().split(/[?&]/)[0];
+                }
+            } catch (err) {
+                console.error("تعذر استخراج معرف الفيديو:", err);
+                return;
             }
 
-            // إضافة خاصية التشغيل التلقائي ومنع الفيديوهات المقترحة
-            const finalUrl = videoUrl.includes('?') ? `${videoUrl}&autoplay=1` : `${videoUrl}?autoplay=1`;
+            // بناء رابط التضمين (Embed) الصافي تماماً لتجنب Error 153
+            const finalUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
 
             // 2. إنشاء خلفية النافذة المنبثقة
             const overlay = document.createElement('div');
@@ -1441,9 +1456,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.85);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
+                background: rgba(0, 0, 0, 0.9);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1452,10 +1467,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 transition: opacity 0.3s ease;
             `;
 
-            // 3. هيكل مشغل الفيديو (مصمم ليتناسب مع أبعاد Shorts الطولية)
+            // 3. هيكل مشغل الفيديو (بأبعاد تناسب الهواتف والشاشات الكبيرة)
             overlay.innerHTML = `
-                <div class="video-container" style="position: relative; width: 90%; max-width: 400px; aspect-ratio: 9/16; transform: scale(0.9); transition: transform 0.3s ease;">
-                    <button id="closeVideoPopup" style="position: absolute; top: -50px; right: 0; background: none; border: none; color: #fff; font-size: 40px; cursor: pointer; line-height: 1;">&times;</button>
+                <div class="video-container" style="position: relative; width: 90%; max-width: 450px; aspect-ratio: 9/16; transform: scale(0.9); transition: transform 0.3s ease;">
+                    <button id="closeVideoPopup" style="position: absolute; top: -50px; right: 0; background: none; border: none; color: #fff; font-size: 40px; cursor: pointer; line-height: 1; outline: none;">&times;</button>
                     <iframe 
                         width="100%" 
                         height="100%" 
@@ -1463,7 +1478,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen 
-                        style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000;">
+                        style="border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000;">
                     </iframe>
                 </div>
             `;
@@ -1484,6 +1499,8 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             document.getElementById('closeVideoPopup').onclick = closeVideo;
+
+            // إغلاق عند النقر خارج الفيديو
             overlay.onclick = (event) => {
                 if (event.target === overlay) closeVideo();
             };
