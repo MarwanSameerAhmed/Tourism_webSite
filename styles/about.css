@@ -343,15 +343,14 @@
     }
 
     .about-cta {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .about-cta .hero-btn {
-        padding: 8px 12px !important;
-        font-size: 0.85rem;
+        justify-content: center;
+        padding: 12px 30px !important;
+        font-size: 1rem;
     }
 }
 
