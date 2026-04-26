@@ -1,106 +1,66 @@
 const fs = require('fs');
 const path = require('path');
 
-const basePath = 'd:/Tourism_webSite';
-const sourceDir = path.join(basePath, 'assets', 'محطات الميترو');
+const metroDir = 'd:/Tourism_webSite/assets/محطات الميترو';
+const dirs = fs.readdirSync(metroDir, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+    .sort((a, b) => parseInt(a) - parseInt(b));
 
-const folders = fs.readdirSync(sourceDir);
-let itemsHtml = '';
-let timelineHtml = '';
-let validItems = [];
+let stopsHtml = '';
+let cardsHtml = '';
+let dotsHtml = '';
 
-folders.forEach((folder) => {
-    const folderPath = path.join(sourceDir, folder);
-    const stat = fs.statSync(folderPath);
-    if (!stat.isDirectory()) return;
+dirs.forEach((dirName, index) => {
+    const dirPath = path.join(metroDir, dirName);
+    const files = fs.readdirSync(dirPath)
+        .filter(f => f.toLowerCase().endsWith('.jpg') || f.toLowerCase().endsWith('.png') || f.toLowerCase().endsWith('.jpeg'))
+        .sort((a, b) => {
+            if(a.includes('غلاف') || a.includes('cover')) return -1;
+            if(b.includes('غلاف') || b.includes('cover')) return 1;
+            return a.localeCompare(b, undefined, {numeric: true});
+        });
 
-    const files = fs.readdirSync(folderPath).filter(f => f.endsWith('.jpg') || f.endsWith('.png'));
-    if (files.length === 0) return;
+    const stationName = dirName.split(' ').slice(1).join(' '); // Remove the number
 
-    validItems.push({
-        folder: folder,
-        keyName: folder,
-        displayName: folder,
-        coverImage: `assets/محطات الميترو/${folder}/${files[0]}`.replace(/\\/g, '/'),
-        allImages: files.map(f => `assets/محطات الميترو/${folder}/${f}`.replace(/\\/g, '/')).join(',')
-    });
+    stopsHtml += `
+                        <div class="metro-stop ${index === 0 ? 'active' : ''}" data-target="${index}">
+                            <div class="metro-dot"></div>
+                            <span class="metro-stop-name">${stationName}</span>
+                        </div>`;
+
+    const imagesStr = files.map(f => `assets/محطات الميترو/${dirName}/${f}`).join(',');
+    const coverImage = files.find(f => f.includes('غلاف') || f.includes('cover')) || files[0] || '';
+
+    cardsHtml += `
+                    <div class="metro-card ${index === 0 ? 'active' : ''} metro-item" data-index="${index}" data-hotel="محطة ${stationName}"
+                        data-images="${imagesStr}">
+                        <img src="assets/محطات الميترو/${dirName}/${coverImage}"
+                            alt="محطة ${stationName}" class="metro-img" loading="lazy">
+                        <div class="metro-card-content">
+                            <h3 class="metro-title">محطة ${stationName}</h3>
+                            <div class="metro-explore">استكشف المحطة <svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>`;
+
+    dotsHtml += `
+                <button class="metro-dot-nav ${index === 0 ? 'active' : ''}" data-index="${index}"></button>`;
 });
 
-validItems.forEach((item, index) => {
-    const activeClass = index === 0 ? 'active' : '';
-    
-    timelineHtml += `
-        <div class="metro-stop ${activeClass}" data-target="${index}">
-            <div class="metro-dot"></div>
-            <span class="metro-stop-name">${item.displayName.replace('محطة ', '')}</span>
-        </div>`;
-
-    itemsHtml += `
-        <div class="metro-card ${activeClass} metro-item" data-index="${index}" data-hotel="${item.keyName}" data-images="${item.allImages}">
-            <img src="${item.coverImage}" alt="${item.displayName}" class="metro-img" loading="lazy">
-            <div class="metro-card-content">
-                <h3 class="metro-title">${item.displayName}</h3>
-                <div class="metro-explore">استكشف المحطة <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </div>
-        </div>`;
-});
-
-const finalHtml = `
-    <!-- Metro Stations Section -->
-    <section class="metro-section" id="metro">
-        <div class="container">
-            <div class="section-header reveal section-header-right">
-                <div class="section-badge">
-                    <svg class="section-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
-                    <span>تحت الأرض</span>
-                </div>
-                <h2 class="section-title">
-                    محطات الميترو
-                    <span class="section-title-en">Metro Stations</span>
-                </h2>
-                <div class="section-title-line" style="margin-left: auto !important; margin-right: 0 !important; justify-content: flex-start !important;">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <p class="section-subtitle" style="margin-left: auto !important; margin-right: 0 !important; text-align: right !important;">قصور تحت الأرض تعكس روعة الهندسة المعمارية الروسية</p>
-            </div>
-            
-            <div class="metro-container reveal" style="transition-delay: 0.2s">
-                <div class="metro-timeline">
-                    <div class="metro-line"></div>
-                    <div class="metro-line-progress"></div>
-                    <div class="metro-stops">
-${timelineHtml}
+const output = `<div class="metro-stops">${stopsHtml}
                     </div>
                 </div>
-                
-                <div class="metro-cards-wrapper">
-${itemsHtml}
+
+                <div class="metro-cards-wrapper">${cardsHtml}
                 </div>
             </div>
-        </div>
-    </section>
-`;
 
-let indexHtml = fs.readFileSync(path.join(basePath, 'index.html'), 'utf8');
+            <!-- Mobile Dots Navigation -->
+            <div class="metro-dots-nav" id="metroDots">${dotsHtml}
+            </div>`;
 
-// Insert after Gallery section
-const galleryStart = indexHtml.indexOf('<section class="gallery-section" id="gallery">');
-const nextSectionMatch = indexHtml.indexOf('<section', galleryStart + 10);
-
-if (nextSectionMatch !== -1) {
-    indexHtml = indexHtml.substring(0, nextSectionMatch) + finalHtml + '\n    ' + indexHtml.substring(nextSectionMatch);
-    fs.writeFileSync(path.join(basePath, 'index.html'), indexHtml);
-    console.log("Successfully inserted Metro section.");
-} else {
-    // If it's the last section before footer
-    const footerMatch = indexHtml.indexOf('<footer>');
-    if (footerMatch !== -1) {
-        indexHtml = indexHtml.substring(0, footerMatch) + finalHtml + '\n    ' + indexHtml.substring(footerMatch);
-        fs.writeFileSync(path.join(basePath, 'index.html'), indexHtml);
-        console.log("Successfully inserted Metro section before footer.");
-    }
-}
+fs.writeFileSync('d:/Tourism_webSite/scratch_metro.html', output);
+console.log('Done!');

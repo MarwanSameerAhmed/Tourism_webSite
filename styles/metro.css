@@ -62,7 +62,7 @@
     gap: 10px;
     cursor: pointer;
     position: relative;
-    width: 120px; /* Keep text centered over dot */
+    width: 80px; /* Reduced to fit 11 items */
 }
 
 .metro-dot {
@@ -76,14 +76,17 @@
 }
 
 .metro-stop-name {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #666;
     text-align: center;
     transition: all 0.4s ease;
     position: absolute;
     top: 35px;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
+    width: 100px;
+    line-height: 1.2;
 }
 
 .metro-stop:hover .metro-dot {
