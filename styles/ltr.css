@@ -60,6 +60,23 @@ html[dir="ltr"] .about-content {
 
 html[dir="ltr"] .about-cta {
     justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+html[dir="ltr"] .about-cta .hero-btn {
+    white-space: nowrap;
+}
+
+/* ---- Hero Social — move to right side in LTR ---- */
+html[dir="ltr"] .hero-social {
+    left: auto;
+    right: 40px;
+}
+
+/* Flip the scroll-text in LTR */
+html[dir="ltr"] .hero-scroll-text {
+    transform: rotate(0deg);
+    writing-mode: vertical-lr;
 }
 
 html[dir="ltr"] .about-description {
