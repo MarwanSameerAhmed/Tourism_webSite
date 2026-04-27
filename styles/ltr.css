@@ -1,0 +1,162 @@
+/* ==========================================
+   LTR Override — English Version
+   Only loaded in index-en.html
+   ========================================== */
+
+/* ---- Global Section Headers ---- */
+html[dir="ltr"] .section-header,
+html[dir="ltr"] .section-header-right {
+    text-align: left !important;
+}
+
+html[dir="ltr"] .section-title-line {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+html[dir="ltr"] .section-subtitle {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+html[dir="ltr"] .section-badge {
+    justify-content: flex-start;
+}
+
+/* ---- Hero Section ---- */
+html[dir="ltr"] .hero-btn-primary .hero-btn-icon {
+    transform: rotate(0deg);
+}
+
+html[dir="ltr"] .hero-btn-primary:hover .hero-btn-icon {
+    transform: translateX(5px);
+}
+
+html[dir="ltr"] .hero-description,
+html[dir="ltr"] .hero-subtitle {
+    text-align: left;
+}
+
+html[dir="ltr"] .hero-badge {
+    justify-content: flex-start;
+}
+
+/* Fix hero-btn-icon margin for LTR */
+html[dir="ltr"] .hero-btn-icon {
+    margin-right: 0 !important;
+    margin-left: 8px;
+}
+
+/* ---- About Section ---- */
+html[dir="ltr"] .about-title-line {
+    justify-content: flex-start;
+}
+
+html[dir="ltr"] .about-content {
+    text-align: left;
+}
+
+html[dir="ltr"] .about-cta {
+    justify-content: flex-start;
+}
+
+html[dir="ltr"] .about-description {
+    text-align: left;
+}
+
+html[dir="ltr"] .about-badge {
+    justify-content: flex-start;
+}
+
+/* ---- Offer Cards ---- */
+html[dir="ltr"] .offer-content-col {
+    text-align: left;
+}
+
+html[dir="ltr"] .offer-header {
+    text-align: left;
+}
+
+/* ---- Hotels ---- */
+html[dir="ltr"] .hotel-info {
+    text-align: left;
+}
+
+/* ---- Restaurants ---- */
+html[dir="ltr"] .restaurant-info {
+    text-align: left;
+}
+
+/* ---- Activities ---- */
+html[dir="ltr"] .activity-content {
+    text-align: left;
+}
+
+/* ---- Gardens/Landmarks ---- */
+html[dir="ltr"] .garden-info {
+    text-align: left;
+}
+
+/* ---- Malls ---- */
+html[dir="ltr"] .mall-info {
+    text-align: left;
+}
+
+/* ---- Museums ---- */
+html[dir="ltr"] .museum-card {
+    text-align: left;
+}
+
+html[dir="ltr"] .museum-header {
+    text-align: left;
+}
+
+/* ---- Gallery ---- */
+html[dir="ltr"] .gallery-tabs {
+    justify-content: flex-start;
+}
+
+/* ---- Metro ---- */
+html[dir="ltr"] .metro-stop-name {
+    text-align: center;
+}
+
+/* ---- Footer ---- */
+html[dir="ltr"] .footer-brand {
+    text-align: left;
+}
+
+html[dir="ltr"] .footer-column {
+    text-align: left;
+}
+
+html[dir="ltr"] .footer-contact-item {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .footer-tagline {
+    text-align: left;
+}
+
+/* ---- Services ---- */
+html[dir="ltr"] .service-description {
+    text-align: left;
+}
+
+/* ---- Navbar ---- */
+html[dir="ltr"] .nav-links {
+    direction: ltr;
+}
+
+/* ---- Language Switcher ---- */
+html[dir="ltr"] .lang-switch a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html[dir="ltr"] .lang-switch a.lang-active {
+    color: var(--clr-primary);
+    font-weight: 700;
+}
