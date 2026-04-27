@@ -520,9 +520,7 @@
     }
 
     .hero-scroll {
-        display: flex;
-        bottom: 15px;
-        /* Adjust bottom offset for mobile */
+        display: none;
     }
 
     .hero-description {

@@ -177,3 +177,71 @@ html[dir="ltr"] .lang-switch a.lang-active {
     color: var(--clr-primary);
     font-weight: 700;
 }
+
+/* ---- Footer LTR Fixes ---- */
+
+/* Green accent line under column titles — left side for LTR */
+html[dir="ltr"] .footer-column-title::after {
+    right: auto;
+    left: 0;
+    transform: none;
+}
+
+/* Footer columns left-aligned in LTR */
+html[dir="ltr"] .footer-column {
+    text-align: left;
+}
+
+/* Footer brand left-aligned in LTR */
+html[dir="ltr"] .footer-brand {
+    text-align: left;
+}
+
+/* Contact items left-aligned in LTR */
+html[dir="ltr"] .footer-contact-item {
+    justify-content: flex-start;
+}
+
+/* Footer hover direction for LTR links */
+html[dir="ltr"] .footer-links a:hover {
+    transform: translateX(5px);
+}
+
+/* Grid direction LTR */
+html[dir="ltr"] .footer-grid,
+html[dir="ltr"] .footer-bottom {
+    direction: ltr;
+}
+
+/* Mobile: green line left-aligned (not centered) for LTR */
+@media (max-width: 600px) {
+    html[dir="ltr"] .footer-column-title::after {
+        right: auto;
+        left: 0;
+        transform: none;
+    }
+
+    html[dir="ltr"] .footer-column {
+        text-align: left;
+    }
+
+    html[dir="ltr"] .footer-contact-item {
+        justify-content: flex-start;
+    }
+
+    html[dir="ltr"] .footer-brand {
+        text-align: left;
+    }
+
+    html[dir="ltr"] .footer-logo {
+        margin: 0 0 20px;
+    }
+
+    html[dir="ltr"] .footer-socials {
+        justify-content: flex-start;
+    }
+
+    html[dir="ltr"] .footer-tagline {
+        margin: 0 0 25px;
+    }
+}
