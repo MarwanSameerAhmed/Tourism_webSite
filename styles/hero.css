@@ -214,6 +214,9 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    padding: 0.15em;
+    margin: -0.15em;
+    /* Extra space so background-clip: text covers full Arabic descenders */
 }
 
 /* Subtitle */
