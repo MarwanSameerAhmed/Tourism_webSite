@@ -56,6 +56,9 @@
     overflow: hidden;
     cursor: pointer;
     background: #eee;
+    /* Improve rendering performance for large galleries */
+    will-change: opacity, transform;
+    contain: layout style paint;
 }
 
 .gallery-item img {
@@ -103,7 +106,18 @@
 
 /* Reveal Animation */
 .revealed-gallery-item {
-    animation: simpleFadeIn 0.5s ease forwards;
+    animation: galleryFadeIn 0.5s ease forwards;
+}
+
+@keyframes galleryFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Load More Button */
@@ -127,6 +141,9 @@
     .gallery-tab {
         padding: 10px 25px;
         font-size: 1rem;
+    }
+    .gallery-section {
+        padding: 60px 0;
     }
 }
 

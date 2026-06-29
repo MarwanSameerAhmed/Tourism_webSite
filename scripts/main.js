@@ -1030,11 +1030,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const showMoreGalleryBtn = document.getElementById('showMoreGalleryBtn');
     let currentCity = 'moscow';
-    let visibleCount = 8;
+    let visibleCount = 12;
+    const GALLERY_LOAD_STEP = 16;
 
     function renderGallery() {
         let cityItems = Array.from(document.querySelectorAll(`.gallery-item[data-city="${currentCity}"]`));
 
+        // Hide all items that don't belong to current city
         galleryItems.forEach(item => {
             if (item.getAttribute('data-city') !== currentCity) {
                 item.classList.add('hidden-gallery-item');
@@ -1042,22 +1044,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Show/hide items of current city based on visibleCount
         cityItems.forEach((item, index) => {
             if (index < visibleCount) {
-                item.classList.remove('hidden-gallery-item');
-                if (!item.classList.contains('revealed-gallery-item')) {
+                if (item.classList.contains('hidden-gallery-item')) {
+                    item.classList.remove('hidden-gallery-item');
+                    // Stagger the reveal animation for newly shown items
+                    item.style.animationDelay = `${(index % GALLERY_LOAD_STEP) * 0.04}s`;
                     item.classList.add('revealed-gallery-item');
                 }
             } else {
                 item.classList.add('hidden-gallery-item');
                 item.classList.remove('revealed-gallery-item');
+                item.style.animationDelay = '';
             }
         });
 
-        if (visibleCount >= cityItems.length) {
-            showMoreGalleryBtn.style.display = 'none';
-        } else {
-            showMoreGalleryBtn.style.display = 'inline-flex';
+        // Show/hide button based on remaining items
+        if (showMoreGalleryBtn) {
+            if (visibleCount >= cityItems.length) {
+                showMoreGalleryBtn.style.display = 'none';
+            } else {
+                showMoreGalleryBtn.style.display = 'inline-flex';
+                // Update button text with remaining count
+                const remaining = cityItems.length - visibleCount;
+                const btnText = showMoreGalleryBtn.querySelector('.hero-btn-text');
+                if (btnText) {
+                    const isArabic = document.documentElement.lang === 'ar' || !document.documentElement.lang || document.querySelector('html[dir="rtl"]');
+                    btnText.textContent = isArabic
+                        ? `تحميل المزيد (${remaining})`
+                        : `Load More (${remaining})`;
+                }
+            }
         }
     }
 
@@ -1067,15 +1085,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 currentCity = tab.getAttribute('data-target');
-                visibleCount = 8; // reset
+                visibleCount = 12; // reset on tab switch
                 renderGallery();
             });
         });
 
-        showMoreGalleryBtn.addEventListener('click', () => {
-            visibleCount += 12;
-            renderGallery();
-        });
+        if (showMoreGalleryBtn) {
+            showMoreGalleryBtn.addEventListener('click', () => {
+                visibleCount += GALLERY_LOAD_STEP;
+                renderGallery();
+            });
+        }
 
         // Initial render
         renderGallery();
