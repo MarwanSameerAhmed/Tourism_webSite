@@ -81,6 +81,8 @@
     /* Explicit height to allow image to stretch */
     min-height: auto;
     margin-bottom: 8vh;
+    /* Bleed to the left edge of the screen */
+    margin-left: calc(-1 * max(var(--space-lg), calc((100vw - 1340px) / 2 + var(--space-lg))));
 
     background: rgba(255, 255, 255, 0.9);
     /* Frosted pearl white */
@@ -377,6 +379,7 @@
         min-width: auto;
         max-width: none;
         margin-bottom: 0;
+        margin-left: 0;
         padding: 0;
         border-radius: 16px;
         box-shadow: none;
