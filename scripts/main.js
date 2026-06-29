@@ -342,9 +342,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                // For elements inside tall sections (gallery, etc.), keep them visible permanently
+                // to prevent disappearing when scrolling through many loaded images
+                const parentSection = entry.target.closest('.gallery-section, .museums-section, .activities-modern');
+                if (parentSection) {
+                    entry.target.classList.add('once-revealed');
+                }
             } else {
-                // Remove the class when it leaves the viewport so it can re-animate upon re-entry
-                entry.target.classList.remove('visible');
+                // Only re-hide elements that are NOT inside tall/dynamic sections
+                if (!entry.target.classList.contains('once-revealed')) {
+                    entry.target.classList.remove('visible');
+                }
             }
         });
     }, {
