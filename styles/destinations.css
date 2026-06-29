@@ -371,6 +371,7 @@
     .offer-card {
         display: none;
         width: 100%;
+        height: auto;
         flex-direction: column;
         min-height: auto;
         min-width: auto;
