@@ -26,7 +26,7 @@
 }
 
 .dest-sticky-header {
-    width: 30%;
+    width: 25%;
     position: sticky;
     top: 25vh;
     margin-bottom: 25vh;
@@ -66,7 +66,7 @@
    ============================================ */
 .dest-stack-container {
     position: relative;
-    width: 65%;
+    width: 70%;
     padding-bottom: 10vh;
     /* Reduced extra space */
 }
@@ -81,8 +81,6 @@
     /* Explicit height to allow image to stretch */
     min-height: auto;
     margin-bottom: 8vh;
-    /* Bleed to the left edge of the screen */
-    margin-left: calc(-1 * max(var(--space-lg), calc((100vw - 1340px) / 2 + var(--space-lg))));
 
     background: rgba(255, 255, 255, 0.9);
     /* Frosted pearl white */
