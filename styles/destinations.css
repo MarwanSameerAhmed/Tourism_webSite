@@ -122,7 +122,7 @@
    CONTENT COLUMN (Editorial Typography)
    ============================================ */
 .offer-content-col {
-    width: 50%;
+    width: 40%;
     /* Rebalance width */
     height: 100%;
     display: flex;
@@ -270,7 +270,7 @@
    IMAGE COLUMN (Fine Art Frame)
    ============================================ */
 .offer-art-col {
-    width: 50%;
+    width: 60%;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -409,12 +409,15 @@
         border-radius: 16px;
         background: #ffffff;
         height: auto;
+        overflow: hidden;
     }
 
     .offer-art-container {
         background: #ffffff;
         height: auto;
         position: static;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     .offer-image {
