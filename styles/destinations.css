@@ -77,7 +77,7 @@
 .offer-card {
     position: sticky;
     top: 15vh;
-    height: 650px;
+    height: 850px;
     /* Explicit height to allow image to stretch */
     min-height: auto;
     margin-bottom: 8vh;
@@ -122,7 +122,7 @@
    CONTENT COLUMN (Editorial Typography)
    ============================================ */
 .offer-content-col {
-    width: 40%;
+    width: 50%;
     /* Rebalance width */
     height: 100%;
     display: flex;
@@ -270,7 +270,7 @@
    IMAGE COLUMN (Fine Art Frame)
    ============================================ */
 .offer-art-col {
-    width: 60%;
+    width: 50%;
     height: 100%;
     position: relative;
     z-index: 2;
